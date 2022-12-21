@@ -21,7 +21,9 @@ public class player : MonoBehaviour
     bool is_ground; //땅 상태
     bool ray_wall; //벽 상태
 
-    Rigidbody2D rigid; 
+    // 컴포넌트
+    Rigidbody2D rigid;
+    
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>(); // 선언
@@ -33,11 +35,13 @@ public class player : MonoBehaviour
         check_wall_and_bottom();
         player_jump();
     }
+
     // 이동은 효율을 위해 여기에 넣는다.
     void FixedUpdate()
     {
         player_move();
     }
+
     void player_move()
     {
         x = Input.GetAxisRaw("Horizontal");

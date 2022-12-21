@@ -352,9 +352,9 @@ GameObject:
   - component: {fileID: 671728822}
   - component: {fileID: 671728821}
   - component: {fileID: 671728820}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bottom
-  m_TagString: Untagged
+  m_TagString: bottom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -509,7 +509,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2.5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -634,6 +634,7 @@ MonoBehaviour:
   crouch_speed: 0
   run_speed: 6
   walk_speed: 3
+  jump_force: 10
 --- !u!1 &941739475
 GameObject:
   m_ObjectHideFlags: 0

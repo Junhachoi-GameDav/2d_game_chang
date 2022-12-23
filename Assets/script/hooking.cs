@@ -9,7 +9,7 @@ public class hooking : MonoBehaviour
     void Start()
     {
         //find 함수로 플레이어(이름)안에있는 컴포넌트에 접근한다.
-        grap = GameObject.Find("girl").GetComponent<grapping>();
+        grap = GameObject.Find("player").GetComponent<grapping>();
         //고리에 있는 조인트를 활성화
         joint2D = GetComponent<DistanceJoint2D>();
     }

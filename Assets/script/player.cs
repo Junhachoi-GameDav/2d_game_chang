@@ -23,11 +23,13 @@ public class player : MonoBehaviour
 
     // 컴포넌트
     Rigidbody2D rigid;
-    
+    grapping grap;
+
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>(); // 선언
         apply_speed = run_speed; // 기존 스피드는 run속도
+        grap = GetComponent<grapping>();
     }
 
     void Update()
@@ -52,7 +54,14 @@ public class player : MonoBehaviour
             {
                 transform.localScale = new Vector3(x, 1, 1); //캐릭터 뒤집기
             }
-            transform.Translate(new Vector3(x * apply_speed * Time.deltaTime, 0, 0));
+            if (grap.is_attach) // 갈고리에 붙을시
+            {
+                rigid.AddForce(new Vector2(x * apply_speed * Time.deltaTime, 0));
+            }
+            else
+            {
+                transform.Translate(new Vector3(x * apply_speed * Time.deltaTime, 0, 0)); // 기본 이동
+            }
         }
     }
 

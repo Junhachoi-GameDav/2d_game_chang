@@ -7,17 +7,20 @@ public class grapping : MonoBehaviour
     public LineRenderer line;
     public Transform hook;
 
-    public float hook_speed = 12f;
-    public float hook_distence = 3f;
+    public float hook_speed;
+    public float hook_distence;
 
     bool is_hook_key_down;
     bool is_line_max;
     public bool is_attach;
 
     Vector2 mouse_direction;
-
+    Rigidbody2D rigid;
+    player p;
     void Start()
     {
+        rigid = GetComponent<Rigidbody2D>();
+        p = GetComponent<player>();
         //라인 그리기
         line.positionCount = 2; //그려질 라인 포인트 개수
         line.endWidth = line.startWidth = 0.05f; // 그려질 가로 길이
@@ -34,7 +37,7 @@ public class grapping : MonoBehaviour
         line.SetPosition(0, transform.position);
         line.SetPosition(1, hook.position);
 
-        if (Input.GetKeyDown(KeyCode.E) && !is_hook_key_down) //e을 누르고 훅키를 안눌렀을때
+        if (Input.GetMouseButtonDown(1) && !is_hook_key_down) // 마우스 오른쪽을 누르고 훅키를 안눌렀을때
         {
             hook.position = transform.position; // 누를시 처음위치
             // 화면(스크린)월드 좌표에 마우스 위치에 케릭터 위치를 빼면 = 마우스의 방향
@@ -69,15 +72,15 @@ public class grapping : MonoBehaviour
         }
         else if (is_attach) //붙을때
         {
-            if (Input.GetKeyDown(KeyCode.E)) // 붙은상태에서 다시 e를 누르면
+            if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Space)) // 붙은상태에서 다시 마우스 오른쪽을 누르면 또는 붙은상태에서 다시 점프키를 누르면
             {
                 is_attach = false;
                 is_hook_key_down = false;
                 is_line_max = false;
                 hook.GetComponent<hooking>().joint2D.enabled = false;
                 hook.gameObject.SetActive(false);
+                //rigid.velocity = new Vector2(p.x, 0);
             }
-
         }
     }
 }

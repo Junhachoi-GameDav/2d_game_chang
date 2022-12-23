@@ -12,9 +12,10 @@ public class player : MonoBehaviour
 
     //점프
     public float jump_force = 10f; //점프 힘 값
+    public float hook_jump_force = 8f; //후크점프 힘 값
 
     // 가로 이동 값
-    float x; 
+    public float x; 
 
     //상태
     bool is_trun; //앞 ,뒤 전환 상태
@@ -56,7 +57,7 @@ public class player : MonoBehaviour
             }
             if (grap.is_attach) // 갈고리에 붙을시
             {
-                rigid.AddForce(new Vector2(x * apply_speed * Time.deltaTime, 0));
+                rigid.AddForce(new Vector2(x * apply_speed * Time.deltaTime, 0),ForceMode2D.Impulse);
             }
             else
             {
@@ -93,6 +94,11 @@ public class player : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && is_ground)
         {
+            rigid.velocity = new Vector2(rigid.velocity.x, jump_force);
+        }
+        else if (Input.GetButtonDown("Jump") && grap.is_attach) // 갈고리에 붙을시
+        {
+            rigid.velocity = Vector2.zero;
             rigid.velocity = new Vector2(rigid.velocity.x, jump_force);
         }
     }

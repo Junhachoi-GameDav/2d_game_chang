@@ -135,9 +135,9 @@ GameObject:
   - component: {fileID: 118135488}
   - component: {fileID: 118135487}
   - component: {fileID: 118135486}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: air_bottom (1)
-  m_TagString: Untagged
+  m_TagString: bottom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -872,7 +872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   line: {fileID: 1682305937}
   hook: {fileID: 1182754161}
-  hook_speed: 12
+  hook_speed: 15
   hook_distence: 3
   is_attach: 0
 --- !u!1 &941739475
@@ -1079,7 +1079,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

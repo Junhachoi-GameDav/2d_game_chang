@@ -76,14 +76,6 @@ public class player : MonoBehaviour
                 transform.Translate(new Vector3(0, y * apply_speed * Time.deltaTime, 0)); //위,아래 이동
             }
         }
-        else if (is_hook_range_max)
-        {
-            if(y != -1)
-            {
-                transform.Translate(new Vector3(0, y * apply_speed * Time.deltaTime, 0));
-                is_hook_range_max = false;
-            }
-        }
     }
 
     //벽 && 바닥 체크.

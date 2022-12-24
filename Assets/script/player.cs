@@ -13,6 +13,7 @@ public class player : MonoBehaviour
     //점프
     public float jump_force = 10f; //점프 힘 값
     public float hook_jump_force = 8f; //후크점프 힘 값
+    public float wall_jump_force = 5f; //벽점프 힘 값
 
     // 가로,세로 이동 값
     float x;
@@ -22,6 +23,7 @@ public class player : MonoBehaviour
     //상태
     bool is_trun; //앞 ,뒤 전환 상태
     bool is_ground; //땅 상태
+    bool is_wall_jump_ready; //벽 점프 준비 상태
     bool ray_wall; //벽 상태
     public bool is_hook_range_max; // 갈고리 길이 최대 상태
 
@@ -40,6 +42,7 @@ public class player : MonoBehaviour
     {
         check_wall_and_bottom();
         player_jump();
+        player_wall_jump();
     }
 
     // 이동은 효율을 위해 여기에 넣는다.
@@ -50,6 +53,11 @@ public class player : MonoBehaviour
 
     void player_move()
     {
+        if (is_wall_jump_ready)
+        {
+            return; //위에 조건이면 함수를 끝냄.
+        }
+
         x = Input.GetAxisRaw("Horizontal");
         y = Input.GetAxisRaw("Vertical");
 
@@ -103,6 +111,11 @@ public class player : MonoBehaviour
 
     void player_jump()
     {
+        if (is_wall_jump_ready)
+        {
+            return; //위에 조건이면 함수를 끝냄.
+        }
+
         if (Input.GetButtonDown("Jump") && is_ground)
         {
             rigid.velocity = new Vector2(rigid.velocity.x, jump_force);
@@ -112,5 +125,45 @@ public class player : MonoBehaviour
             rigid.velocity = Vector2.zero;
             rigid.velocity = new Vector2(rigid.velocity.x, hook_jump_force);
         }
+    }
+    void player_wall_jump()
+    {
+        if(ray_wall && !is_ground) //벽에 붙었고 땅에 없을시.
+        {
+            #region 벽매달리기 취소
+            //왼쪽 벽에서 오른쪽으로 가면 벽매달리기 취소
+            if (!is_trun && Input.GetKey(KeyCode.D))
+            {
+                is_wall_jump_ready = false;
+                return;
+            }
+            //오른쪽 벽에서 왼쪽으로 가면 벽매달리기 취소
+            if (is_trun && x == -1)
+            {
+                is_wall_jump_ready = false;
+                return;
+            }
+            #endregion
+            is_wall_jump_ready = true; //벽점프 준비 완료.
+            rigid.velocity = Vector2.zero; // 멈춤.
+            rigid.gravityScale = 0;
+
+            
+            if (Input.GetButtonDown("Jump")) //벽에서 점프를 눌렀을시.
+            {
+                // is_trun이 트루면 왼쪽으로 펄스면 오른쪽으로 튕김 (즉 왼쪽벽에서 점프를 누르면 오른쪽으로 튕김)
+                rigid.velocity = new Vector2(wall_jump_force * (is_trun ? -1 : 1), wall_jump_force * 1.5f);
+                Invoke("wall_jump_deley", 0.15f); // 튕기고 딜레이
+            }
+        }
+        else
+        {
+            rigid.gravityScale = 2.5f;
+        }
+    }
+    void wall_jump_deley()
+    {
+        is_wall_jump_ready = false;
+        rigid.velocity = new Vector2(0, rigid.velocity.y);
     }
 }

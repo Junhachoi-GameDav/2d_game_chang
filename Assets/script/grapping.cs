@@ -81,7 +81,7 @@ public class grapping : MonoBehaviour
             if (Vector2.Distance(transform.position, hook.position) > hook_distence) // 붙은 상태에서 위아래로 움직일때 제한 길이 및 상태
             {
                 p.is_hook_range_max = true;
-                transform.position = Vector2.MoveTowards(transform.position, hook.position, Time.deltaTime * 2);
+                transform.position = Vector2.MoveTowards(transform.position, hook.position, Time.deltaTime * 2); // 제한을 넘으면 조금 되돌려서 true값 false로 되돌리기.
             }
             else
             {

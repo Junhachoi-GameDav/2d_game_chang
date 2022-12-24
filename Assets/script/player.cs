@@ -24,7 +24,6 @@ public class player : MonoBehaviour
     bool is_ground; //땅 상태
     bool ray_wall; //벽 상태
     public bool is_hook_range_max; // 갈고리 길이 최대 상태
-    //public bool is_hook_range_min; // 갈고리 길이 최소 상태
 
     // 컴포넌트
     Rigidbody2D rigid;

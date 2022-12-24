@@ -15,11 +15,9 @@ public class grapping : MonoBehaviour
     public bool is_attach;
 
     Vector2 mouse_direction;
-    Rigidbody2D rigid;
     player p;
     void Start()
     {
-        rigid = GetComponent<Rigidbody2D>();
         p = GetComponent<player>();
         //라인 그리기
         line.positionCount = 2; //그려질 라인 포인트 개수
@@ -66,7 +64,7 @@ public class grapping : MonoBehaviour
             {
                 is_hook_key_down = false;
                 is_line_max = false;
-                hook.gameObject.SetActive(false); // 활성화
+                hook.gameObject.SetActive(false); // 비활성화
 
             }
         }
@@ -79,7 +77,10 @@ public class grapping : MonoBehaviour
                 is_line_max = false;
                 hook.GetComponent<hooking>().joint2D.enabled = false;
                 hook.gameObject.SetActive(false);
-                //rigid.velocity = new Vector2(p.x, 0);
+            }
+            if (Vector2.Distance(transform.position, hook.position) > hook_distence) // 붙은 상태에서 위아래로 움직일때 제한 길이 및 상태
+            {
+                p.is_hook_range_max = true;
             }
         }
     }

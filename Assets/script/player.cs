@@ -14,13 +14,17 @@ public class player : MonoBehaviour
     public float jump_force = 10f; //점프 힘 값
     public float hook_jump_force = 8f; //후크점프 힘 값
 
-    // 가로 이동 값
-    public float x; 
+    // 가로,세로 이동 값
+    float x;
+    float y;
+
 
     //상태
     bool is_trun; //앞 ,뒤 전환 상태
     bool is_ground; //땅 상태
     bool ray_wall; //벽 상태
+    public bool is_hook_range_max; // 갈고리 길이 최대 상태
+    //public bool is_hook_range_min; // 갈고리 길이 최소 상태
 
     // 컴포넌트
     Rigidbody2D rigid;
@@ -48,6 +52,7 @@ public class player : MonoBehaviour
     void player_move()
     {
         x = Input.GetAxisRaw("Horizontal");
+        y = Input.GetAxisRaw("Vertical");
 
         if (Input.GetButton("Horizontal"))
         {
@@ -57,11 +62,26 @@ public class player : MonoBehaviour
             }
             if (grap.is_attach) // 갈고리에 붙을시
             {
-                rigid.AddForce(new Vector2(x * apply_speed * Time.deltaTime, 0),ForceMode2D.Impulse);
+                rigid.AddForce(new Vector2(x * apply_speed * Time.deltaTime, 0),ForceMode2D.Impulse); //좌,우 이동
             }
             else
             {
                 transform.Translate(new Vector3(x * apply_speed * Time.deltaTime, 0, 0)); // 기본 이동
+            }
+        }
+        if (Input.GetButton("Vertical") && !is_hook_range_max)
+        {
+            if (grap.is_attach) // 갈고리에 붙을시
+            {
+                transform.Translate(new Vector3(0, y * apply_speed * Time.deltaTime, 0)); //위,아래 이동
+            }
+        }
+        else if (is_hook_range_max)
+        {
+            if(y != -1)
+            {
+                transform.Translate(new Vector3(0, y * apply_speed * Time.deltaTime, 0));
+                is_hook_range_max = false;
             }
         }
     }
@@ -99,7 +119,7 @@ public class player : MonoBehaviour
         else if (Input.GetButtonDown("Jump") && grap.is_attach) // 갈고리에 붙을시
         {
             rigid.velocity = Vector2.zero;
-            rigid.velocity = new Vector2(rigid.velocity.x, jump_force);
+            rigid.velocity = new Vector2(rigid.velocity.x, hook_jump_force);
         }
     }
 }

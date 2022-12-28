@@ -166,4 +166,9 @@ public class player : MonoBehaviour
         is_wall_jump_ready = false;
         rigid.velocity = new Vector2(0, rigid.velocity.y);
     }
+
+    void player_use_granade()
+    {
+
+    }
 }

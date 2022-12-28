@@ -5,11 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - bottom
+  - ring
+  - Monster
+  - Endpoint
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - bottom

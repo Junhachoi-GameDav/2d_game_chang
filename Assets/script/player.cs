@@ -19,6 +19,11 @@ public class player : MonoBehaviour
     float x;
     float y;
 
+    //총알 및 폭탄
+    public GameObject granade;
+
+    //총알 및 폭탄 힘 값
+    public float g_force;
 
     //상태
     bool is_trun; //앞 ,뒤 전환 상태
@@ -43,6 +48,7 @@ public class player : MonoBehaviour
         check_wall_and_bottom();
         player_jump();
         player_wall_jump();
+        player_use_granade();
     }
 
     // 이동은 효율을 위해 여기에 넣는다.
@@ -165,5 +171,19 @@ public class player : MonoBehaviour
     {
         is_wall_jump_ready = false;
         rigid.velocity = new Vector2(0, rigid.velocity.y);
+    }
+
+    void player_use_granade()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            // 참고로 중력값은 2이다.
+            GameObject ins_granade = Instantiate(granade, transform.position, transform.rotation); // 캐릭터 위치에서 생성, 나중에 오브젝트 풀링 해줄거임.
+            Rigidbody2D rigid_granade = ins_granade.GetComponent<Rigidbody2D>(); // 물리 선언
+
+            //캐릭터위치에서 (위* 힘* 조절) + (오른쪽 * 힘* 캐릭터 바라보는 방향) = 대각선으로 포물선을 그린다.
+            rigid_granade.velocity = (transform.up * g_force *0.7f ) + (transform.right * g_force * (is_trun ? 1 : -1));
+
+        }
     }
 }

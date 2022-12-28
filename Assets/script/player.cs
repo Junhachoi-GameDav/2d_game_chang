@@ -144,7 +144,7 @@ public class player : MonoBehaviour
                 return;
             }
             //오른쪽 벽에서 왼쪽으로 가면 벽매달리기 취소
-            if (is_trun && x == -1)
+            if (is_trun && Input.GetKey(KeyCode.A))
             {
                 is_wall_jump_ready = false;
                 return;

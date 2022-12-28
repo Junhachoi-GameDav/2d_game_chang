@@ -53,7 +53,7 @@ public class Enermy : MonoBehaviour
         {
             
             RaycastHit2D raycast = Physics2D.Raycast(transform.position, transform.right * isLeft, distance, isLayer);
-            Debug.DrawRay(transform.position, Vector2.right * isLeft, new Color(0, 1, 0), 2);
+            Debug.DrawRay(transform.position, Vector2.right * isLeft * distance, new Color(0, 1, 0), 2);
             if (raycast.collider != null)
             {
                 Debug.Log("isfollow");

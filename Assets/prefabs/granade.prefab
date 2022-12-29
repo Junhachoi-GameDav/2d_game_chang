@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5597152920646754470}
   - component: {fileID: 5597152920646754474}
   - component: {fileID: 5597152920646754469}
-  - component: {fileID: 5597152920646754468}
   - component: {fileID: 1676628928021403391}
+  - component: {fileID: 5921104849746612430}
   m_Layer: 0
   m_Name: granade
   m_TagString: Untagged
@@ -130,21 +130,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5597152920646754468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5597152920646754465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a08c012d8a70c75488c25c336ffc9aa7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  granade_dmg: 5
-  bullet_dmg: 0
-  granade_effect: {fileID: 3889418791435815939, guid: 6ebd90dba46a73c4eb66f1bac9442775, type: 3}
 --- !u!95 &1676628928021403391
 Animator:
   serializedVersion: 4
@@ -165,3 +150,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5921104849746612430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5597152920646754465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c8cce3c02f9614994bb8371205a34b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boom_position: {fileID: 3606087065601212249, guid: 79886e46dde56804db44de5fa1dda3b2, type: 3}

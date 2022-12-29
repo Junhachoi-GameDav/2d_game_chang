@@ -30,9 +30,9 @@ public class granade : MonoBehaviour
         
         yield return new WaitForSeconds(0.2f);//0.2초후 비활성화
         Destroy(g_b_ef);
-        yield return new WaitForSeconds(0.2f);//0.45초후 비활성화
+        yield return new WaitForSeconds(0.16f);//0.36초후 비활성화
         Destroy(g_ef);
-        yield return new WaitForSeconds(1.1f);//1.5초후 비활성화
+        yield return new WaitForSeconds(1.14f);//1.5초후 비활성화
         Destroy(g_part);
         Destroy(gameObject);
     }

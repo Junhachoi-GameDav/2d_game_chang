@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5597152920646754474}
   - component: {fileID: 5597152920646754469}
   - component: {fileID: 5597152920646754468}
+  - component: {fileID: 1676628928021403391}
   m_Layer: 0
   m_Name: granade
   m_TagString: Untagged
@@ -33,7 +34,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -81,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fa37b9f05540b6946be56453d2480dc0, type: 3}
+  m_Sprite: {fileID: 2009024823, guid: bc0996bd06c99534eb8912273bcab347, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -144,3 +145,23 @@ MonoBehaviour:
   granade_dmg: 5
   bullet_dmg: 0
   granade_effect: {fileID: 3889418791435815939, guid: 6ebd90dba46a73c4eb66f1bac9442775, type: 3}
+--- !u!95 &1676628928021403391
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5597152920646754465}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4558b29381a722d4ab9667474c9c4ad4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

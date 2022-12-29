@@ -24,6 +24,7 @@ public class player : MonoBehaviour
 
     //ÃÑ¾Ë ¹× ÆøÅº Èû °ª
     public float g_force;
+    public float g_cool_time;
 
     //»óÅÂ
     bool is_trun; //¾Õ ,µÚ ÀüÈ¯ »óÅÂ

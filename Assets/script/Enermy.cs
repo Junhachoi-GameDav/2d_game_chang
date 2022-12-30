@@ -70,18 +70,18 @@ public class Enermy : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Endpoint")
+        if (collision.tag == "Endpoint"&&isEnd==false)
         {
             Debug.Log("collision");
             isEnd = true;
             if (isLeft == -1)
             {
-                transform.eulerAngles = new Vector3(0, 180, 0);
+               // transform.eulerAngles = new Vector3(0, 180, 0);
                 isLeft = 1;
             }
             else
             {
-                transform.eulerAngles = new Vector3(0, 0, 0);
+                //transform.eulerAngles = new Vector3(0, 0, 0);
                 isLeft = -1;
             }
             transform.position = Vector2.MoveTowards(transform.position, home, Time.deltaTime * speed * 1.4f);
@@ -93,6 +93,7 @@ public class Enermy : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         transform.position = Vector2.MoveTowards(transform.position, home, Time.deltaTime * speed * 3f);
+        yield return new WaitForSeconds(0.5f);
         isEnd = false;
     }
     IEnumerator Move()

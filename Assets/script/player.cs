@@ -22,8 +22,9 @@ public class player : MonoBehaviour
     //총알 및 폭탄
     public GameObject granade;
 
-    //총알 및 폭탄 힘 값
+    //총알 및 폭탄 힘, 기타 값
     public float g_force;
+    public float g_rotation_speed;
 
     //상태
     bool is_trun; //앞 ,뒤 전환 상태
@@ -183,7 +184,6 @@ public class player : MonoBehaviour
 
             //캐릭터위치에서 (위* 힘* 조절) + (오른쪽 * 힘* 캐릭터 바라보는 방향) = 대각선으로 포물선을 그린다.
             rigid_granade.velocity = (transform.up * g_force *0.7f ) + (transform.right * g_force * (is_trun ? 1 : -1));
-
         }
     }
 }

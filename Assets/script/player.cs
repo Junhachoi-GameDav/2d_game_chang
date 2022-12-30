@@ -19,7 +19,7 @@ public class player : MonoBehaviour
     float x;
     float y;
 
-    //총알 및 폭탄
+    //기타 오브젝트
     public GameObject granade;
 
     //총알 및 폭탄 힘, 기타 값
@@ -162,7 +162,7 @@ public class player : MonoBehaviour
             {
                 // is_trun이 트루면 왼쪽으로 펄스면 오른쪽으로 튕김 (즉 왼쪽벽에서 점프를 누르면 오른쪽으로 튕김)
                 rigid.velocity = new Vector2(wall_jump_force * (is_trun ? -1 : 1), wall_jump_force * 1.5f);
-                Invoke("wall_jump_deley", 0.15f); // 튕기고 딜레이
+                //Invoke("wall_jump_deley", 0.15f); // 튕기고 딜레이
             }
         }
         else
@@ -188,4 +188,5 @@ public class player : MonoBehaviour
             rigid_granade.velocity = (transform.up * g_force *0.7f ) + (transform.right * g_force * (is_trun ? 1 : -1));
         }
     }
+    
 }

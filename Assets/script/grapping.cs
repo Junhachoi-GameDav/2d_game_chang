@@ -6,9 +6,11 @@ public class grapping : MonoBehaviour
 {
     public LineRenderer line;
     public Transform hook;
+    public GameObject hook_ef;
 
     public float hook_speed;
     public float hook_distence;
+    [Range(0f, 360f)] public float hook_rotation;
 
     bool is_hook_key_down;
     bool is_line_max;
@@ -35,6 +37,9 @@ public class grapping : MonoBehaviour
         line.SetPosition(0, transform.position);
         line.SetPosition(1, hook.position);
 
+        float hook_ro = hook_ef.transform.rotation.z;
+        hook_ro = hook_rotation;
+
         if (Input.GetMouseButtonDown(1) && !is_hook_key_down) // 마우스 오른쪽을 누르고 훅키를 안눌렀을때
         {
             hook.position = transform.position; // 누를시 처음위치
@@ -44,6 +49,10 @@ public class grapping : MonoBehaviour
             is_hook_key_down = true;   //키를 눌렀다 =true
             is_line_max = false;       //아직 거리가 짧으니까
             hook.gameObject.SetActive(true); // 활성화
+            hook_ef.transform.position = transform.position;
+            Debug.Log(mouse_direction.x);
+            hook_ef.SetActive(true);
+
         }
 
         if (is_hook_key_down && !is_line_max && !is_attach)// 눌렀고 false 이고 안붙었을때
@@ -89,4 +98,5 @@ public class grapping : MonoBehaviour
             }
         }
     }
+    
 }

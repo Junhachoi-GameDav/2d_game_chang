@@ -36,7 +36,7 @@ public class grapping : MonoBehaviour
         //위치를 계속 업데이트 해줘야 라인이 따라가져 보인다.
         line.SetPosition(0, transform.position);
         line.SetPosition(1, hook.position);
-        hook_ef.transform.position = transform.position;
+        hook_ef.transform.position = transform.position;// 이펙트의 위치는 플레이어 정중앙
 
 
         if (Input.GetMouseButtonDown(1) && !is_hook_key_down) // 마우스 오른쪽을 누르고 훅키를 안눌렀을때
@@ -49,9 +49,9 @@ public class grapping : MonoBehaviour
             is_line_max = false;       //아직 거리가 짧으니까
             hook.gameObject.SetActive(true); // 활성화
 
-            //hook_ef.transform.position = transform.position; // 이펙트의 위치는 플레이어 정중앙
+            //이펙트 각도
             //각도는 atan2(y 값 , x 값) * Mathf.Rad2Deg = 라디언 값을 도로 바꿔주는 함수
-            //탄제드의 역함수이다. 검색 ㄱㄱ
+            //탄제드의 역함수이다.
             float r = Mathf.Atan2(mouse_direction.y, mouse_direction.x) * Mathf.Rad2Deg;
             hook_ef.transform.rotation = Quaternion.Euler(0, 0, r+(-90)); //이펙트가 바라보는 방향
             hook_ef.SetActive(true);

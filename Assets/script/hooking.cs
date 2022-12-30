@@ -21,6 +21,7 @@ public class hooking : MonoBehaviour
         {
             joint2D.enabled = true; // È°¼ºÈ­
             grap.is_attach = true;
+            grap.hook_ef.SetActive(false);
         }
         
     }

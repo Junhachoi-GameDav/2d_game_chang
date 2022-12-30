@@ -13,15 +13,6 @@ public class grapping : MonoBehaviour
     public float hook_distence;
     [Range(0f, 10f)] public float hook_ef_cooltime;
 
-    [Range(0f, 50f)] public int points =10; //점의 개수 많을수록 부드러운 곡선
-
-    public float start;
-    public float end;
-
-    public float amplitube = 1; //진폭 y의 높히값
-    public float frequency = 1; //진동수
-
-
     bool is_hook_key_down;
     bool is_line_max;
     public bool is_attach;
@@ -32,7 +23,7 @@ public class grapping : MonoBehaviour
     {
         p = GetComponent<player>();
         //라인 그리기
-        line.positionCount = points; //그려질 라인 포인트 개수
+        line.positionCount = 2; //그려질 라인 포인트 개수
         line.endWidth = line.startWidth = 0.05f; // 그려질 가로 길이
         line.SetPosition(0, transform.position); //index 포인트, 위치
         line.SetPosition(1, hook.position);
@@ -119,28 +110,6 @@ public class grapping : MonoBehaviour
     void hook_ef_disapear()
     {
         hook_ef.SetActive(false);
-    }
-
-    void point_play()
-    {
-        line.positionCount = points;
-
-        for(int i=0; i<points; i++)
-        {
-            // i를 0.0 ~1.0 값으로 정규화 한다. line의 포지션 값은 소수점이므로 이렇게 바꿔준다.
-            float _line_point = (float)i / (points - 1);
-
-            // start 부터 end 위치까지 _line 개수의 점을 일정하게 배치
-            float x = Mathf.Lerp(start, end, _line_point);
-
-            //2 * Mathf.PI = 360 원각도 _line는 0.0 ~1.0 사이의 수, 둘을 곱하면 0~1사이의 원각도 즉 sin 그래프가 완성된다.
-            // frequency를 곱해 이 값에 따라 진동수 결정.
-            float y = amplitube * Mathf.Sin(2 * Mathf.PI * _line_point * frequency);
-
-            line.SetPosition(i, new Vector3(x, y, 0));
-        }
-        line.SetPosition((int)start, transform.position);
-        line.SetPosition((int)end, hook.position);
     }
     
 }

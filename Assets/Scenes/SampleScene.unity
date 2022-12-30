@@ -1097,6 +1097,7 @@ MonoBehaviour:
   hook_ef: {fileID: 1553455566}
   hook_speed: 20
   hook_distence: 3
+  hook_ef_cooltime: 3
   is_attach: 0
 --- !u!1 &869555931
 GameObject:

@@ -307,8 +307,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 118135485}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.36, y: -2.64, z: 0}
-  m_LocalScale: {x: 2.7779448, y: 0.38037357, z: 1}
+  m_LocalPosition: {x: 5.36, y: -2.6117, z: 0}
+  m_LocalScale: {x: 2.7779448, y: 0.21461196, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1098,11 +1098,6 @@ MonoBehaviour:
   hook_speed: 20
   hook_distence: 3
   hook_ef_cooltime: 3
-  points: 2
-  start: 0
-  end: 5
-  amplitube: 1
-  frequency: 1
   is_attach: 0
 --- !u!1 &869555931
 GameObject:
@@ -1288,8 +1283,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 941739475}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.84, y: 2.76, z: 0}
-  m_LocalScale: {x: 2.5913296, y: 0.3459467, z: 1}
+  m_LocalPosition: {x: -4.84, y: 2.8269, z: 0}
+  m_LocalScale: {x: 2.5913296, y: 0.14539842, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

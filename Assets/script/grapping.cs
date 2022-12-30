@@ -8,9 +8,19 @@ public class grapping : MonoBehaviour
     public Transform hook;
     public GameObject hook_ef;
 
+    //상태
     public float hook_speed;
     public float hook_distence;
     [Range(0f, 10f)] public float hook_ef_cooltime;
+
+    [Range(0f, 50f)] public int points =10; //점의 개수 많을수록 부드러운 곡선
+
+    public float start;
+    public float end;
+
+    public float amplitube = 1; //진폭 y의 높히값
+    public float frequency = 1; //진동수
+
 
     bool is_hook_key_down;
     bool is_line_max;
@@ -22,10 +32,11 @@ public class grapping : MonoBehaviour
     {
         p = GetComponent<player>();
         //라인 그리기
-        line.positionCount = 2; //그려질 라인 포인트 개수
+        line.positionCount = points; //그려질 라인 포인트 개수
         line.endWidth = line.startWidth = 0.05f; // 그려질 가로 길이
         line.SetPosition(0, transform.position); //index 포인트, 위치
         line.SetPosition(1, hook.position);
+        
         line.useWorldSpace = true; // 월드좌표로 한다는 뜻
         is_attach = false;
     }
@@ -33,6 +44,7 @@ public class grapping : MonoBehaviour
 
     void Update()
     {
+        //point_play();
         //위치를 계속 업데이트 해줘야 라인이 따라가져 보인다.
         line.SetPosition(0, transform.position);
         line.SetPosition(1, hook.position);
@@ -41,7 +53,9 @@ public class grapping : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1) && !is_hook_key_down) // 마우스 오른쪽을 누르고 훅키를 안눌렀을때
         {
+            line.enabled = false;
             hook.position = transform.position; // 누를시 처음위치
+
             // 화면(스크린)월드 좌표에 마우스 위치에 케릭터 위치를 빼면 = 마우스의 방향
             mouse_direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 
@@ -82,6 +96,7 @@ public class grapping : MonoBehaviour
         }
         else if (is_attach) //붙을때
         {
+            line.enabled = true;
             if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Space)) // 붙은상태에서 다시 마우스 오른쪽을 누르면 또는 붙은상태에서 다시 점프키를 누르면
             {
                 is_attach = false;
@@ -104,6 +119,28 @@ public class grapping : MonoBehaviour
     void hook_ef_disapear()
     {
         hook_ef.SetActive(false);
+    }
+
+    void point_play()
+    {
+        line.positionCount = points;
+
+        for(int i=0; i<points; i++)
+        {
+            // i를 0.0 ~1.0 값으로 정규화 한다. line의 포지션 값은 소수점이므로 이렇게 바꿔준다.
+            float _line_point = (float)i / (points - 1);
+
+            // start 부터 end 위치까지 _line 개수의 점을 일정하게 배치
+            float x = Mathf.Lerp(start, end, _line_point);
+
+            //2 * Mathf.PI = 360 원각도 _line는 0.0 ~1.0 사이의 수, 둘을 곱하면 0~1사이의 원각도 즉 sin 그래프가 완성된다.
+            // frequency를 곱해 이 값에 따라 진동수 결정.
+            float y = amplitube * Mathf.Sin(2 * Mathf.PI * _line_point * frequency);
+
+            line.SetPosition(i, new Vector3(x, y, 0));
+        }
+        line.SetPosition((int)start, transform.position);
+        line.SetPosition((int)end, hook.position);
     }
     
 }

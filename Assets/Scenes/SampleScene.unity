@@ -5087,7 +5087,7 @@ MonoBehaviour:
   hook_jump_force: 8
   wall_jump_force: 5
   granade: {fileID: 5597152920646754465, guid: 186541266adc7da49ad0bc45fa613138, type: 3}
-  g_force: 5.8
+  g_force: 5
   is_hook_range_max: 0
 --- !u!114 &725022684
 MonoBehaviour:

@@ -131,6 +131,7 @@ public class player : MonoBehaviour
         {
             rigid.velocity = Vector2.zero;
             rigid.velocity = new Vector2(rigid.velocity.x, hook_jump_force);
+            Debug.Log("ss");
         }
     }
     void player_wall_jump()

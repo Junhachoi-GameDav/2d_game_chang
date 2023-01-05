@@ -3387,14 +3387,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7b1319d9db9ca241a7c5c4fad487d1d, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d1f68af7c4e77441a36addbf582192e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 725022680}
-  speed: 0
-  limits: []
+  speed: 3
+  limits:
+  - {fileID: 869555932}
 --- !u!1 &522430501
 GameObject:
   m_ObjectHideFlags: 0
@@ -4933,8 +4934,8 @@ GameObject:
   - component: {fileID: 725022678}
   - component: {fileID: 725022677}
   - component: {fileID: 725022681}
-  - component: {fileID: 725022682}
   - component: {fileID: 725022683}
+  - component: {fileID: 725022684}
   m_Layer: 3
   m_Name: player
   m_TagString: Player
@@ -5066,28 +5067,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &725022682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 725022676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d71bd819e24f26442b1f55bce5d5b27f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  apply_speed: 0
-  crouch_speed: 0
-  run_speed: 6
-  walk_speed: 3
-  jump_force: 10
-  hook_jump_force: 8
-  wall_jump_force: 5
-  granade: {fileID: 0}
-  g_force: 0
-  is_hook_range_max: 0
 --- !u!114 &725022683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5097,15 +5076,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 725022676}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5747861d68e1b6849a0a1b832509d0d1, type: 3}
+  m_Script: {fileID: 11500000, guid: 3de47052a232712409049bd3763a7cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  apply_speed: 0
+  crouch_speed: 0
+  run_speed: 6
+  walk_speed: 3
+  jump_force: 10
+  hook_jump_force: 8
+  wall_jump_force: 5
+  granade: {fileID: 5597152920646754465, guid: 186541266adc7da49ad0bc45fa613138, type: 3}
+  g_force: 5.8
+  is_hook_range_max: 0
+--- !u!114 &725022684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725022676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49268c72246469b428440befa981578b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   line: {fileID: 1682305937}
   hook: {fileID: 1182754161}
   hook_ef: {fileID: 1553455566}
-  hook_speed: 0
-  hook_distence: 0
-  hook_ef_cooltime: 0
+  hook_speed: 20
+  hook_distence: 3
+  hook_ef_cooltime: 3
   is_attach: 0
 --- !u!1 &736513228
 GameObject:
@@ -7248,14 +7249,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1001103824}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dc337a6dc63b644da9cea0acd14edd9, type: 3}
+  m_Script: {fileID: 11500000, guid: dacc6c16f5958f6429dbf00d94ba2ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 0
+  distance: 2
   isLayer:
     serializedVersion: 2
-    m_Bits: 0
-  speed: 0
+    m_Bits: 8
+  speed: 2
 --- !u!1 &1007734513
 GameObject:
   m_ObjectHideFlags: 0
@@ -8461,7 +8462,7 @@ DistanceJoint2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1182754156}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 725022677}
@@ -8587,10 +8588,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1182754156}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1194b021f7dc56240bc2d8124cd311aa, type: 3}
+  m_Script: {fileID: 11500000, guid: 3bd24c9b23f91a542a7dd24c06f8dd97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joint2D: {fileID: 0}
+  joint2D: {fileID: 1182754157}
 --- !u!1 &1227853391
 GameObject:
   m_ObjectHideFlags: 0

@@ -4977,7 +4977,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.12, y: -0.09}
+  m_Offset: {x: 0.01, y: -0.1}
   m_Size: {x: 0.65, y: 1.3}
   m_Direction: 0
 --- !u!212 &725022679
@@ -5021,12 +5021,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1730500799, guid: d5c75fc01ca7b2d4f946fe7f7151e1c3, type: 3}
+  m_Sprite: {fileID: 1393594294, guid: 7bcf317bf8beddc4e9db1d9ac2634680, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.3125, y: 2}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

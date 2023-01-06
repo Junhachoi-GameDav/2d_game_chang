@@ -19,12 +19,11 @@ public class player : MonoBehaviour
     float x;
     float y;
 
-    //총알 및 폭탄
+    //기타 오브젝트
     public GameObject granade;
 
     //총알 및 폭탄 힘, 기타 값
     public float g_force;
-    public float g_rotation_speed;
 
     //상태
     bool is_trun; //앞 ,뒤 전환 상태
@@ -42,6 +41,7 @@ public class player : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>(); // 선언
         apply_speed = run_speed; // 기존 스피드는 run속도
         grap = GetComponent<grapping>();
+        is_trun = true;
     }
 
     void Update()
@@ -131,6 +131,7 @@ public class player : MonoBehaviour
         {
             rigid.velocity = Vector2.zero;
             rigid.velocity = new Vector2(rigid.velocity.x, hook_jump_force);
+            Debug.Log("ss");
         }
     }
     void player_wall_jump()
@@ -139,6 +140,7 @@ public class player : MonoBehaviour
         {
             #region 벽매달리기 취소
             //왼쪽 벽에서 오른쪽으로 가면 벽매달리기 취소
+            
             if (!is_trun && Input.GetKey(KeyCode.D))
             {
                 is_wall_jump_ready = false;
@@ -151,6 +153,7 @@ public class player : MonoBehaviour
                 return;
             }
             #endregion
+
             is_wall_jump_ready = true; //벽점프 준비 완료.
             rigid.velocity = Vector2.zero; // 멈춤.
             rigid.gravityScale = 0;
@@ -186,4 +189,5 @@ public class player : MonoBehaviour
             rigid_granade.velocity = (transform.up * g_force *0.7f ) + (transform.right * g_force * (is_trun ? 1 : -1));
         }
     }
+    
 }

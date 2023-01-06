@@ -6,9 +6,12 @@ public class grapping : MonoBehaviour
 {
     public LineRenderer line;
     public Transform hook;
+    public GameObject hook_ef;
 
+    //상태
     public float hook_speed;
     public float hook_distence;
+    [Range(0f, 10f)] public float hook_ef_cooltime;
 
     bool is_hook_key_down;
     bool is_line_max;
@@ -24,6 +27,7 @@ public class grapping : MonoBehaviour
         line.endWidth = line.startWidth = 0.05f; // 그려질 가로 길이
         line.SetPosition(0, transform.position); //index 포인트, 위치
         line.SetPosition(1, hook.position);
+        
         line.useWorldSpace = true; // 월드좌표로 한다는 뜻
         is_attach = false;
     }
@@ -31,19 +35,32 @@ public class grapping : MonoBehaviour
 
     void Update()
     {
+        //point_play();
         //위치를 계속 업데이트 해줘야 라인이 따라가져 보인다.
         line.SetPosition(0, transform.position);
         line.SetPosition(1, hook.position);
+        hook_ef.transform.position = transform.position;// 이펙트의 위치는 플레이어 정중앙
+
 
         if (Input.GetMouseButtonDown(1) && !is_hook_key_down) // 마우스 오른쪽을 누르고 훅키를 안눌렀을때
         {
+            line.enabled = false;
             hook.position = transform.position; // 누를시 처음위치
+
             // 화면(스크린)월드 좌표에 마우스 위치에 케릭터 위치를 빼면 = 마우스의 방향
             mouse_direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 
             is_hook_key_down = true;   //키를 눌렀다 =true
             is_line_max = false;       //아직 거리가 짧으니까
             hook.gameObject.SetActive(true); // 활성화
+
+            //이펙트 각도
+            //각도는 atan2(y 값 , x 값) * Mathf.Rad2Deg = 라디언 값을 도로 바꿔주는 함수
+            //탄제드의 역함수이다.
+            float r = Mathf.Atan2(mouse_direction.y, mouse_direction.x) * Mathf.Rad2Deg;
+            hook_ef.transform.rotation = Quaternion.Euler(0, 0, r+(-90)); //이펙트가 바라보는 방향
+            hook_ef.SetActive(true);
+            Invoke("hook_ef_disapear", hook_ef_cooltime /10);
         }
 
         if (is_hook_key_down && !is_line_max && !is_attach)// 눌렀고 false 이고 안붙었을때
@@ -70,6 +87,7 @@ public class grapping : MonoBehaviour
         }
         else if (is_attach) //붙을때
         {
+            line.enabled = true;
             if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Space)) // 붙은상태에서 다시 마우스 오른쪽을 누르면 또는 붙은상태에서 다시 점프키를 누르면
             {
                 is_attach = false;
@@ -89,4 +107,9 @@ public class grapping : MonoBehaviour
             }
         }
     }
+    void hook_ef_disapear()
+    {
+        hook_ef.SetActive(false);
+    }
+    
 }

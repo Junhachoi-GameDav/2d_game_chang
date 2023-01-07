@@ -61,6 +61,7 @@ public class player_hair : MonoBehaviour
         lineRenderer.positionCount = segment_position.Length;
         lineRenderer.SetPositions(segment_position);
     }
+    
     void update_segments()
     {
         for (int i = 0; i < segments.Count; i++)
@@ -69,8 +70,14 @@ public class player_hair : MonoBehaviour
             segments[i].previous_pos = segments[i].current_pos;
             segments[i].current_pos += gravity * Time.fixedDeltaTime * Time.fixedDeltaTime;
             segments[i].current_pos += segments[i].velocity;
+            if(i < segments.Count -1)
+            {
+                segments[i + 1].current_pos += gravity * 30 * Time.fixedDeltaTime * Time.fixedDeltaTime * Time.fixedDeltaTime;
+            }
+
         }
     }
+
     void apply_constraint()
     {
         segments[0].current_pos = start_transform.position;

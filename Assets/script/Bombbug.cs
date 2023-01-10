@@ -68,12 +68,16 @@ public class Bombbug : Enermy
                 }
                 else if (isFind == true)
                 {
-                    transform.position = Vector3.MoveTowards(transform.position, raycast.collider.transform.position, Time.deltaTime * speed * 3f);
+                    
                     if (Vector2.Distance(transform.position, raycast.collider.transform.position) <= 1f)
                     {
                         //¸öÅë¹ÚÄ¡±â
                         Attack();
-                    }                                     
+                    } 
+                    else
+                    {
+                        transform.position = Vector3.MoveTowards(transform.position, raycast.collider.transform.position, Time.deltaTime * speed * 3f);
+                    }
                 }
             }
             else

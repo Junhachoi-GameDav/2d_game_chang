@@ -11,7 +11,7 @@ public class Enermy : MonoBehaviour
     protected bool isEnd = false;
     protected bool isDelay = false;
     protected bool isFollow = false;
-    protected float isLeft;
+    public float isLeft;
     public float speed;
     protected int op = 0;//¼±ÅÃÁö
     

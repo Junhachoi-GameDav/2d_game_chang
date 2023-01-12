@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerTeleport : MonoBehaviour
 {
     private GameObject currentTeleporter;
 
-    
+    Teleporter tele;
+    private void Start()
+    {
+        tele = FindObjectOfType<Teleporter>();
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -14,7 +19,6 @@ public class PlayerTeleport : MonoBehaviour
             if (currentTeleporter != null)
             {
                 transform.position = currentTeleporter.GetComponent<Teleporter>().GetDestination().position;
-                Debug.Log(Teleporter.FindObjectOfType<Teleporter>().next_map_num); 
             }
         }
     }

@@ -8,7 +8,7 @@ public class Teleporter : MonoBehaviour
 
     public int next_map_num;
 
-    public bool is_tele;
+    bool is_tele;
     public Transform GetDestination()
     {
         return destination;

@@ -534,7 +534,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1412522721}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &27691037
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3449,7 +3448,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1954868734}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &136419288
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3660,7 +3658,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1476249809}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &138361777
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4207,7 +4204,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1321092786}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &164572241
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4586,7 +4582,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1859387099}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &169637843
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5328,7 +5323,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1412522721}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &194464335
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6043,7 +6037,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 636443137}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &214125770
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6758,7 +6751,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1154205878}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &250718172
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14360,7 +14352,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 857642252}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &475141447
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16218,7 +16209,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1125567955}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &529046414
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16912,7 +16902,7 @@ Transform:
   m_GameObject: {fileID: 549986790}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.81, y: -3.54, z: 0}
-  m_LocalScale: {x: 0.7, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 1.43, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -17759,7 +17749,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 593307179}
   next_map_num: 2
-  is_tele: 0
 --- !u!61 &583196186
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18239,7 +18228,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 583196184}
   next_map_num: 1
-  is_tele: 0
 --- !u!61 &593307177
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19668,7 +19656,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1441085935}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &623042468
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20242,7 +20229,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 214125768}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &636443139
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26225,7 +26211,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1535138793}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &826180729
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26436,7 +26421,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1601938344}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &836553266
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26983,7 +26967,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 475141445}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &857642254
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27414,7 +27397,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1420049907}
   next_map_num: 1
-  is_tele: 0
 --- !u!61 &864470428
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31431,7 +31413,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1332511747}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &987867235
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34791,7 +34772,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1526628206}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &1089116584
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35945,7 +35925,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1089116582}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &1112179226
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -36240,7 +36219,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 987867233}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &1125567957
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -37208,7 +37186,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 250718170}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &1154205880
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38249,7 +38226,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1463935884}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &1192060253
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -41615,9 +41591,9 @@ LineRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -320689967
+  m_SortingLayer: 5
+  m_SortingOrder: 4
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
@@ -42379,7 +42355,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1089116582}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &1305223807
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -42922,7 +42897,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 164572239}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &1321092788
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -43301,7 +43275,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 987867233}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &1332511749
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -43860,7 +43833,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 2030775570}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &1358056852
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -45533,7 +45505,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 27691035}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &1412522723
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -46133,7 +46104,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 864470426}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &1420049909
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -46761,7 +46731,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 623042466}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &1441085937
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -47293,7 +47262,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1192060251}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &1463935886
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -47672,7 +47640,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 138361775}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &1476249811
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -49340,7 +49307,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1089116582}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &1526628208
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -49719,7 +49685,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 826180727}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &1535138795
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -51912,7 +51877,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 836553264}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &1601938346
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -52535,7 +52499,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1089116582}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &1610900844
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -55077,9 +55040,9 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.35686275, g: 0.5921569, b: 0.4666667, a: 1}
+      key0: {r: 0.116011046, g: 0.31132078, b: 0.20756248, a: 1}
       key1: {r: 0.06020827, g: 0.38679248, b: 0.11784075, a: 1}
-      key2: {r: 0.35686275, g: 0.5921569, b: 0.4666667, a: 0}
+      key2: {r: 0.16064437, g: 0.3584906, b: 0.2527919, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -56659,7 +56622,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1089116582}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &1720266060
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -57821,7 +57783,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1859387099}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &1756941717
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -60689,7 +60650,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1756941715}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &1859387101
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -62809,7 +62769,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1476249809}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &1912301887
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -64768,7 +64727,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 136419286}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &1954868736
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -66567,7 +66525,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destination: {fileID: 1358056854}
   next_map_num: 0
-  is_tele: 0
 --- !u!61 &2030775572
 BoxCollider2D:
   m_ObjectHideFlags: 0

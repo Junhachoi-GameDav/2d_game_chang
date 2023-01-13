@@ -33,6 +33,7 @@ public class player_hair : MonoBehaviour
             segments.Add(new segment(segment_pos));
             segment_pos.y -= segment_length;
         }
+        
     }
 
 

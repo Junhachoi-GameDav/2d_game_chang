@@ -7,11 +7,6 @@ public class PlayerTeleport : MonoBehaviour
 {
     private GameObject currentTeleporter;
 
-    Teleporter tele;
-    private void Start()
-    {
-        tele = FindObjectOfType<Teleporter>();
-    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))

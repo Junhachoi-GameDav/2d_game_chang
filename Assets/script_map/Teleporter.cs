@@ -27,7 +27,7 @@ public class Teleporter : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             is_tele = true;
-            Debug.Log(next_map_num);
+            //Debug.Log(next_map_num);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

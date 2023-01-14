@@ -53,7 +53,7 @@ public class Bombbug : Enermy
     
     private void FixedUpdate()
     {
-        if (isEnd == false && isDamage == false)
+        if (isEnd == false )
         {
 
             RaycastHit2D raycast = Physics2D.Raycast(transform.position, transform.right * isLeft, distance, isLayer);//플레이어와만 충돌할수 있다
@@ -73,12 +73,13 @@ public class Bombbug : Enermy
                     
                     if (Vector2.Distance(transform.position, raycast.collider.transform.position) <= 1f)
                     {
-                        //몸통박치기
-                        Attack();
+                        if(isDamage == false)
+                        Attack();//몸통박치기
                     } 
                     else
                     {
-                        transform.position = Vector3.MoveTowards(transform.position, raycast.collider.transform.position, Time.deltaTime * speed * 3f);
+                        if (isDamage == false)
+                            transform.position = Vector3.MoveTowards(transform.position, raycast.collider.transform.position, Time.deltaTime * speed * 3f);
                     }
                 }
             }

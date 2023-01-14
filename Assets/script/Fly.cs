@@ -6,6 +6,7 @@ public class Fly :Enermy
 {
     // Start is called before the first frame update
     public Transform ray;
+    int Hp = 5;
     Transform target;
     [Header("근접거리")]
     [SerializeField] [Range(0f, 3f)] float contactDistance = 1f;
@@ -91,8 +92,30 @@ public class Fly :Enermy
         }
     }
 
+    public void TakeDamage(int damage, int h)
+    {
+        
+        Hp = h - damage;
+        Debug.Log(Hp);
+        if (Hp <= 0)
+        {
+            Destroy(gameObject);
+        }
+       // return h;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.tag == "weapon")
+        {
+
+            Debug.Log("damage");
+            TakeDamage(5, Hp);
+            isDamage = true;
+            Debug.Log("isnot move");
+            Invoke("damage", 0.4f);
+        }
+
         if (collision.CompareTag("Player"))
         {
             isFollow = true;

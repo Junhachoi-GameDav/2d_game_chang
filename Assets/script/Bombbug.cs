@@ -6,6 +6,8 @@ public class Bombbug : Enermy
 {
     Animator animator;
     bool isFind=false;
+    int Hp = 10;
+    public float r;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -18,7 +20,7 @@ public class Bombbug : Enermy
     // Update is called once per frame
     private void Update()
     {
-        if (isFollow == false && isEnd == false)//쫓아가고 있지 않을때만 이런 동작허용한다.
+        if (isFollow == false && isEnd == false&&isDamage==false)//쫓아가고 있지 않을때만 이런 동작허용한다.
         {
             if (op == 0)
             {
@@ -51,7 +53,7 @@ public class Bombbug : Enermy
     
     private void FixedUpdate()
     {
-        if (isEnd == false)
+        if (isEnd == false && isDamage == false)
         {
 
             RaycastHit2D raycast = Physics2D.Raycast(transform.position, transform.right * isLeft, distance, isLayer);//플레이어와만 충돌할수 있다
@@ -97,8 +99,33 @@ public class Bombbug : Enermy
             animator.ResetTrigger("Run");
         }
     }
+
+
+    public void TakeDamage(int damage, int h)
+    {
+        Hp = h - damage;
+        Debug.Log(Hp);
+        if (Hp <= 0)
+        {
+            Destroy(gameObject);
+        }
+       // return h;
+    }
+
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.tag=="weapon")
+        {
+           
+            Debug.Log("damage");
+            TakeDamage(5,Hp);
+            isDamage = true;
+            Debug.Log("isnot move");
+            Invoke("damage",0.4f);
+        }
+
         if (collision.tag == "Endpoint"&&isEnd==false)
         {
            // Debug.Log("collision");

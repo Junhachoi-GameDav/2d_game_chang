@@ -16415,6 +16415,7 @@ MonoBehaviour:
   isLeft: 0
   speed: 2
   ray: {fileID: 1143349602}
+  Hp: 5
   contactDistance: 1
   dontcatch: 5
 --- !u!58 &537618338
@@ -32411,6 +32412,8 @@ MonoBehaviour:
     m_Bits: 8
   isLeft: 0
   speed: 1
+  Hp: 10
+  r: 0
   boxSize: {x: 2, y: 2}
   boxpos: {fileID: 1790257052}
   direct: {fileID: 1416880009}

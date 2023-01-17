@@ -5,28 +5,36 @@ using UnityEngine;
 public class Bombbug : Enermy
 {
     Animator animator;
-    bool isFind=false;
-    int Hp = 10;
-    public float r;
+    bool isFind = false;
+    int Hp = 40;
+    int weapon_damage;
+    GameObject effect;
+    //public float r;
+
     // Start is called before the first frame update
     private void Awake()
     {
-       animator = GetComponent<Animator>();
-            op = Random.Range(0, 3);
+        animator = GetComponent<Animator>();
+        op = Random.Range(0, 3);
         home = transform.position;//물체의 위치
         Physics2D.IgnoreLayerCollision(3, 11);//플레이어와의 충돌 무시
+        GameObject weapon = Instantiate(prefab_weapon);
+        weapon_damage = weapon.GetComponent<granade>().granade_dmg;
+        effect = weapon.GetComponent<granade>().granade_effect;
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if (isFollow == false && isEnd == false&&isDamage==false)//쫓아가고 있지 않을때만 이런 동작허용한다.
+
+
+        if (isFollow == false && isEnd == false && isDamage == false && isDie == false)//쫓아가고 있지 않을때만 이런 동작허용한다.
         {
             if (op == 0)
             {
                 transform.Translate(Vector2.left * speed * Time.deltaTime);
                 isLeft = -1;
-                animator.SetFloat("Isleft",isLeft);
+                animator.SetFloat("Isleft", isLeft);
                 animator.SetBool("Walk", true);
             }
             else if (op == 1)
@@ -38,7 +46,7 @@ public class Bombbug : Enermy
             }
             else
             {
-                transform.Translate(Vector2.zero); 
+                transform.Translate(Vector2.zero);
                 animator.SetFloat("Isleft", isLeft);//전에 방향으로 머리를 향함
                 animator.SetBool("Walk", false);
             }
@@ -50,10 +58,10 @@ public class Bombbug : Enermy
             }
         }
     }
-    
+
     private void FixedUpdate()
     {
-        if (isEnd == false )
+        if (isEnd == false && isDie == false)
         {
 
             RaycastHit2D raycast = Physics2D.Raycast(transform.position, transform.right * isLeft, distance, isLayer);//플레이어와만 충돌할수 있다
@@ -70,12 +78,12 @@ public class Bombbug : Enermy
                 }
                 else if (isFind == true)
                 {
-                    
+
                     if (Vector2.Distance(transform.position, raycast.collider.transform.position) <= 1f)
                     {
-                        if(isDamage == false)
-                        Attack();//몸통박치기
-                    } 
+                        if (isDamage == false)
+                            Attack();//몸통박치기
+                    }
                     else
                     {
                         if (isDamage == false)
@@ -105,29 +113,72 @@ public class Bombbug : Enermy
     public void TakeDamage(int damage, int h)
     {
         Hp = h - damage;
+
         Debug.Log(Hp);
         if (Hp <= 0)
         {
-            Destroy(gameObject);
+
+            StartCoroutine(Die());
+
         }
-       // return h;
+        // return h;
+    }
+    IEnumerator Die()
+    {
+        animator.SetTrigger("Die");
+        isDie = true;
+        //isDamage = true;//적 못움직이게
+        yield return new WaitForSeconds(3.5f);
+        Destroy(gameObject);
     }
 
-
+    IEnumerator Attacked_weapon(GameObject collision)
+    {
+        iseffect = true;
+        Transform d = collision.transform;
+        Destroy(collision);
+        GameObject eff = Instantiate(effect, transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.3f);
+        Destroy(eff);
+        yield return new WaitForSeconds(0.1f);
+        iseffect = false;
+    }
+    void attacked()
+    {
+        animator.SetBool("Attacked",false);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag=="weapon")
+        if(collision.tag=="weapon"&&isDie==false)
         {
-           
-            Debug.Log("damage");
-            TakeDamage(5,Hp);
+            if (collision.tag == "weapon")
+                StartCoroutine(Attacked_weapon(collision.gameObject));
+            Debug.Log("weapondamage");
+            TakeDamage(weapon_damage,Hp);
             isDamage = true;
             Debug.Log("isnot move");
+            animator.SetBool("Attacked", true);
+            Debug.Log(isDamage);
+            Invoke("attacked", 0.4f);
             Invoke("damage",0.4f);
+          
+        }
+        else if(collision.tag=="effect"&&iseffect==false && isDie == false)
+        {
+            Debug.Log("effectdamage");
+            TakeDamage(weapon_damage, Hp);
+            isDamage = true;
+            Debug.Log("isnot move");
+            animator.SetBool("Attacked", true);
+            Debug.Log(isDamage);
+            Invoke("attacked", 0.4f);
+            Invoke("damage", 0.4f);
+            Debug.Log(isDamage);
+           
         }
 
-        if (collision.tag == "Endpoint"&&isEnd==false)
+        if (collision.tag == "Endpoint"&&isEnd==false && isDie == false)
         {
            // Debug.Log("collision");
             isEnd = true;

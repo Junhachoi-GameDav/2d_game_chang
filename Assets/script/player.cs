@@ -12,7 +12,8 @@ public class player : MonoBehaviour
     public float dash_speed= 8f;
 
     //타임
-    public float dash_timer;
+    float dash_timer;
+    [Range(0.1f, 3)] public float dash_time;
 
     //점프
     public float jump_force = 10f; //점프 힘 값
@@ -199,28 +200,28 @@ public class player : MonoBehaviour
     
     void player_dash()
     {
-        if(x == 0)
+        if(x != 0) //서있지 않을 때
         {
-            return;
-        }
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            is_dash = true;
-            
-            if(is_dash)
+            if (Input.GetKey(KeyCode.LeftShift))
             {
-                dash_timer += Time.deltaTime;
-                if (dash_timer >= 0.7f)
+                is_dash = true;
+
+                if (is_dash)
                 {
-                    apply_speed = run_speed;
-                }
-                else
-                {
-                    apply_speed = dash_speed;
+                    dash_timer += Time.deltaTime;
+                    if (dash_timer >= dash_time)
+                    {
+                        apply_speed = run_speed;
+                    }
+                    else
+                    {
+                        apply_speed = dash_speed;
+                    }
                 }
             }
+            
         }
-        else if (Input.GetKeyUp(KeyCode.LeftShift))
+        if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             dash_timer = 0;
             is_dash = false;

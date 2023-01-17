@@ -10,8 +10,6 @@ TagManager:
   - Endpoint
   - Telepoter
   - Teleporter
-  - weapon
-  - effect
   layers:
   - Default
   - TransparentFX

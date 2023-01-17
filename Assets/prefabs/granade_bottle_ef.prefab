@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6786068505353965563}
   m_Layer: 13
   m_Name: granade_bottle_ef
-  m_TagString: effect
+  m_TagString: weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,11 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6495080471278960431}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< Updated upstream
   m_LocalPosition: {x: 2.4331117, y: -4.261049, z: 0}
-=======
-  m_LocalPosition: {x: 4.2000003, y: -4.261049, z: 0}
->>>>>>> Stashed changes
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &3606087065601212250
 CircleCollider2D:
@@ -62,6 +62,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   granade_dmg: 10
-  granade_effect: {fileID: 840176100923015615, guid: 36ff718112dfd72488c302fe0c472a9c, type: 3}
+  granade_effect: {fileID: 3889418791435815939, guid: 6ebd90dba46a73c4eb66f1bac9442775, type: 3}
   granade_partical_ef: {fileID: 1142068123080188730, guid: cc533f3497d841c4cb0f8efac5e83107, type: 3}
   granade_bottle_effect: {fileID: 6495080471278960431, guid: e272e490f586cc4418c20ad06d84499e, type: 3}

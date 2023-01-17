@@ -9,6 +9,10 @@ public class player : MonoBehaviour
     public float crouch_speed = 0f;
     public float run_speed = 6f;
     public float walk_speed= 3f;
+    public float dash_speed= 8f;
+
+    //타임
+    public float dash_timer;
 
     //점프
     public float jump_force = 10f; //점프 힘 값
@@ -29,6 +33,7 @@ public class player : MonoBehaviour
     bool is_trun; //앞 ,뒤 전환 상태
     bool is_ground; //땅 상태
     bool is_wall_jump_ready; //벽 점프 준비 상태
+    bool is_dash; //대쉬 상태
     bool ray_wall; //벽 상태
     public bool is_hook_range_max; // 갈고리 길이 최대 상태
 
@@ -50,6 +55,7 @@ public class player : MonoBehaviour
         player_jump();
         player_wall_jump();
         player_use_granade();
+        player_dash();
     }
 
     // 이동은 효율을 위해 여기에 넣는다.
@@ -191,4 +197,34 @@ public class player : MonoBehaviour
         }
     }
     
+    void player_dash()
+    {
+        if(x == 0)
+        {
+            return;
+        }
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            is_dash = true;
+            
+            if(is_dash)
+            {
+                dash_timer += Time.deltaTime;
+                if (dash_timer >= 0.7f)
+                {
+                    apply_speed = run_speed;
+                }
+                else
+                {
+                    apply_speed = dash_speed;
+                }
+            }
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            dash_timer = 0;
+            is_dash = false;
+            apply_speed = run_speed;
+        }
+    }
 }

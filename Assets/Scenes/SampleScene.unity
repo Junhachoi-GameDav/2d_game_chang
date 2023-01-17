@@ -21144,8 +21144,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   apply_speed: 0
   crouch_speed: 0
-  run_speed: 6
+  run_speed: 5
   walk_speed: 3
+  dash_speed: 9
+  dash_timer: 0
   jump_force: 10
   hook_jump_force: 8
   wall_jump_force: 5

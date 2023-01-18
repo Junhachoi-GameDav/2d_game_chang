@@ -26,6 +26,7 @@ public class player : MonoBehaviour
 
     //기타 오브젝트
     public GameObject granade;
+    public GameObject hiar;
 
     //총알 및 폭탄 힘, 기타 값
     public float g_force;
@@ -41,9 +42,10 @@ public class player : MonoBehaviour
     // 컴포넌트
     Rigidbody2D rigid;
     grapping grap;
-
+    Animator anime;
     void Start()
     {
+        anime = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>(); // 선언
         apply_speed = run_speed; // 기존 스피드는 run속도
         grap = GetComponent<grapping>();
@@ -77,6 +79,8 @@ public class player : MonoBehaviour
 
         if (Input.GetButton("Horizontal"))
         {
+            anime.SetBool("is_run", true);
+            hiar.transform.localPosition = new Vector3(0, 0.15f, 0);
             if(x != 0)
             {
                 transform.localScale = new Vector3(x, 1, 1); //캐릭터 뒤집기
@@ -89,6 +93,11 @@ public class player : MonoBehaviour
             {
                 transform.Translate(new Vector3(x * apply_speed * Time.deltaTime, 0, 0)); // 기본 이동
             }
+        }
+        else
+        {
+            anime.SetBool("is_run", false);
+            hiar.transform.localPosition = new Vector3(-0.085f, 0.258f, 0);
         }
         if (Input.GetButton("Vertical") && !is_hook_range_max)
         {

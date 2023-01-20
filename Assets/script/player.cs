@@ -136,19 +136,29 @@ public class player : MonoBehaviour
     {
         if (is_wall_jump_ready)
         {
+            anime.SetBool("do_jump", false);
             return; //위에 조건이면 함수를 끝냄.
         }
 
         if (Input.GetButtonDown("Jump") && is_ground)
         {
             rigid.velocity = new Vector2(rigid.velocity.x, jump_force);
+            anime.SetBool("do_jump", true);
         }
         else if (Input.GetButtonDown("Jump") && grap.is_attach) // 갈고리에 붙을시
         {
             rigid.velocity = Vector2.zero;
             rigid.velocity = new Vector2(rigid.velocity.x, hook_jump_force);
-            Debug.Log("ss");
+            anime.SetBool("do_jump", true);
         }
+        else if (is_ground)
+        {
+            Invoke("jump_ani_deley", 1f);
+        }
+    }
+    void jump_ani_deley()
+    {
+        anime.SetBool("do_jump", false);
     }
     void player_wall_jump()
     {

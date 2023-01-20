@@ -61049,6 +61049,10 @@ PrefabInstance:
       propertyPath: hook_ef
       value: 
       objectReference: {fileID: 549986790}
+    - target: {fileID: 8666735072144946575, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
+      propertyPath: ray_dis
+      value: 0.747
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}

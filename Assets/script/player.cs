@@ -11,6 +11,10 @@ public class player : MonoBehaviour
     public float walk_speed= 3f;
     public float dash_speed= 8f;
 
+    //레이 길이
+    public float ray_dis;
+
+
     //타임
     float dash_timer;
     [Range(0.1f, 3)] public float dash_time;
@@ -123,8 +127,8 @@ public class player : MonoBehaviour
             }
         }
         //땅체크
-        Debug.DrawRay(rigid.position, Vector2.down * 1f, new Color(0, 1, 0));
-        is_ground = Physics2D.Raycast(rigid.position, Vector2.down * 1f, 1f, LayerMask.GetMask("bottom"));
+        Debug.DrawRay(rigid.position, Vector2.down * ray_dis, new Color(0, 1, 0));
+        is_ground = Physics2D.Raycast(rigid.position, Vector2.down * ray_dis, ray_dis, LayerMask.GetMask("bottom"));
         
         //벽체크
         float cont_num = 0.5f;
@@ -153,8 +157,9 @@ public class player : MonoBehaviour
         }
         else if (is_ground)
         {
-            Invoke("jump_ani_deley", 1f);
+            anime.SetBool("do_jump", false);
         }
+
     }
     void jump_ani_deley()
     {

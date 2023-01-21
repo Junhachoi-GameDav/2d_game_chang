@@ -38,6 +38,7 @@ public class player : MonoBehaviour
     //상태
     bool is_trun; //앞 ,뒤 전환 상태
     bool is_ground; //땅 상태
+    bool is_air; //공중 상태
     bool is_wall_jump_ready; //벽 점프 준비 상태
     bool is_dash; //대쉬 상태
     bool ray_wall; //벽 상태
@@ -146,24 +147,27 @@ public class player : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && is_ground)
         {
+            is_air = false;
+            Invoke("jump_ani_deley", 0.5f);
             rigid.velocity = new Vector2(rigid.velocity.x, jump_force);
             anime.SetBool("do_jump", true);
         }
         else if (Input.GetButtonDown("Jump") && grap.is_attach) // 갈고리에 붙을시
         {
+            is_air = false;
+            Invoke("jump_ani_deley", 0.5f);
             rigid.velocity = Vector2.zero;
             rigid.velocity = new Vector2(rigid.velocity.x, hook_jump_force);
             anime.SetBool("do_jump", true);
         }
-        else if (is_ground)
+        if(is_air && is_ground)
         {
             anime.SetBool("do_jump", false);
         }
-
     }
     void jump_ani_deley()
     {
-        anime.SetBool("do_jump", false);
+        is_air = true;
     }
     void player_wall_jump()
     {

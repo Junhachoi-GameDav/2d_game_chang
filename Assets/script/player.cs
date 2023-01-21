@@ -78,15 +78,13 @@ public class player : MonoBehaviour
         {
             return; //위에 조건이면 함수를 끝냄.
         }
-
         x = Input.GetAxisRaw("Horizontal");
         y = Input.GetAxisRaw("Vertical");
-
         if (Input.GetButton("Horizontal"))
         {
             anime.SetBool("is_run", true);
-            hiar.transform.localPosition = new Vector3(0, 0.15f, 0);
-            if(x != 0)
+            hiar.transform.localPosition = new Vector3(0.05f, 0.15f, 0);
+            if (x != 0)
             {
                 transform.localScale = new Vector3(x, 1, 1); //캐릭터 뒤집기
             }

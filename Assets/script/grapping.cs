@@ -88,7 +88,6 @@ public class grapping : MonoBehaviour
         else if (is_attach) //붙을때
         {
             line.enabled = true;
-            //p.anime.SetBool("is_hook", true);
             if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Space)) // 붙은상태에서 다시 마우스 오른쪽을 누르면 또는 붙은상태에서 다시 점프키를 누르면
             {
                 is_attach = false;

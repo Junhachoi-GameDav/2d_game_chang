@@ -100,7 +100,6 @@ public class player : MonoBehaviour
         else
         {
             anime.SetBool("is_run", false);
-            hiar.transform.localPosition = new Vector3(-0.085f, 0.258f, 0);
         }
         if (Input.GetButton("Vertical") && !is_hook_range_max)
         {

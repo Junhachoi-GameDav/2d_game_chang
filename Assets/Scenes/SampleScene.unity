@@ -41999,9 +41999,9 @@ GameObject:
   - component: {fileID: 1430137926}
   - component: {fileID: 1430137925}
   - component: {fileID: 1430137924}
-  m_Layer: 6
-  m_Name: bottom (1)
-  m_TagString: bottom
+  m_Layer: 13
+  m_Name: wall
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60993,6 +60993,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 8666735072144946563, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
+      propertyPath: m_Size.x
+      value: 0.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666735072144946563, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 8666735072144946573, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -61052,6 +61060,10 @@ PrefabInstance:
     - target: {fileID: 8666735072144946575, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
       propertyPath: ray_dis
       value: 0.747
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666735072144946575, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
+      propertyPath: ray_wall_dis
+      value: 0.32
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

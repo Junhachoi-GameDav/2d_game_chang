@@ -13,6 +13,7 @@ public class player : MonoBehaviour
 
     //레이 길이
     public float ray_dis;
+    public float ray_wall_dis;
 
 
     //타임
@@ -129,9 +130,8 @@ public class player : MonoBehaviour
         is_ground = Physics2D.Raycast(rigid.position, Vector2.down * ray_dis, ray_dis, LayerMask.GetMask("bottom"));
         
         //벽체크
-        float cont_num = 0.5f;
-        Debug.DrawRay(rigid.position, Vector2.right * (is_trun ? cont_num : cont_num * -1), new Color(0, 1, 0));
-        ray_wall = Physics2D.Raycast(rigid.position, Vector2.right * (is_trun ? cont_num : cont_num * -1), cont_num, LayerMask.GetMask("bottom"));
+        Debug.DrawRay(rigid.position, Vector2.right * (is_trun ? ray_wall_dis : ray_wall_dis * -1), new Color(0, 1, 0));
+        ray_wall = Physics2D.Raycast(rigid.position, Vector2.right * (is_trun ? ray_wall_dis : ray_wall_dis * -1), ray_wall_dis, LayerMask.GetMask("wall"));
     }
 
     void player_jump()
@@ -176,15 +176,21 @@ public class player : MonoBehaviour
             if (!is_trun && Input.GetKey(KeyCode.D))
             {
                 is_wall_jump_ready = false;
+                anime.SetBool("is_wall", false);
+                anime.SetBool("do_jump", true);
                 return;
             }
             //오른쪽 벽에서 왼쪽으로 가면 벽매달리기 취소
             if (is_trun && Input.GetKey(KeyCode.A))
             {
                 is_wall_jump_ready = false;
+                anime.SetBool("is_wall", false);
+                anime.SetBool("do_jump", true);
                 return;
             }
             #endregion
+            
+            anime.SetBool("is_wall", true);
 
             is_wall_jump_ready = true; //벽점프 준비 완료.
             rigid.velocity = Vector2.zero; // 멈춤.
@@ -195,6 +201,8 @@ public class player : MonoBehaviour
             {
                 // is_trun이 트루면 왼쪽으로 펄스면 오른쪽으로 튕김 (즉 왼쪽벽에서 점프를 누르면 오른쪽으로 튕김)
                 rigid.velocity = new Vector2(wall_jump_force * (is_trun ? -1 : 1), wall_jump_force * 1.5f);
+                anime.SetBool("is_wall", false);
+                anime.SetBool("do_jump", true);
                 Invoke("wall_jump_deley", 0.15f); // 튕기고 딜레이
             }
         }

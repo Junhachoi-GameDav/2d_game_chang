@@ -10,6 +10,9 @@ TagManager:
   - Endpoint
   - Telepoter
   - Teleporter
+  - effect
+  - weapon
+  - wall
   layers:
   - Default
   - TransparentFX
@@ -24,7 +27,7 @@ TagManager:
   - background3
   - enermy(ground)
   - enermy(fly)
-  - 
+  - wall
   - 
   - 
   - 

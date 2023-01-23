@@ -143,7 +143,14 @@ public class player : MonoBehaviour
             anime.SetBool("do_jump", false);
             return; //위에 조건이면 함수를 끝냄.
         }
-
+        if (!is_ground)
+        {
+            anime.SetBool("do_jump", true);
+        }
+        else
+        {
+            anime.SetBool("do_jump", false);
+        }
         if (Input.GetButtonDown("Jump") && is_ground)
         {
             is_air = false;
@@ -197,10 +204,10 @@ public class player : MonoBehaviour
             
 
             is_wall_jump_ready = true; //벽점프 준비 완료.
-            
+            anime.SetBool("is_wall", true);
             if (stop_cnt <= 0)
             {
-                anime.SetBool("is_wall", true);
+                
                 rigid.velocity = Vector2.zero; // 멈춤.
                 stop_cnt++;
             }

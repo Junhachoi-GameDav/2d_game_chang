@@ -204,7 +204,7 @@ public class player : MonoBehaviour
             
 
             is_wall_jump_ready = true; //벽점프 준비 완료.
-            anime.SetBool("is_wall", true);
+            
             if (stop_cnt <= 0)
             {
                 
@@ -223,9 +223,14 @@ public class player : MonoBehaviour
                 anime.SetBool("do_jump", true);
                 Invoke("wall_jump_deley", 0.15f); // 튕기고 딜레이
             }
+            else
+            {
+                anime.SetBool("is_wall", true);
+            }
         }
         else
         {
+            anime.SetBool("is_wall", false);
             rigid.gravityScale = 2.5f;
         }
     }

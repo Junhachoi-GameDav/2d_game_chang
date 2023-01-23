@@ -15,6 +15,8 @@ public class player : MonoBehaviour
     public float ray_dis;
     public float ray_wall_dis;
 
+    //사용횟수 인트
+    int stop_cnt; //벽점프 멈추게하는것 한번만 실행
 
     //타임
     float dash_timer;
@@ -84,7 +86,7 @@ public class player : MonoBehaviour
         if (Input.GetButton("Horizontal"))
         {
             anime.SetBool("is_run", true);
-            hiar.transform.localPosition = new Vector3(0.05f, 0.15f, 0);
+            hiar.transform.localPosition = new Vector3(0.1f, 0.15f, 0);
             if (x != 0)
             {
                 transform.localScale = new Vector3(x, 1, 1); //캐릭터 뒤집기
@@ -131,7 +133,7 @@ public class player : MonoBehaviour
         
         //벽체크
         Debug.DrawRay(rigid.position, Vector2.right * (is_trun ? ray_wall_dis : ray_wall_dis * -1), new Color(0, 1, 0));
-        ray_wall = Physics2D.Raycast(rigid.position, Vector2.right * (is_trun ? ray_wall_dis : ray_wall_dis * -1), ray_wall_dis, LayerMask.GetMask("wall"));
+        ray_wall = Physics2D.Raycast(rigid.position, Vector2.right * (is_trun ? ray_wall_dis : ray_wall_dis * -1), ray_wall_dis, LayerMask.GetMask("bottom"));
     }
 
     void player_jump()
@@ -178,6 +180,7 @@ public class player : MonoBehaviour
                 is_wall_jump_ready = false;
                 anime.SetBool("is_wall", false);
                 anime.SetBool("do_jump", true);
+                stop_cnt = 0;
                 return;
             }
             //오른쪽 벽에서 왼쪽으로 가면 벽매달리기 취소
@@ -186,14 +189,22 @@ public class player : MonoBehaviour
                 is_wall_jump_ready = false;
                 anime.SetBool("is_wall", false);
                 anime.SetBool("do_jump", true);
+                stop_cnt = 0;
                 return;
             }
             #endregion
             
-            anime.SetBool("is_wall", true);
+            
 
             is_wall_jump_ready = true; //벽점프 준비 완료.
-            rigid.velocity = Vector2.zero; // 멈춤.
+            
+            if (stop_cnt <= 0)
+            {
+                anime.SetBool("is_wall", true);
+                rigid.velocity = Vector2.zero; // 멈춤.
+                stop_cnt++;
+            }
+            
             rigid.gravityScale = 0;
 
             
@@ -214,6 +225,7 @@ public class player : MonoBehaviour
     void wall_jump_deley()
     {
         is_wall_jump_ready = false;
+        stop_cnt = 0;
         rigid.velocity = new Vector2(0, rigid.velocity.y);
     }
 

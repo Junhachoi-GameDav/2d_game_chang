@@ -41999,9 +41999,9 @@ GameObject:
   - component: {fileID: 1430137926}
   - component: {fileID: 1430137925}
   - component: {fileID: 1430137924}
-  m_Layer: 13
+  m_Layer: 6
   m_Name: wall
-  m_TagString: wall
+  m_TagString: bottom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

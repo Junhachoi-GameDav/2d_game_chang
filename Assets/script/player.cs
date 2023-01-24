@@ -163,7 +163,7 @@ public class player : MonoBehaviour
             is_air = false;
             Invoke("jump_ani_deley", 0.5f);
             rigid.velocity = Vector2.zero;
-            rigid.velocity = new Vector2(rigid.velocity.x, hook_jump_force);
+            rigid.AddForce(new Vector2(rigid.velocity.x, hook_jump_force),ForceMode2D.Impulse);
             anime.SetBool("do_jump", true);
         }
         if(is_air && is_ground)

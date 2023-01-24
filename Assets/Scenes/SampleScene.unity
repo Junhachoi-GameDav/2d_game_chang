@@ -61059,7 +61059,7 @@ PrefabInstance:
       objectReference: {fileID: 549986790}
     - target: {fileID: 8666735072144946574, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
       propertyPath: hook_distence
-      value: 3
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 8666735072144946575, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
       propertyPath: ray_dis

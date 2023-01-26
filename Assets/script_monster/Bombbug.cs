@@ -6,7 +6,7 @@ public class Bombbug : Enermy
 {
     Animator animator;
     bool isFind = false;
-    int Hp = 40;
+    public int Hp = 50;
     int weapon_damage;
     GameObject effect;
     //public float r;
@@ -211,8 +211,6 @@ public class Bombbug : Enermy
                 boxpos.localPosition = new Vector2(boxpos.localPosition.x*-1, boxpos.localPosition.y);//음수로 만든다
                 //axepos.localPosition = new Vector2(axepos.localPosition.x * -1, axepos.localPosition.y);
             }
-            
-
         }
         else
         {

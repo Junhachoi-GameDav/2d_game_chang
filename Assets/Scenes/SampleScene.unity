@@ -16557,10 +16557,14 @@ MonoBehaviour:
     m_Bits: 8
   isLeft: 0
   speed: 2
-  prefab_weapon: {fileID: 0}
+  prefab_weapon: {fileID: 3606087065601212249, guid: 79886e46dde56804db44de5fa1dda3b2, type: 3}
   ray: {fileID: 1143349602}
-  contactDistance: 1
+  contactDistance: 0.13
   dontcatch: 5
+  boxSize: {x: 0, y: 0}
+  boxpos: {fileID: 1143349602}
+  expolsion: {fileID: 1013839131}
+  box: {fileID: 1143349601}
 --- !u!1 &540038671
 GameObject:
   m_ObjectHideFlags: 0
@@ -31782,6 +31786,7 @@ MonoBehaviour:
   isLeft: 0
   speed: 1
   prefab_weapon: {fileID: 3606087065601212249, guid: 79886e46dde56804db44de5fa1dda3b2, type: 3}
+  Hp: 50
   boxSize: {x: 2, y: 2}
   boxpos: {fileID: 1790257052}
   direct: {fileID: 1416880009}
@@ -32354,6 +32359,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1013839132}
   - component: {fileID: 1013839133}
+  - component: {fileID: 1013839134}
   m_Layer: 0
   m_Name: follow range
   m_TagString: Untagged
@@ -32428,6 +32434,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1013839134
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013839131}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.000000014901161, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.50000006
 --- !u!1 &1015134912
 GameObject:
   m_ObjectHideFlags: 0
@@ -35820,7 +35842,7 @@ GameObject:
   - component: {fileID: 1118989939}
   - component: {fileID: 1118989938}
   - component: {fileID: 1118989937}
-  - component: {fileID: 1118989936}
+  - component: {fileID: 1118989942}
   m_Layer: 11
   m_Name: Popcornbug
   m_TagString: Monster
@@ -35828,29 +35850,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1118989936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1118989935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dacc6c16f5958f6429dbf00d94ba2ad3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distance: 2
-  isLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  isLeft: 0
-  speed: 1
-  prefab_weapon: {fileID: 3606087065601212249, guid: 79886e46dde56804db44de5fa1dda3b2, type: 3}
-  boxSize: {x: 2, y: 2}
-  boxpos: {fileID: 251944517}
-  direct: {fileID: 224788267}
-  box: {fileID: 251944513}
 --- !u!50 &1118989937
 Rigidbody2D:
   serializedVersion: 4
@@ -35976,6 +35975,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1118989942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118989935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44b59a3f819470d4381eee36cd8868f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 2
+  isLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  isLeft: 0
+  speed: 0.5
+  prefab_weapon: {fileID: 3606087065601212249, guid: 79886e46dde56804db44de5fa1dda3b2, type: 3}
+  Hp: 30
+  boxSize: {x: 0, y: 0}
+  boxpos: {fileID: 224788267}
+  direct: {fileID: 251944517}
+  box: {fileID: 224788266}
 --- !u!1 &1124533143
 GameObject:
   m_ObjectHideFlags: 0

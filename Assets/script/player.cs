@@ -188,13 +188,19 @@ public class player : MonoBehaviour
     {
         if (is_hitted)
         {
+            anime.SetBool("is_wall", false);
+            is_wall_jump_ready = false;
+            rigid.gravityScale = 2.5f;
+            stop_cnt = 0;
+  
             return;
         }
         if(ray_wall && !is_ground) //벽에 붙었고 땅에 없을시.
         {
+            anime.SetBool("is_wall", true);
             #region 벽매달리기 취소
             //왼쪽 벽에서 오른쪽으로 가면 벽매달리기 취소
-            
+
             if (!is_trun && Input.GetKey(KeyCode.D))
             {
                 is_wall_jump_ready = false;
@@ -214,8 +220,6 @@ public class player : MonoBehaviour
             }
             #endregion
             
-            
-
             is_wall_jump_ready = true; //벽점프 준비 완료.
             
             if (stop_cnt <= 0)
@@ -236,10 +240,13 @@ public class player : MonoBehaviour
                 anime.SetBool("do_jump", true);
                 Invoke("wall_jump_deley", 0.15f); // 튕기고 딜레이
             }
-            else
-            {
-                anime.SetBool("is_wall", true);
-            }
+        }
+        else if (ray_wall && is_ground)
+        {
+            anime.SetBool("is_wall", false);
+            rigid.gravityScale = 2.5f;
+            is_wall_jump_ready = false;
+            stop_cnt = 0;
         }
         else
         {
@@ -301,7 +308,7 @@ public class player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Monster")
+        if(collision.tag == "monster_melee")
         {
             is_hitted = true;
             anime.SetTrigger("is_hitted");

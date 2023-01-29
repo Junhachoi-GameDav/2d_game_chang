@@ -313,7 +313,7 @@ public class player : MonoBehaviour
             is_hitted = true;
             anime.SetTrigger("is_hitted");
             gameObject.layer = 14; // 무적
-            sprite.color = new Color(1, 1, 1, 0.3f); //투명해짐
+            sprite.color = new Color(1, 1, 1, 0.5f); //투명해짐
             player_hp--; // 플레이어 hp 깍임. 나중에 매니저에서 관리 해도 됨.
             Invoke("hitted_deley", 0.3f);
             Invoke("hitted_back", 2f);

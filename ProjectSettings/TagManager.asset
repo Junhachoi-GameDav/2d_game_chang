@@ -28,7 +28,7 @@ TagManager:
   - enermy(ground)
   - enermy(fly)
   - wall
-  - 
+  - player_dead
   - 
   - 
   - 

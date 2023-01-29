@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
+    //플레이어 정보
+    public int player_hp;
     //속도
     public float apply_speed; // 현재 스피드
     public float crouch_speed = 0f;
@@ -45,16 +47,19 @@ public class player : MonoBehaviour
     bool is_wall_jump_ready; //벽 점프 준비 상태
     bool is_dash; //대쉬 상태
     bool ray_wall; //벽 상태
+    bool is_hitted; //피격 상태
     public bool is_hook_range_max; // 갈고리 길이 최대 상태
 
     // 컴포넌트
     Rigidbody2D rigid;
     grapping grap;
     Animator anime;
+    SpriteRenderer sprite;
     void Start()
     {
         anime = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>(); // 선언
+        sprite = GetComponent<SpriteRenderer>();
         apply_speed = run_speed; // 기존 스피드는 run속도
         grap = GetComponent<grapping>();
         is_trun = true;
@@ -72,6 +77,10 @@ public class player : MonoBehaviour
     // 이동은 효율을 위해 여기에 넣는다.
     void FixedUpdate()
     {
+        if (is_hitted)
+        {
+            return;
+        }
         player_move();
     }
 
@@ -177,6 +186,10 @@ public class player : MonoBehaviour
     }
     void player_wall_jump()
     {
+        if (is_hitted)
+        {
+            return;
+        }
         if(ray_wall && !is_ground) //벽에 붙었고 땅에 없을시.
         {
             #region 벽매달리기 취소
@@ -284,5 +297,28 @@ public class player : MonoBehaviour
             is_dash = false;
             apply_speed = run_speed;
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Monster")
+        {
+            is_hitted = true;
+            anime.SetTrigger("is_hitted");
+            gameObject.layer = 14; // 무적
+            sprite.color = new Color(1, 1, 1, 0.3f); //투명해짐
+            player_hp--; // 플레이어 hp 깍임. 나중에 매니저에서 관리 해도 됨.
+            Invoke("hitted_deley", 0.3f);
+            Invoke("hitted_back", 2f);
+        }
+    }
+    void hitted_back()
+    {
+        gameObject.layer = 3; // 무적 다시 돌아옴
+        sprite.color = new Color(1, 1, 1, 1);
+    }
+    void hitted_deley()
+    {
+        is_hitted = false;
     }
 }

@@ -59546,7 +59546,7 @@ GameObject:
   - component: {fileID: 1790257055}
   m_Layer: 0
   m_Name: attack
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68875,6 +68875,10 @@ PrefabInstance:
     - target: {fileID: 8666735072144946575, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
       propertyPath: ray_dis
       value: 0.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666735072144946575, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
+      propertyPath: player_hp
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8666735072144946575, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
       propertyPath: ray_wall_dis

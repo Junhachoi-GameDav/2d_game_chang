@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// 자료 출처 https://glikmakesworld.tistory.com/2
 // 싱글톤으로 만들되, MonoBehaviour를 상속 받지 않아 씬이 넘어가도 존재할수 있게 만든다.(대신 화면상에 나오지 않는다.)
 public class damage_manager
 {

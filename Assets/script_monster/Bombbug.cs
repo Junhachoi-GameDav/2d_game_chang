@@ -231,6 +231,7 @@ public class Bombbug : Enermy
             if (colider.tag == "Player")//콜라이더의 테그를 비교해서 플레이어면은 넣어놓는다
             {
                 Debug.Log("player damage");
+                damage_manager.Instance.damage_count(1); // 폭탄 벌레의 공격력 =1
                 colider.GetComponent<Rigidbody2D>().AddForce(new Vector2(200f*isLeft,10f));
             }
         }

@@ -9,7 +9,7 @@ public class Ladybug :Enermy
     GameObject effect;
     Animator animator;
     public Transform ray;
-    int Hp = 5;
+    public int Hp = 20;
     Transform target;
     [Header("근접거리")]
     [SerializeField] [Range(0f, 3f)] float contactDistance = 1f;
@@ -29,7 +29,7 @@ public class Ladybug :Enermy
     // Update is called once per frame
     void Update()
     {
-        if (isFollow == false && isEnd == false && isDamage == false && isDie == false)//쫓아가고 있지 않을때만 이런 동작허용한다.
+        if (isFollow == false && isEnd == false && isDamage == false && isDie == false&&isDamage==false)//쫓아가고 있지 않을때만 이런 동작허용한다.
         {
             if (op == 0)
             {
@@ -91,7 +91,7 @@ public class Ladybug :Enermy
     }
     void FollowTarget()
     {
-        if (isEnd == false&&isFollow==true)
+        if (isEnd == false&&isFollow==true&&isDamage==false)
         {
             DirectionEnemy(target.position.x, transform.position.x);
             if (Vector2.Distance(transform.position, target.position) > contactDistance && isFollow == true)
@@ -103,6 +103,7 @@ public class Ladybug :Enermy
             }
             else if (Vector2.Distance(transform.position, target.position) < contactDistance && isFollow == true&&isDie==false)
             {
+                //if(isDamage==false)
                 Attack();
             }
 
@@ -138,13 +139,13 @@ public class Ladybug :Enermy
         yield return new WaitForSeconds(3.5f);
         //폭발하도록하기
 
-        Explosion();
-        yield return new WaitForSeconds(0.1f);
+        //Explosion();
+        //yield return new WaitForSeconds(0.1f);
         Destroy(gameObject);
     }
     public void Explosion()
     {
-        expolsion.SetActive(true);
+        explosion.SetActive(true);
         //if(Collision2D )
         Collider2D[] collider2Ds = Physics2D.OverlapCircleAll(boxpos.position, 5f);
         //박스의 위치와 박스의 크기에 그리고 회전값을 넣는다
@@ -200,8 +201,8 @@ public class Ladybug :Enermy
             Debug.Log("isnot move");
             animator.SetBool("Attacked", true);
             Debug.Log(isDamage);
-            Invoke("attacked", 0.4f);
-            Invoke("damage", 0.4f);
+            Invoke("attacked", 0.15f);
+            Invoke("damage", 0.15f);
 
         }
         else if (collision.tag == "effect" && iseffect == false && isDie == false)
@@ -212,8 +213,8 @@ public class Ladybug :Enermy
             Debug.Log("isnot move");
             animator.SetBool("Attacked", true);
             Debug.Log(isDamage);
-            Invoke("attacked", 0.4f);
-            Invoke("damage", 0.4f);
+            Invoke("attacked", 0.15f);
+            Invoke("damage", 0.15f);
             Debug.Log(isDamage);
 
         }
@@ -226,7 +227,7 @@ public class Ladybug :Enermy
 
     public Vector2 boxSize;
     public Transform boxpos;
-    public GameObject expolsion;
+    public GameObject explosion;
     public GameObject box;
 
     public void Attack()

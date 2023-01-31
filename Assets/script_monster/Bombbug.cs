@@ -9,6 +9,7 @@ public class Bombbug : Enermy
     public int Hp = 50;
     int weapon_damage;
     GameObject effect;
+    public GameObject explosion;
     //public float r;
 
     // Start is called before the first frame update
@@ -61,6 +62,11 @@ public class Bombbug : Enermy
 
     private void FixedUpdate()
     {
+        if(isDie==true)
+        {
+
+        }
+
         if (isEnd == false && isDie == false)
         {
 
@@ -125,13 +131,46 @@ public class Bombbug : Enermy
     }
     IEnumerator Die()
     {
-        animator.SetTrigger("Die");
+
+        
         isDie = true;
         //isDamage = true;//적 못움직이게
         yield return new WaitForSeconds(3.5f);
+        //폭발하도록하기
+
+        Explosion();
+        animator.SetTrigger("Die");
+        yield return new WaitForSeconds(4f);
         Destroy(gameObject);
     }
 
+
+    public void Explosion()
+    {
+        explosion.SetActive(true);
+        //if(Collision2D )
+        Collider2D[] collider2Ds = Physics2D.OverlapCircleAll(boxpos.position, 5f);
+        //박스의 위치와 박스의 크기에 그리고 회전값을 넣는다
+        foreach (Collider2D colider in collider2Ds)
+        {
+            // Debug.Log("충돌");
+            if (colider.tag == "Player")//콜라이더의 테그를 비교해서 플레이어면은 넣어놓는다
+            {
+                Debug.Log("explosion damage");
+                colider.GetComponent<Rigidbody2D>().AddForce(new Vector2(400f * isLeft, 500f));
+            }
+        }
+    }
+    /*animator.SetTrigger("Die");
+        isDie = true;
+        //isDamage = true;//적 못움직이게
+        yield return new WaitForSeconds(3.5f);
+    //폭발하도록하기
+
+    Explosion();
+    yield return new WaitForSeconds(0.1f);
+    Destroy(gameObject);
+    */
     IEnumerator Attacked_weapon(GameObject collision)
     {
         iseffect = true;

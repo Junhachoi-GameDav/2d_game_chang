@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Ladybug :Enermy
 {
+   // float player_isleft;
     // Start is called before the first frame update
     int weapon_damage;
+    private float roll = 1;
     GameObject effect;
     Animator animator;
     public Transform ray;
@@ -24,12 +26,13 @@ public class Ladybug :Enermy
         GameObject weapon = Instantiate(prefab_weapon);
         weapon_damage = weapon.GetComponent<granade>().granade_dmg;
         effect = weapon.GetComponent<granade>().granade_effect;
+        //player_isleft= GameObject.FindGameObjectWithTag("Player").GetComponent<player>().;
     }
  
     // Update is called once per frame
     void Update()
     {
-        if (isFollow == false && isEnd == false && isDamage == false && isDie == false&&isDamage==false)//쫓아가고 있지 않을때만 이런 동작허용한다.
+        if (isFollow == false && isEnd == false && isDamage == false && isDie == false&&isDamage==false&&isAttack==false)//쫓아가고 있지 않을때만 이런 동작허용한다.
         {
             if (op == 0)
             {
@@ -64,8 +67,15 @@ public class Ladybug :Enermy
     
     private void FixedUpdate()
     {
-        FollowTarget();
-        backhome();
+        if (isDie == false&&isAttack==false)
+        {
+            FollowTarget();
+            backhome();
+        }
+        if(isDie == true)
+        {
+            DirectionEnemy(target.position.x, transform.position.x);
+        }
     }
     void backhome()
     {
@@ -104,7 +114,8 @@ public class Ladybug :Enermy
             else if (Vector2.Distance(transform.position, target.position) < contactDistance && isFollow == true&&isDie==false)
             {
                 //if(isDamage==false)
-                Attack();
+               Invoke("Attack",0.3f);
+            
             }
 
             if(isEnd == true)
@@ -112,7 +123,7 @@ public class Ladybug :Enermy
                 speed += 1.5f;              
             }
            // Debug.Log(isLeft);
-            box.SetActive(false);
+           // box.SetActive(false);
         }
     }
 
@@ -135,30 +146,61 @@ public class Ladybug :Enermy
     {
         animator.SetTrigger("Die");
         isDie = true;
+        
+        Debug.Log("isroll");
+        Debug.Log(roll);
         //isDamage = true;//적 못움직이게
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(4f);
         //폭발하도록하기
-
+        
         //Explosion();
         //yield return new WaitForSeconds(0.1f);
         Destroy(gameObject);
     }
-    public void Explosion()
+    float stoptime = 1f;
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        explosion.SetActive(true);
-        //if(Collision2D )
-        Collider2D[] collider2Ds = Physics2D.OverlapCircleAll(boxpos.position, 5f);
-        //박스의 위치와 박스의 크기에 그리고 회전값을 넣는다
-        foreach (Collider2D colider in collider2Ds)
+        if (isDie == true)
         {
-            // Debug.Log("충돌");
-            if (colider.tag == "Player")//콜라이더의 테그를 비교해서 플레이어면은 넣어놓는다
+            if (collision.gameObject.CompareTag("Player"))
             {
-                Debug.Log("explosion damage");
-                colider.GetComponent<Rigidbody2D>().AddForce(new Vector2(400f * isLeft, 500f));
+                {
+                    transform.rotation = Quaternion.Euler(0, 0, roll);
+                    //Debug.Log(roll);
+                    if (isLeft == -1)
+                    {
+                        roll -= Time.deltaTime * 120;
+                    }
+                    else
+                    {
+                        roll += Time.deltaTime * 120;
+                    }
+                    stoptime = 1f;//원래 멈추는 시간
+                }
+            }
+            else//플레이어와 부딫치지 않고 있을경우
+            {
+                stoptime -= Time.deltaTime*1.25f;
+                if (stoptime <= 0)
+                {
+                    Debug.Log(stoptime);
+                }
+                else if(stoptime >0)
+                {
+                    transform.rotation = Quaternion.Euler(0, 0, roll);
+                    if (isLeft == -1)
+                    {
+                        roll -= Time.deltaTime * 100*stoptime;
+                    }
+                    else
+                    {
+                        roll += Time.deltaTime * 100*stoptime;
+                    }
+                }
             }
         }
     }
+   
 
     public void TakeDamage(int damage, int h)
     {
@@ -233,7 +275,8 @@ public class Ladybug :Enermy
     public void Attack()
     {
         box.SetActive(true);
-        
+        animator.SetBool("Attack",true);
+        isAttack = true;
        
         Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(boxpos.position, boxSize, 0);
         //박스의 위치와 박스의 크기에 그리고 회전값을 넣는다
@@ -243,11 +286,19 @@ public class Ladybug :Enermy
             if (colider.tag == "Player")//콜라이더의 테그를 비교해서 플레이어면은 넣어놓는다
             {
                 Debug.Log("player damage");
-                //colider.GetComponent<Rigidbody2D>().AddForce(new Vector2(200f * isLeft, 10f));
+                colider.GetComponent<Rigidbody2D>().AddForce(new Vector2(200f * isLeft, 10f));
             }
         }
+        StartCoroutine(attack());
     }
 
+    IEnumerator attack()
+    {
+        yield return new WaitForSeconds(0.4f);
+        isAttack = false;
+        box.SetActive(false);
+        animator.SetBool("Attack", false);
+    }
     private IEnumerator Move()
     {
         yield return new WaitForSeconds(0.8f);

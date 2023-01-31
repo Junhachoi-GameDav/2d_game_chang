@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Ladybug :Enermy
 {
-   // float player_isleft;
+    
+
+    // float player_isleft;
     // Start is called before the first frame update
     int weapon_damage;
     private float roll = 1;
@@ -271,6 +273,7 @@ public class Ladybug :Enermy
     public Transform boxpos;
     public GameObject explosion;
     public GameObject box;
+    public GameObject melee;
 
     public void Attack()
     {
@@ -286,6 +289,8 @@ public class Ladybug :Enermy
             if (colider.tag == "Player")//콜라이더의 테그를 비교해서 플레이어면은 넣어놓는다
             {
                 Debug.Log("player damage");
+                damage_manager.Instance.damage_count(1);
+                melee.SetActive(true);
                 colider.GetComponent<Rigidbody2D>().AddForce(new Vector2(200f * isLeft, 10f));
             }
         }
@@ -297,6 +302,7 @@ public class Ladybug :Enermy
         yield return new WaitForSeconds(0.4f);
         isAttack = false;
         box.SetActive(false);
+        melee.SetActive(false);
         animator.SetBool("Attack", false);
     }
     private IEnumerator Move()

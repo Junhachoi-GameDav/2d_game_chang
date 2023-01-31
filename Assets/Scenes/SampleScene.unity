@@ -16500,6 +16500,7 @@ Transform:
   m_Children:
   - {fileID: 1143349602}
   - {fileID: 1013839132}
+  - {fileID: 700076806}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16559,12 +16560,14 @@ MonoBehaviour:
   speed: 2
   prefab_weapon: {fileID: 3606087065601212249, guid: 79886e46dde56804db44de5fa1dda3b2, type: 3}
   ray: {fileID: 1143349602}
+  Hp: 5
   contactDistance: 0.13
   dontcatch: 5
   boxSize: {x: 0, y: 0}
   boxpos: {fileID: 1143349602}
-  expolsion: {fileID: 1013839131}
+  explosion: {fileID: 0}
   box: {fileID: 1143349601}
+  melee: {fileID: 700076804}
 --- !u!1 &540038671
 GameObject:
   m_ObjectHideFlags: 0
@@ -21669,6 +21672,54 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &700076804
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 700076806}
+  - component: {fileID: 700076805}
+  m_Layer: 0
+  m_Name: melee
+  m_TagString: monster_melee
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!58 &700076805
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700076804}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.99
+--- !u!4 &700076806
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700076804}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 537618332}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &701786928
 GameObject:
   m_ObjectHideFlags: 0
@@ -31787,6 +31838,7 @@ MonoBehaviour:
   speed: 1
   prefab_weapon: {fileID: 3606087065601212249, guid: 79886e46dde56804db44de5fa1dda3b2, type: 3}
   Hp: 50
+  explosion: {fileID: 0}
   boxSize: {x: 2, y: 2}
   boxpos: {fileID: 1790257052}
   direct: {fileID: 1416880009}

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Enermy : MonoBehaviour
 {
-    
     public float distance;
     public LayerMask isLayer;
     protected Vector2 home;

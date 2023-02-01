@@ -13,6 +13,7 @@ public class Enermy : MonoBehaviour
     protected bool isFollow = false;
     protected bool isDamage = false;
     protected bool isAttack = false;
+    protected Transform player_position;
     //protected int Hp;
     public float isLeft;
     public float speed;

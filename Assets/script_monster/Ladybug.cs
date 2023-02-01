@@ -19,8 +19,10 @@ public class Ladybug :Enermy
     [SerializeField] [Range(0f, 3f)] float contactDistance = 1f;
     [Header("인식불가거리")]
     [SerializeField] [Range(0f, 6f)] float dontcatch = 5f;
+    Rigidbody2D rb;
     private void Awake()
     {
+        rb=GetComponent<Rigidbody2D>();
         op = Random.Range(0, 3);
         animator = GetComponent<Animator>();
         home = transform.position;//물체의 위치
@@ -152,6 +154,8 @@ public class Ladybug :Enermy
         Debug.Log("isroll");
         Debug.Log(roll);
         //isDamage = true;//적 못움직이게
+        yield return new WaitForSeconds(0.3f);
+        rb.AddForce(new Vector3(0, 0, 0));
         yield return new WaitForSeconds(4f);
         //폭발하도록하기
         
@@ -291,7 +295,7 @@ public class Ladybug :Enermy
                 Debug.Log("player damage");
                 damage_manager.Instance.damage_count(1);
                 melee.SetActive(true);
-                colider.GetComponent<Rigidbody2D>().AddForce(new Vector2(200f * isLeft, 10f));
+                //colider.GetComponent<Rigidbody2D>().AddForce(new Vector2(20f * isLeft, 10f));
             }
         }
         StartCoroutine(attack());

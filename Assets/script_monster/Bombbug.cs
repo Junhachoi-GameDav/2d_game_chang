@@ -6,15 +6,18 @@ public class Bombbug : Enermy
 {
     Animator animator;
     bool isFind = false;
+    bool isexplosion = false;
     public int Hp = 50;
     int weapon_damage;
     GameObject effect;
     public GameObject explosion;
     //public float r;
+    Transform explosion_target;
 
     // Start is called before the first frame update
     private void Awake()
     {
+        explosion_target= GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         animator = GetComponent<Animator>();
         op = Random.Range(0, 3);
         home = transform.position;//물체의 위치
@@ -59,12 +62,25 @@ public class Bombbug : Enermy
             }
         }
     }
-
+    public void DirectionEnemy(float target, float basobj)
+    {
+        if (target < basobj)
+        {
+            animator.SetFloat("Isleft", -1);//방향의 설정
+            isLeft = -1;
+        }
+        else
+        {
+            animator.SetFloat("Isleft", 1);
+            isLeft = 1;
+        }
+    }
     private void FixedUpdate()
     {
-        if(isDie==true)
+        if(isDie==true&&isexplosion==false)
         {
-
+            DirectionEnemy(explosion_target.position.x, transform.position.x);
+            transform.position=Vector3.MoveTowards(transform.position, explosion_target.position, Time.deltaTime*speed*2f);
         }
 
         if (isEnd == false && isDie == false)
@@ -106,7 +122,7 @@ public class Bombbug : Enermy
                 box.SetActive(false);
             }
         }
-        else
+        else if(isDie==false)
         {
             isFollow = false;
             isFind = false;
@@ -134,12 +150,16 @@ public class Bombbug : Enermy
 
         
         isDie = true;
+        animator.SetTrigger("Explosion");
         //isDamage = true;//적 못움직이게
         yield return new WaitForSeconds(3.5f);
         //폭발하도록하기
-
+        isexplosion = true;
         Explosion();
         animator.SetTrigger("Die");
+        //폭발알리기용
+        yield return new WaitForSeconds(0.2f);
+        explosion.SetActive(false);
         yield return new WaitForSeconds(4f);
         Destroy(gameObject);
     }
@@ -157,7 +177,8 @@ public class Bombbug : Enermy
             if (colider.tag == "Player")//콜라이더의 테그를 비교해서 플레이어면은 넣어놓는다
             {
                 Debug.Log("explosion damage");
-                colider.GetComponent<Rigidbody2D>().AddForce(new Vector2(400f * isLeft, 500f));
+                damage_manager.Instance.damage_count(2); // 폭탄 벌레의 폭발
+                //colider.GetComponent<Rigidbody2D>().AddForce(new Vector2(400f * isLeft, 500f));
             }
         }
     }
@@ -271,7 +292,7 @@ public class Bombbug : Enermy
             {
                 Debug.Log("player damage");
                 damage_manager.Instance.damage_count(1); // 폭탄 벌레의 공격력 =1
-                colider.GetComponent<Rigidbody2D>().AddForce(new Vector2(200f*isLeft,10f));
+               // colider.GetComponent<Rigidbody2D>().AddForce(new Vector2(200f*isLeft,10f));
             }
         }
     }

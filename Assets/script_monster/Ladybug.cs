@@ -155,7 +155,8 @@ public class Ladybug :Enermy
         Debug.Log(roll);
         //isDamage = true;//적 못움직이게
         yield return new WaitForSeconds(0.3f);
-        rb.AddForce(new Vector3(0, 0, 0));
+        //rb.AddForce(new Vector3(0, 0, 0));
+        rb.gravityScale = 1.5f;
         yield return new WaitForSeconds(4f);
         //폭발하도록하기
         

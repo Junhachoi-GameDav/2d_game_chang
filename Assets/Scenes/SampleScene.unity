@@ -18361,6 +18361,7 @@ GameObject:
   - component: {fileID: 537618339}
   - component: {fileID: 537618333}
   - component: {fileID: 537618338}
+  - component: {fileID: 537618340}
   m_Layer: 12
   m_Name: Ladybug
   m_TagString: Monster
@@ -18502,6 +18503,27 @@ MonoBehaviour:
   explosion: {fileID: 0}
   box: {fileID: 1143349601}
   melee: {fileID: 700076804}
+--- !u!50 &537618340
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537618330}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &540038671
 GameObject:
   m_ObjectHideFlags: 0

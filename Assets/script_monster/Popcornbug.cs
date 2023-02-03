@@ -251,7 +251,7 @@ public class Popcornbug : Enermy
         
         
         bullet= Instantiate(popcorn_bullet, boxpos.position, transform.rotation);
-
+        
         //bullet.transform.Translate(player_position);  //Vector2.MoveTowards(bullet.transform.position, player_position.position, Time.deltaTime * speed);
         bullet.transform.position= Vector2.MoveTowards(bullet.transform.position, player_position.position, Time.deltaTime * speed);
         yield return new WaitForSeconds(3f);

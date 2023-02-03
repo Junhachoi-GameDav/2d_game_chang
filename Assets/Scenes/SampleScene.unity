@@ -35915,7 +35915,6 @@ MonoBehaviour:
   speed: 1
   prefab_weapon: {fileID: 3606087065601212249, guid: 79886e46dde56804db44de5fa1dda3b2, type: 3}
   Hp: 50
-  explosion: {fileID: 0}
   boxSize: {x: 2, y: 2}
   boxpos: {fileID: 1790257052}
   direct: {fileID: 1416880009}
@@ -41017,7 +41016,7 @@ MonoBehaviour:
   boxpos: {fileID: 224788267}
   direct: {fileID: 251944517}
   box: {fileID: 224788266}
-  popcorn_bullet: {fileID: 0}
+  popcorn_bullet: {fileID: 8952878993850071261, guid: 8429acda137b432499cc9fca7d67a5ec, type: 3}
 --- !u!1 &1124533143
 GameObject:
   m_ObjectHideFlags: 0

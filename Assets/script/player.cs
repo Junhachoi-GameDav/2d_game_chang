@@ -36,6 +36,7 @@ public class player : MonoBehaviour
     //기타 오브젝트
     public GameObject granade;
     public GameObject hiar;
+    public GameObject p_melee;
 
     //총알 및 폭탄 힘, 기타 값
     public float g_force;
@@ -48,6 +49,7 @@ public class player : MonoBehaviour
     bool is_dash; //대쉬 상태
     bool ray_wall; //벽 상태
     bool is_hitted; //피격 상태
+    bool is_attacking; //공격 중
     public bool is_hook_range_max; // 갈고리 길이 최대 상태
 
     // 컴포넌트
@@ -72,6 +74,7 @@ public class player : MonoBehaviour
         player_wall_jump();
         player_use_granade();
         player_dash();
+        player_attack();
     }
 
     // 이동은 효율을 위해 여기에 넣는다.
@@ -86,7 +89,7 @@ public class player : MonoBehaviour
 
     void player_move()
     {
-        if (is_wall_jump_ready)
+        if (is_wall_jump_ready || is_attacking)
         {
             return; //위에 조건이면 함수를 끝냄.
         }
@@ -147,7 +150,7 @@ public class player : MonoBehaviour
 
     void player_jump()
     {
-        if (is_wall_jump_ready)
+        if (is_wall_jump_ready||is_attacking)
         {
             anime.SetBool("do_jump", false);
             return; //위에 조건이면 함수를 끝냄.
@@ -186,6 +189,10 @@ public class player : MonoBehaviour
     }
     void player_wall_jump()
     {
+        if (is_attacking)
+        {
+            return;
+        }
         if (is_hitted)
         {
             anime.SetBool("is_wall", false);
@@ -263,6 +270,10 @@ public class player : MonoBehaviour
 
     void player_use_granade()
     {
+        if (is_attacking)
+        {
+            return;
+        }
         if (Input.GetKeyDown(KeyCode.Q))
         {
             // 참고로 중력값은 2이다.
@@ -277,6 +288,10 @@ public class player : MonoBehaviour
     
     void player_dash()
     {
+        if (is_attacking)
+        {
+            return;
+        }
         if(x != 0) //서있지 않을 때
         {
             if (Input.GetKey(KeyCode.LeftShift))
@@ -306,6 +321,39 @@ public class player : MonoBehaviour
         }
     }
 
+    void player_attack()
+    {
+        if (is_attacking || is_hitted || is_wall_jump_ready)
+        {
+            return;
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            anime.SetTrigger("is_atk");
+        }
+        else if(!is_ground && Input.GetMouseButtonDown(0))
+        {
+            anime.SetTrigger("is_atk");
+        }
+    }
+    #region 공격 로직 //유니티 애니메이션으로 조절한다.
+    public void atk_true()
+    {
+        is_attacking = true;
+    }
+    public void atk_false()
+    {
+        is_attacking = false;
+    }
+    public void atk_collider_on()
+    {
+        p_melee.SetActive(true);
+    }
+    public void atk_collider_off()
+    {
+        p_melee.SetActive(false);
+    }
+    #endregion  
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "monster_melee")

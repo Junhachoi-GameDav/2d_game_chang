@@ -1346,6 +1346,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &45429254 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 45429254, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
+  m_PrefabInstance: {fileID: 8666735071491293781}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &49709788
 GameObject:
   m_ObjectHideFlags: 0
@@ -77980,17 +77985,21 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 45429254, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 45429254, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
+      propertyPath: m_TagString
+      value: p_melee
+      objectReference: {fileID: 0}
+    - target: {fileID: 45429256, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8666735072144946561, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
       propertyPath: m_Name
       value: player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8666735072144946563, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
-      propertyPath: m_Size.x
-      value: 0.53
-      objectReference: {fileID: 0}
-    - target: {fileID: 8666735072144946563, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 8666735072144946573, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
       propertyPath: m_RootOrder
@@ -78048,22 +78057,10 @@ PrefabInstance:
       propertyPath: hook_ef
       value: 
       objectReference: {fileID: 549986790}
-    - target: {fileID: 8666735072144946574, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
-      propertyPath: hook_distence
-      value: 3.3
-      objectReference: {fileID: 0}
     - target: {fileID: 8666735072144946575, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
-      propertyPath: ray_dis
-      value: 0.76
-      objectReference: {fileID: 0}
-    - target: {fileID: 8666735072144946575, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
-      propertyPath: player_hp
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8666735072144946575, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
-      propertyPath: ray_wall_dis
-      value: 0.32
-      objectReference: {fileID: 0}
+      propertyPath: p_melee
+      value: 
+      objectReference: {fileID: 45429254}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}

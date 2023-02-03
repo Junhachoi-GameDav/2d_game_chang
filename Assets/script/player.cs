@@ -50,6 +50,7 @@ public class player : MonoBehaviour
     bool ray_wall; //벽 상태
     bool is_hitted; //피격 상태
     bool is_attacking; //공격 중
+    bool do_atk; //공격 중 2
     public bool is_hook_range_max; // 갈고리 길이 최대 상태
 
     // 컴포넌트
@@ -323,7 +324,7 @@ public class player : MonoBehaviour
 
     void player_attack()
     {
-        if (is_attacking || is_hitted || is_wall_jump_ready)
+        if (do_atk || is_hitted || is_wall_jump_ready)
         {
             return;
         }
@@ -331,12 +332,10 @@ public class player : MonoBehaviour
         {
             anime.SetTrigger("is_atk");
         }
-        else if(!is_ground && Input.GetMouseButtonDown(0))
-        {
-            anime.SetTrigger("is_atk");
-        }
+        
     }
     #region 공격 로직 //유니티 애니메이션으로 조절한다.
+    //공격 중 다른 로직 막기
     public void atk_true()
     {
         is_attacking = true;
@@ -345,6 +344,16 @@ public class player : MonoBehaviour
     {
         is_attacking = false;
     }
+    //공격 중 공격모션 막기
+    public void doing_atk_true()
+    {
+        do_atk = true;
+    }
+    public void doing_atk_false()
+    {
+        do_atk = false;
+    }
+    //공격 범위 박스 on/off
     public void atk_collider_on()
     {
         p_melee.SetActive(true);
@@ -363,6 +372,7 @@ public class player : MonoBehaviour
             gameObject.layer = 14; // 무적
             sprite.color = new Color(1, 1, 1, 0.5f); //투명해짐
             player_hp -= damage_manager.Instance.en_dmg;
+            hitted_anime_stop();
             Invoke("hitted_deley", 0.3f);
             Invoke("hitted_back", 2f);
         }
@@ -375,5 +385,12 @@ public class player : MonoBehaviour
     void hitted_deley()
     {
         is_hitted = false;
+    }
+    void hitted_anime_stop()
+    {
+        is_hitted = true;
+        is_attacking = false;
+        is_wall_jump_ready = false;
+        is_dash = false;
     }
 }

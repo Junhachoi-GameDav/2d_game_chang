@@ -20,20 +20,16 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 1085869703, guid: 3715df761a5a3ba498d11c2ac9aac80d, type: 3}
-    - time: 0.083333336
-      value: {fileID: -1737092672, guid: 3715df761a5a3ba498d11c2ac9aac80d, type: 3}
-    - time: 0.16666667
       value: {fileID: 1881507143, guid: 3715df761a5a3ba498d11c2ac9aac80d, type: 3}
-    - time: 0.25
+    - time: 0.083333336
       value: {fileID: -1065756738, guid: 3715df761a5a3ba498d11c2ac9aac80d, type: 3}
-    - time: 0.33333334
+    - time: 0.16666667
       value: {fileID: -1478772717, guid: 3715df761a5a3ba498d11c2ac9aac80d, type: 3}
-    - time: 0.41666666
+    - time: 0.25
       value: {fileID: 621414202, guid: 3715df761a5a3ba498d11c2ac9aac80d, type: 3}
-    - time: 0.5
+    - time: 0.33333334
       value: {fileID: -1413162497, guid: 3715df761a5a3ba498d11c2ac9aac80d, type: 3}
-    - time: 0.5833333
+    - time: 0.41666666
       value: {fileID: 536156144, guid: 3715df761a5a3ba498d11c2ac9aac80d, type: 3}
     attribute: m_Sprite
     path: 
@@ -55,8 +51,6 @@ AnimationClip:
       isPPtrCurve: 1
       isIntCurve: 0
     pptrCurveMapping:
-    - {fileID: 1085869703, guid: 3715df761a5a3ba498d11c2ac9aac80d, type: 3}
-    - {fileID: -1737092672, guid: 3715df761a5a3ba498d11c2ac9aac80d, type: 3}
     - {fileID: 1881507143, guid: 3715df761a5a3ba498d11c2ac9aac80d, type: 3}
     - {fileID: -1065756738, guid: 3715df761a5a3ba498d11c2ac9aac80d, type: 3}
     - {fileID: -1478772717, guid: 3715df761a5a3ba498d11c2ac9aac80d, type: 3}
@@ -68,7 +62,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.6666666
+    m_StopTime: 0.5
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -89,27 +83,41 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
+    functionName: doing_atk_true
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0
     functionName: atk_true
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.16666667
+  - time: 0
     functionName: atk_collider_on
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.25
+  - time: 0
+    functionName: doing_atk_false
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.083333336
     functionName: atk_collider_off
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.25
+  - time: 0.5
     functionName: atk_false
     data: 
     objectReferenceParameter: {fileID: 0}

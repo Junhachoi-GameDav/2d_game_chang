@@ -10,7 +10,7 @@ public class Bombbug : Enermy
     public int Hp = 50;
     int weapon_damage;
     GameObject effect;
-    public GameObject explosion;
+    //public GameObject explosion;
     //public float r;
     Transform explosion_target;
 
@@ -159,7 +159,7 @@ public class Bombbug : Enermy
         animator.SetTrigger("Die");
         //폭발알리기용
         yield return new WaitForSeconds(0.2f);
-        explosion.SetActive(false);
+        //explosion.SetActive(false);
         yield return new WaitForSeconds(4f);
         Destroy(gameObject);
     }
@@ -167,7 +167,7 @@ public class Bombbug : Enermy
 
     public void Explosion()
     {
-        explosion.SetActive(true);
+        //explosion.SetActive(true);
         //if(Collision2D )
         Collider2D[] collider2Ds = Physics2D.OverlapCircleAll(boxpos.position, 5f);
         //박스의 위치와 박스의 크기에 그리고 회전값을 넣는다

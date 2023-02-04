@@ -48,7 +48,7 @@ public class player : MonoBehaviour
     bool is_wall_jump_ready; //벽 점프 준비 상태
     bool is_dash; //대쉬 상태
     bool ray_wall; //벽 상태
-    bool is_hitted; //피격 상태
+    public bool is_hitted; //피격 상태
     bool is_attacking; //공격 중
     bool do_atk; //공격 중 2
     public bool is_hook_range_max; // 갈고리 길이 최대 상태
@@ -179,6 +179,7 @@ public class player : MonoBehaviour
             rigid.AddForce(new Vector2(rigid.velocity.x, hook_jump_force),ForceMode2D.Impulse);
             anime.SetBool("do_jump", true);
         }
+
         if(is_air && is_ground)
         {
             anime.SetBool("do_jump", false);

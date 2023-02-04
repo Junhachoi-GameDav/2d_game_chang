@@ -392,10 +392,10 @@ public class player : MonoBehaviour
     }
     void hitted_anime_stop()
     {
-        is_hitted = true;
         is_attacking = false;
         do_atk = false;
         is_wall_jump_ready = false;
         is_dash = false;
+        p_melee.SetActive(false);
     }
 }

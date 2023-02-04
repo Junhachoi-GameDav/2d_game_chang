@@ -13,6 +13,8 @@ TagManager:
   - effect
   - weapon
   - wall
+  - monster_melee
+  - p_melee
   layers:
   - Default
   - TransparentFX
@@ -29,7 +31,7 @@ TagManager:
   - enermy(fly)
   - wall
   - player_dead
-  - 
+  - p_melee
   - 
   - 
   - 

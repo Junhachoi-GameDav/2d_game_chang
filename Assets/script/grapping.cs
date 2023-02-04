@@ -88,8 +88,19 @@ public class grapping : MonoBehaviour
         else if (is_attach) //붙을때
         {
             line.enabled = true;
-            if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Space) || p.is_hitted) // 붙은상태에서 다시 마우스 오른쪽을 누르면 또는 붙은상태에서 다시 점프키를 누르면
+            if (Input.GetKeyDown(KeyCode.Space))
             {
+                p.rigid.velocity = Vector2.zero;
+                p.rigid.AddForce(new Vector2(p.rigid.velocity.x, p.hook_jump_force), ForceMode2D.Impulse);
+                is_attach = false;
+                is_hook_key_down = false;
+                is_line_max = false;
+                hook.GetComponent<hooking>().joint2D.enabled = false;
+                hook.gameObject.SetActive(false);
+            }
+            if (Input.GetMouseButtonDown(1) || p.is_hitted) // 붙은상태에서 다시 마우스 오른쪽을 누르면 또는 붙은상태에서 다시 점프키를 누르면
+            {
+                
                 is_attach = false;
                 is_hook_key_down = false;
                 is_line_max = false;

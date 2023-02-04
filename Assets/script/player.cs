@@ -54,7 +54,7 @@ public class player : MonoBehaviour
     public bool is_hook_range_max; // 갈고리 길이 최대 상태
 
     // 컴포넌트
-    Rigidbody2D rigid;
+    public Rigidbody2D rigid;
     grapping grap;
     Animator anime;
     SpriteRenderer sprite;
@@ -175,8 +175,8 @@ public class player : MonoBehaviour
         {
             is_air = false;
             Invoke("jump_ani_deley", 0.5f);
-            rigid.velocity = Vector2.zero;
-            rigid.AddForce(new Vector2(rigid.velocity.x, hook_jump_force),ForceMode2D.Impulse);
+            //rigid.velocity = Vector2.zero;
+            //rigid.AddForce(new Vector2(rigid.velocity.x, hook_jump_force),ForceMode2D.Impulse);
             anime.SetBool("do_jump", true);
         }
 

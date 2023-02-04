@@ -292,6 +292,9 @@ public class player : MonoBehaviour
     {
         if (is_attacking)
         {
+            dash_timer = 0;
+            is_dash = false;
+            apply_speed = run_speed;
             return;
         }
         if(x != 0) //서있지 않을 때
@@ -315,7 +318,7 @@ public class player : MonoBehaviour
             }
             
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        if (Input.GetKeyUp(KeyCode.LeftShift) || is_hitted)
         {
             dash_timer = 0;
             is_dash = false;
@@ -391,6 +394,7 @@ public class player : MonoBehaviour
     {
         is_hitted = true;
         is_attacking = false;
+        do_atk = false;
         is_wall_jump_ready = false;
         is_dash = false;
     }

@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 45429255}
   - component: {fileID: 45429256}
-  m_Layer: 3
+  m_Layer: 15
   m_Name: p_melee
-  m_TagString: Untagged
+  m_TagString: p_melee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &45429255
 Transform:
   m_ObjectHideFlags: 0
@@ -42,7 +42,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -74,7 +74,6 @@ GameObject:
   - component: {fileID: 8666735072144946575}
   - component: {fileID: 8666735072144946574}
   - component: {fileID: 8666735072144946569}
-  - component: {fileID: 8666735072144946568}
   m_Layer: 3
   m_Name: player
   m_TagString: Player
@@ -228,7 +227,7 @@ MonoBehaviour:
   dash_speed: 9
   ray_dis: 0.76
   ray_wall_dis: 0.32
-  dash_time: 0.6
+  dash_time: 0.3
   jump_force: 10
   hook_jump_force: 8
   wall_jump_force: 5
@@ -236,7 +235,9 @@ MonoBehaviour:
   hiar: {fileID: 8666735072760822557}
   p_melee: {fileID: 45429254}
   g_force: 5
+  is_hitted: 0
   is_hook_range_max: 0
+  rigid: {fileID: 0}
 --- !u!114 &8666735072144946574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,18 +267,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8603c3508f52e649aa2eb6d245607ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8666735072144946568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666735072144946561}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d102bdd21be1374ba52746c52b57906, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8666735072760822557

@@ -1346,11 +1346,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &45429254 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 45429254, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
-  m_PrefabInstance: {fileID: 8666735071491293781}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &49709788
 GameObject:
   m_ObjectHideFlags: 0
@@ -78006,22 +78001,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 45429254, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
-      propertyPath: m_Layer
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 45429254, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 45429254, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
-      propertyPath: m_TagString
-      value: p_melee
-      objectReference: {fileID: 0}
-    - target: {fileID: 45429256, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8666735072144946561, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
       propertyPath: m_Name
       value: player
@@ -78083,12 +78062,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 549986790}
     - target: {fileID: 8666735072144946575, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
-      propertyPath: p_melee
-      value: 
-      objectReference: {fileID: 45429254}
-    - target: {fileID: 8666735072144946575, guid: 2bad44e97a06afb449a7abd83716db56, type: 3}
-      propertyPath: dash_time
-      value: 0.3
+      propertyPath: player_dmg
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

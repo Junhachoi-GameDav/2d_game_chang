@@ -14,9 +14,10 @@ public class Bombbug : Enermy
     //public float r;
     Transform explosion_target;
 
-    // Start is called before the first frame update
+    player p;
     private void Awake()
     {
+        p = FindObjectOfType<player>();
         explosion_target= GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         animator = GetComponent<Animator>();
         op = Random.Range(0, 3);
@@ -253,6 +254,14 @@ public class Bombbug : Enermy
             }
             transform.position = Vector2.MoveTowards(transform.position, home, Time.deltaTime * speed * 1.4f);
             StartCoroutine(Endpoint());
+        }
+        if (collision.gameObject.tag == "p_melee" && !isDie)
+        {
+            TakeDamage(p.player_dmg, Hp);
+            isDamage = true;
+            animator.SetBool("Attacked", true);
+            Invoke("attacked", 0.4f);
+            Invoke("damage", 0.4f);
         }
     }
     public Vector2 boxSize;

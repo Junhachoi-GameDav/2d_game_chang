@@ -20,8 +20,10 @@ public class Ladybug :Enermy
     [Header("인식불가거리")]
     [SerializeField] [Range(0f, 6f)] float dontcatch = 5f;
     Rigidbody2D rb;
+    player p;
     private void Awake()
     {
+        p = FindObjectOfType<player>();
         rb=GetComponent<Rigidbody2D>();
         op = Random.Range(0, 3);
         animator = GetComponent<Animator>();
@@ -271,6 +273,14 @@ public class Ladybug :Enermy
         if (collision.CompareTag("Player"))
         {
             isFollow = true;
+        }
+        if (collision.gameObject.tag == "p_melee" && !isDie)
+        {
+            TakeDamage(p.player_dmg, Hp);
+            isDamage = true;
+            animator.SetBool("Attacked", true);
+            Invoke("attacked", 0.15f);
+            Invoke("damage", 0.15f);
         }
     }
 

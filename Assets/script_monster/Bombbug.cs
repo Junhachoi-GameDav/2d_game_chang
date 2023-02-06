@@ -13,11 +13,12 @@ public class Bombbug : Enermy
     //public GameObject explosion;
     //public float r;
     Transform explosion_target;
-
+    SpriteRenderer sprite;
     player p;
     private void Awake()
     {
         p = FindObjectOfType<player>();
+        sprite = GetComponent<SpriteRenderer>();
         explosion_target= GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         animator = GetComponent<Animator>();
         op = Random.Range(0, 3);
@@ -207,6 +208,7 @@ public class Bombbug : Enermy
     void attacked()
     {
         animator.SetBool("Attacked",false);
+        sprite.color = new Color(1, 1, 1, 1);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -259,6 +261,7 @@ public class Bombbug : Enermy
         {
             TakeDamage(p.player_dmg, Hp);
             isDamage = true;
+            sprite.color = new Color(1, 1, 0, 1); //³ë¶õ»ö
             animator.SetBool("Attacked", true);
             Invoke("attacked", 0.4f);
             Invoke("damage", 0.4f);

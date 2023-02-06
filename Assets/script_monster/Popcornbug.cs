@@ -11,10 +11,11 @@ public class Popcornbug : Enermy
     GameObject effect;
 
     //public float r;
-
+    SpriteRenderer sprite;
     player p;
     private void Awake()
     {
+        sprite = GetComponent<SpriteRenderer>();
         p = FindObjectOfType<player>();
         player_position= GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         animator = GetComponent<Animator>();
@@ -174,6 +175,7 @@ public class Popcornbug : Enermy
     void attacked()
     {
         animator.SetBool("Attacked", false);
+        sprite.color = new Color(1, 1, 1, 1);
     }
 
    /* void Attack()
@@ -240,6 +242,7 @@ public class Popcornbug : Enermy
         {
             TakeDamage(p.player_dmg, Hp);
             isDamage = true;
+            sprite.color = new Color(1, 0, 0, 1);
             animator.SetBool("Attacked", true);
             Invoke("attacked", 0.4f);
             Invoke("damage", 0.4f);

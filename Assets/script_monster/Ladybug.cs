@@ -21,10 +21,12 @@ public class Ladybug :Enermy
     [SerializeField] [Range(0f, 6f)] float dontcatch = 5f;
     Rigidbody2D rb;
     player p;
+    SpriteRenderer sprite;
     private void Awake()
     {
         p = FindObjectOfType<player>();
         rb=GetComponent<Rigidbody2D>();
+        sprite = GetComponent<SpriteRenderer>();
         op = Random.Range(0, 3);
         animator = GetComponent<Animator>();
         home = transform.position;//물체의 위치
@@ -226,6 +228,7 @@ public class Ladybug :Enermy
     void attacked()
     {
         animator.SetBool("Attacked", false);
+        sprite.color = new Color(1, 1, 1, 1);
     }
 
     IEnumerator Attacked_weapon(GameObject collision)
@@ -278,6 +281,7 @@ public class Ladybug :Enermy
         {
             TakeDamage(p.player_dmg, Hp);
             isDamage = true;
+            sprite.color = new Color(1, 0, 0, 1); //빨간색
             animator.SetBool("Attacked", true);
             Invoke("attacked", 0.15f);
             Invoke("damage", 0.15f);

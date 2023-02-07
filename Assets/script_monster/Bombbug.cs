@@ -13,11 +13,14 @@ public class Bombbug : Enermy
     public GameObject explosion;
     //public float r;
     Transform explosion_target;
-
+    player p;
+    SpriteRenderer sprite;
     // Start is called before the first frame update
     private void Awake()
     {
-        explosion_target= GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        sprite = GetComponent<SpriteRenderer>();
+        p = FindObjectOfType<player>();
+        explosion_target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         animator = GetComponent<Animator>();
         op = Random.Range(0, 3);
         home = transform.position;//물체의 위치
@@ -206,6 +209,7 @@ public class Bombbug : Enermy
     }
     void attacked()
     {
+        sprite.color = new Color(1, 1, 1, 1);
         animator.SetBool("Attacked",false);
     }
 
@@ -254,6 +258,15 @@ public class Bombbug : Enermy
             }
             transform.position = Vector2.MoveTowards(transform.position, home, Time.deltaTime * speed * 1.4f);
             StartCoroutine(Endpoint());
+        }
+        if (collision.gameObject.tag == "p_melee" && !isDie)
+        {
+            TakeDamage(p.player_dmg, Hp);
+            isDamage = true;
+            sprite.color = new Color(1, 1, 0, 1);
+            animator.SetBool("Attacked", true);
+            Invoke("attacked", 0.4f);
+            Invoke("damage", 0.4f);
         }
     }
     public Vector2 boxSize;

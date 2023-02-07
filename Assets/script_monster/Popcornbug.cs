@@ -125,7 +125,7 @@ public class Popcornbug : Enermy
             animator.SetFloat("Isleft", 1);
             isLeft = 1;
         }
-        Debug.Log(isLeft);
+       // Debug.Log(isLeft);
     }
 
     IEnumerator walk()
@@ -200,6 +200,7 @@ public class Popcornbug : Enermy
             Debug.Log("isnot move");
             animator.SetBool("Attacked", true);
             Debug.Log(isDamage);
+            sprite.color = new Color(1, 0, 0, 1);
             Invoke("attacked", 0.4f);
             Invoke("damage", 0.4f);
 
@@ -212,9 +213,11 @@ public class Popcornbug : Enermy
             Debug.Log("isnot move");
             animator.SetBool("Attacked", true);
             Debug.Log(isDamage);
+            sprite.color = new Color(1, 0, 0, 1);
             Invoke("attacked", 0.4f);
             Invoke("damage", 0.4f);
             Debug.Log(isDamage);
+
 
         }
 
@@ -258,8 +261,8 @@ public class Popcornbug : Enermy
         animator.SetBool("Attack", isAttack);
         GameObject bullet;
         box.SetActive(true);
-        Debug.Log(isLeft);
-        if (isLeft == -1)
+       // Debug.Log(isLeft);
+        if (isLeft == 1)
         {
             //direct.localScale = new Vector3(direct.localScale.x, direct.localScale.y, direct.localScale.z);
             if (boxpos.localPosition.x > 0)//부모와의 거리가 양수일때 음수가 정상 왼쪽
@@ -279,11 +282,11 @@ public class Popcornbug : Enermy
             }
 
         }
-        Debug.Log("yes");
+       // Debug.Log("yes");
         
         
         bullet= Instantiate(popcorn_bullet, boxpos.position, transform.rotation);
-
+       
         //bullet.transform.Translate(player_position);  //Vector2.MoveTowards(bullet.transform.position, player_position.position, Time.deltaTime * speed);
         //bullet.transform.position= Vector2.MoveTowards(bullet.transform.position, player_position.position, Time.deltaTime * speed);
         yield return new WaitForSeconds(2f);
@@ -291,8 +294,8 @@ public class Popcornbug : Enermy
         isAttack = false;
         animator.SetBool("Attack", isAttack);
        
-        yield return new WaitForSeconds(1f);
-        Destroy(bullet);
+       // yield return new WaitForSeconds(1f);
+       // Destroy(bullet);
     }
    
 

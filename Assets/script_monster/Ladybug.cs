@@ -15,7 +15,6 @@ public class Ladybug :Enermy
     public Transform ray;
     public int Hp = 20;
     Transform target;
-    float player_follow_limit;
     [Header("근접거리")]
     [SerializeField] [Range(0f, 3f)] float contactDistance = 1f;
     [Header("인식불가거리")]
@@ -25,18 +24,13 @@ public class Ladybug :Enermy
     SpriteRenderer sprite;
     private void Awake()
     {
-<<<<<<< Updated upstream
         p = FindObjectOfType<player>();
         rb=GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
-=======
-         //GameObject.FindGameObjectWithTag("Player").GetComponent<player>().hiar.transform;
-        rb =GetComponent<Rigidbody2D>();
->>>>>>> Stashed changes
         op = Random.Range(0, 3);
         animator = GetComponent<Animator>();
         home = transform.position;//물체의 위치
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<player>().hiar.transform;//GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         GameObject weapon = Instantiate(prefab_weapon);
         weapon_damage = weapon.GetComponent<granade>().granade_dmg;
         effect = weapon.GetComponent<granade>().granade_effect;
@@ -117,12 +111,12 @@ public class Ladybug :Enermy
     {
         if (isEnd == false&&isFollow==true&&isDamage==false)
         {
-            player_follow_limit = target.position.y;
-            // target.position=
             DirectionEnemy(target.position.x, transform.position.x);
             if (Vector2.Distance(transform.position, target.position) > contactDistance && isFollow == true)
             {
-                    transform.position = Vector2.MoveTowards(transform.position,new Vector2(target.position.x, player_follow_limit+ 0.5f), speed * Time.deltaTime);
+                
+                transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+               // Debug.Log("follow");
                 //if () ;//플레이어가왼쪽에 있는지 오른쪽에 있는지를 알아야 한다.
             }
             else if (Vector2.Distance(transform.position, target.position) < contactDistance && isFollow == true&&isDie==false)
@@ -139,10 +133,6 @@ public class Ladybug :Enermy
            // Debug.Log(isLeft);
            // box.SetActive(false);
         }
-    }
-    void up()
-    {
-        transform.position = new Vector2(transform.position.x, transform.position.y + 2f);
     }
 
 
@@ -302,7 +292,7 @@ public class Ladybug :Enermy
     public Transform boxpos;
     public GameObject explosion;
     public GameObject box;
-   // public GameObject melee;
+    public GameObject melee;
 
     public void Attack()
     {
@@ -319,7 +309,7 @@ public class Ladybug :Enermy
             {
                 Debug.Log("player damage");
                 damage_manager.Instance.damage_count(1);
-               // melee.SetActive(true);
+                melee.SetActive(true);
                 //colider.GetComponent<Rigidbody2D>().AddForce(new Vector2(20f * isLeft, 10f));
             }
         }
@@ -331,7 +321,7 @@ public class Ladybug :Enermy
         yield return new WaitForSeconds(0.4f);
         isAttack = false;
         box.SetActive(false);
-        //melee.SetActive(false);
+        melee.SetActive(false);
         animator.SetBool("Attack", false);
     }
     private IEnumerator Move()

@@ -80,6 +80,17 @@ public class Popcornbug : Enermy
                 collider_position = raycast.collider.transform.position;
                 iscollider = true;
                 walktime -= Time.deltaTime;
+                /*Debug.Log(isLeft);
+                Debug.Log("monster");
+                Debug.Log(transform.position.x);
+                Debug.Log("player");
+                Debug.Log(raycast.collider.transform.position.x);
+                if(transform.position.x>0)
+                DirectionEnemy(raycast.collider.transform.position.x, transform.position.x);//
+                else
+                    DirectionEnemy(transform.position.x, raycast.collider.transform.position.x);//
+                turn *= isLeft;
+                Debug.Log(isLeft);*/
             }
         }
         if(iscollider==true)
@@ -89,19 +100,12 @@ public class Popcornbug : Enermy
             animator.SetBool("Run",true);
             animator.SetFloat("Walkspeed", walkspeed);
             transform.position = Vector3.MoveTowards(transform.position, collider_position, Time.deltaTime * speed*-1*4f); ;
-            if(bullet_cooltime==0.8f)
+            if(bullet_cooltime==0.7f)
             StartCoroutine(Attack());
            // Attack();
-           /*else
-            {
-                box.SetActive(false);
-                isAttack = false;
-                animator.SetBool("Attack", isAttack);
-            }*/
            bullet_cooltime-=Time.deltaTime;
-            
             if (bullet_cooltime < 0)
-                bullet_cooltime = 0.8f;
+                bullet_cooltime = 0.7f;
         }
         
         if(walktime<=0&&iscollider==true)
@@ -250,48 +254,19 @@ public class Popcornbug : Enermy
     public GameObject box;
     public GameObject popcorn_bullet;
     float bullet_followtime = 0.2f;
-    float bullet_cooltime = 0.8f;
+    float bullet_cooltime = 0.7f;
     IEnumerator Attack()
     {
-        
-        isAttack = true;
-        animator.SetBool("Attack", isAttack);
         GameObject bullet;
         box.SetActive(true);
-        Debug.Log(isLeft);
-        if (isLeft == -1)
-        {
-            //direct.localScale = new Vector3(direct.localScale.x, direct.localScale.y, direct.localScale.z);
-            if (boxpos.localPosition.x > 0)//부모와의 거리가 양수일때 음수가 정상 왼쪽
-            {
-                boxpos.localPosition = new Vector2(boxpos.localPosition.x * -1, boxpos.localPosition.y);//음수로 만든다
-                //axepos.localPosition = new Vector2(axepos.localPosition.x * -1, axepos.localPosition.y);
-            }
-        }
-        else
-        {
-            // direct.localScale = new Vector3(direct.localScale.x*-1, direct.localScale.y, direct.localScale.z);
-
-            if (boxpos.localPosition.x < 0)//부모와의 거리가 음수일때 양수가 정상 오른쪽
-            {
-                boxpos.localPosition = new Vector2(Mathf.Abs(boxpos.localPosition.x), boxpos.localPosition.y);//절대값으로 양수로 만든다.
-                //axepos.localPosition = new Vector2(Mathf.Abs(axepos.localPosition.x), axepos.localPosition.y);
-            }
-
-        }
         Debug.Log("yes");
         
         
         bullet= Instantiate(popcorn_bullet, boxpos.position, transform.rotation);
         
         //bullet.transform.Translate(player_position);  //Vector2.MoveTowards(bullet.transform.position, player_position.position, Time.deltaTime * speed);
-        //bullet.transform.position= Vector2.MoveTowards(bullet.transform.position, player_position.position, Time.deltaTime * speed);
-        yield return new WaitForSeconds(2f);
-        box.SetActive(false);
-        isAttack = false;
-        animator.SetBool("Attack", isAttack);
-       
-        yield return new WaitForSeconds(1f);
+        bullet.transform.position= Vector2.MoveTowards(bullet.transform.position, player_position.position, Time.deltaTime * speed);
+        yield return new WaitForSeconds(3f);
         Destroy(bullet);
     }
    

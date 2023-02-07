@@ -150,10 +150,9 @@ public class Bombbug : Enermy
     IEnumerator Die()
     {
 
-        box.SetActive(false);
+        
         isDie = true;
         animator.SetTrigger("Explosion");
-        
         //isDamage = true;//적 못움직이게
         yield return new WaitForSeconds(3.5f);
         //폭발하도록하기
@@ -272,10 +271,8 @@ public class Bombbug : Enermy
     public Transform boxpos;
     public Transform direct;
     public GameObject box;
-    public float p_left;
     public void Attack()
     {
-        p_left = isLeft;
         box.SetActive(true);
         Debug.Log("yes");
         if (isLeft == -1)

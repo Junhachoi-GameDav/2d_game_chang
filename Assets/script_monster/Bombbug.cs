@@ -223,6 +223,7 @@ public class Bombbug : Enermy
             TakeDamage(weapon_damage,Hp);
             isDamage = true;
             Debug.Log("isnot move");
+            sprite.color = new Color(1, 1, 0, 1);
             animator.SetBool("Attacked", true);
             Debug.Log(isDamage);
             Invoke("attacked", 0.4f);
@@ -237,6 +238,7 @@ public class Bombbug : Enermy
             Debug.Log("isnot move");
             animator.SetBool("Attacked", true);
             Debug.Log(isDamage);
+            sprite.color = new Color(1, 1, 0, 1);
             Invoke("attacked", 0.4f);
             Invoke("damage", 0.4f);
             Debug.Log(isDamage);

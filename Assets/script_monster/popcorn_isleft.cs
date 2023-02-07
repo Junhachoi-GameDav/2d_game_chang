@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class isleft : MonoBehaviour
+public class popcorn_isleft : MonoBehaviour
 {
     // Start is called before the first frame update
 
@@ -11,15 +11,15 @@ public class isleft : MonoBehaviour
     public GameObject islefts;
     private void Awake()
     {
-        isLeft = islefts.GetComponent<Popcornbug>().isLeft;
+        
         animator = GetComponent<Animator>();
         
     }
     // Update is called once per frame
     void Update()
     {
-        
+        isLeft = islefts.GetComponent<Popcornbug>().isLeft;
         animator.SetFloat("Isleft",isLeft);
-        Debug.Log(isLeft);
+       // Debug.Log(isLeft);
     }
 }

@@ -263,7 +263,7 @@ public class Ladybug :Enermy
             Debug.Log(isDamage);
             Invoke("attacked", 0.15f);
             Invoke("damage", 0.15f);
-
+            sprite.color = new Color(1, 0, 0, 1);
         }
         else if (collision.tag == "effect" && iseffect == false && isDie == false)
         {
@@ -276,7 +276,7 @@ public class Ladybug :Enermy
             Invoke("attacked", 0.15f);
             Invoke("damage", 0.15f);
             Debug.Log(isDamage);
-
+            sprite.color = new Color(1, 0, 0, 1);
         }
 
         if (collision.CompareTag("Player"))

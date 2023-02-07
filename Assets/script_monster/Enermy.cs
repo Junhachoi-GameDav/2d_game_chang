@@ -21,6 +21,7 @@ public class Enermy : MonoBehaviour
     public GameObject prefab_weapon;
     protected bool iseffect = false;
 
+  
 
     public void damage()
     {

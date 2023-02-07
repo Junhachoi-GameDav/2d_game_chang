@@ -15,22 +15,20 @@ public class Ladybug :Enermy
     public Transform ray;
     public int Hp = 20;
     Transform target;
+    float player_follow_limit;
     [Header("근접거리")]
     [SerializeField] [Range(0f, 3f)] float contactDistance = 1f;
     [Header("인식불가거리")]
     [SerializeField] [Range(0f, 6f)] float dontcatch = 5f;
     Rigidbody2D rb;
-    player p;
-    SpriteRenderer sprite;
     private void Awake()
     {
-        p = FindObjectOfType<player>();
-        rb=GetComponent<Rigidbody2D>();
-        sprite = GetComponent<SpriteRenderer>();
+         //GameObject.FindGameObjectWithTag("Player").GetComponent<player>().hiar.transform;
+        rb =GetComponent<Rigidbody2D>();
         op = Random.Range(0, 3);
         animator = GetComponent<Animator>();
         home = transform.position;//물체의 위치
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<player>().hiar.transform;//GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         GameObject weapon = Instantiate(prefab_weapon);
         weapon_damage = weapon.GetComponent<granade>().granade_dmg;
         effect = weapon.GetComponent<granade>().granade_effect;
@@ -111,12 +109,12 @@ public class Ladybug :Enermy
     {
         if (isEnd == false&&isFollow==true&&isDamage==false)
         {
+            player_follow_limit = target.position.y;
+            // target.position=
             DirectionEnemy(target.position.x, transform.position.x);
             if (Vector2.Distance(transform.position, target.position) > contactDistance && isFollow == true)
             {
-                
-                transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-               // Debug.Log("follow");
+                    transform.position = Vector2.MoveTowards(transform.position,new Vector2(target.position.x, player_follow_limit+ 0.5f), speed * Time.deltaTime);
                 //if () ;//플레이어가왼쪽에 있는지 오른쪽에 있는지를 알아야 한다.
             }
             else if (Vector2.Distance(transform.position, target.position) < contactDistance && isFollow == true&&isDie==false)
@@ -133,6 +131,10 @@ public class Ladybug :Enermy
            // Debug.Log(isLeft);
            // box.SetActive(false);
         }
+    }
+    void up()
+    {
+        transform.position = new Vector2(transform.position.x, transform.position.y + 2f);
     }
 
 
@@ -159,8 +161,7 @@ public class Ladybug :Enermy
         Debug.Log(roll);
         //isDamage = true;//적 못움직이게
         yield return new WaitForSeconds(0.3f);
-        //rb.AddForce(new Vector3(0, 0, 0));
-        rb.gravityScale = 1.5f;
+        rb.AddForce(new Vector3(0, 0, 0));
         yield return new WaitForSeconds(4f);
         //폭발하도록하기
         
@@ -228,7 +229,6 @@ public class Ladybug :Enermy
     void attacked()
     {
         animator.SetBool("Attacked", false);
-        sprite.color = new Color(1, 1, 1, 1);
     }
 
     IEnumerator Attacked_weapon(GameObject collision)
@@ -277,22 +277,13 @@ public class Ladybug :Enermy
         {
             isFollow = true;
         }
-        if (collision.gameObject.tag == "p_melee" && !isDie)
-        {
-            TakeDamage(p.player_dmg, Hp);
-            isDamage = true;
-            sprite.color = new Color(1, 0, 0, 1); //빨간색
-            animator.SetBool("Attacked", true);
-            Invoke("attacked", 0.15f);
-            Invoke("damage", 0.15f);
-        }
     }
 
     public Vector2 boxSize;
     public Transform boxpos;
     public GameObject explosion;
     public GameObject box;
-    public GameObject melee;
+   // public GameObject melee;
 
     public void Attack()
     {
@@ -309,7 +300,7 @@ public class Ladybug :Enermy
             {
                 Debug.Log("player damage");
                 damage_manager.Instance.damage_count(1);
-                melee.SetActive(true);
+               // melee.SetActive(true);
                 //colider.GetComponent<Rigidbody2D>().AddForce(new Vector2(20f * isLeft, 10f));
             }
         }
@@ -321,7 +312,7 @@ public class Ladybug :Enermy
         yield return new WaitForSeconds(0.4f);
         isAttack = false;
         box.SetActive(false);
-        melee.SetActive(false);
+        //melee.SetActive(false);
         animator.SetBool("Attack", false);
     }
     private IEnumerator Move()

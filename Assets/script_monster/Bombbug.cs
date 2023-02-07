@@ -10,15 +10,13 @@ public class Bombbug : Enermy
     public int Hp = 50;
     int weapon_damage;
     GameObject effect;
-    //public GameObject explosion;
+    public GameObject explosion;
     //public float r;
     Transform explosion_target;
-    SpriteRenderer sprite;
-    player p;
+
+    // Start is called before the first frame update
     private void Awake()
     {
-        p = FindObjectOfType<player>();
-        sprite = GetComponent<SpriteRenderer>();
         explosion_target= GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         animator = GetComponent<Animator>();
         op = Random.Range(0, 3);
@@ -150,9 +148,10 @@ public class Bombbug : Enermy
     IEnumerator Die()
     {
 
-        
+        box.SetActive(false);
         isDie = true;
         animator.SetTrigger("Explosion");
+        
         //isDamage = true;//적 못움직이게
         yield return new WaitForSeconds(3.5f);
         //폭발하도록하기
@@ -161,7 +160,7 @@ public class Bombbug : Enermy
         animator.SetTrigger("Die");
         //폭발알리기용
         yield return new WaitForSeconds(0.2f);
-        //explosion.SetActive(false);
+        explosion.SetActive(false);
         yield return new WaitForSeconds(4f);
         Destroy(gameObject);
     }
@@ -169,7 +168,7 @@ public class Bombbug : Enermy
 
     public void Explosion()
     {
-        //explosion.SetActive(true);
+        explosion.SetActive(true);
         //if(Collision2D )
         Collider2D[] collider2Ds = Physics2D.OverlapCircleAll(boxpos.position, 5f);
         //박스의 위치와 박스의 크기에 그리고 회전값을 넣는다
@@ -208,7 +207,6 @@ public class Bombbug : Enermy
     void attacked()
     {
         animator.SetBool("Attacked",false);
-        sprite.color = new Color(1, 1, 1, 1);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -257,22 +255,15 @@ public class Bombbug : Enermy
             transform.position = Vector2.MoveTowards(transform.position, home, Time.deltaTime * speed * 1.4f);
             StartCoroutine(Endpoint());
         }
-        if (collision.gameObject.tag == "p_melee" && !isDie)
-        {
-            TakeDamage(p.player_dmg, Hp);
-            isDamage = true;
-            sprite.color = new Color(1, 1, 0, 1); //노란색
-            animator.SetBool("Attacked", true);
-            Invoke("attacked", 0.4f);
-            Invoke("damage", 0.4f);
-        }
     }
     public Vector2 boxSize;
     public Transform boxpos;
     public Transform direct;
     public GameObject box;
+    public float p_left;
     public void Attack()
     {
+        p_left = isLeft;
         box.SetActive(true);
         Debug.Log("yes");
         if (isLeft == -1)

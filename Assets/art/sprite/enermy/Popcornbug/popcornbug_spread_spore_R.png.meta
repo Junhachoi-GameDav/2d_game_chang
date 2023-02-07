@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 277080b5ead3b7649bbd9090d030470f
+guid: 96f58bb5b48f368428b9888cf12e1fea
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -107,7 +107,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ladybug_attack_R_4
+      name: popcornbug_spread_spore_R_5
       rect:
         serializedVersion: 2
         x: 0
@@ -115,62 +115,62 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebe1eeeed61dfd94d9b7e69bfa754324
-      internalID: -204173179
+      spriteID: 2791a94b7dd409f4995d141a2c232fc6
+      internalID: -272661726
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ladybug_attack_R_3
+      name: popcornbug_spread_spore_R_4
       rect:
         serializedVersion: 2
-        x: 78
+        x: 80
         y: 0
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0c5577d11dfc4c47b11a0fa34eb1cfd
-      internalID: 2096234693
+      spriteID: 0025c804fb340ce40af5f52f27bb1cd1
+      internalID: -340482427
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ladybug_attack_R_2
+      name: popcornbug_spread_spore_R_3
       rect:
         serializedVersion: 2
-        x: 159
+        x: 160
         y: 0
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 030b5b44bd8404d489384e139c028308
-      internalID: -1898444030
+      spriteID: f272a0ff78313df49a2f7e32cdc5609f
+      internalID: 59176645
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ladybug_attack_R_1
+      name: popcornbug_spread_spore_R_2
       rect:
         serializedVersion: 2
         x: 240
@@ -178,20 +178,20 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5dc86bb180051546b3bd1f997ee7637
-      internalID: 597474953
+      spriteID: f5caa968392d764419e88bc5bd1a7919
+      internalID: 991762502
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ladybug_attack_R_0
+      name: popcornbug_spread_spore_R_1
       rect:
         serializedVersion: 2
         x: 320
@@ -199,14 +199,35 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ffe8ca128542d04eb177593986c6bee
-      internalID: 963569222
+      spriteID: 5b0f2b751b2bd33419757bb6f8e70bec
+      internalID: -931758254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: popcornbug_spread_spore_R_0
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2184428a888621e4faf844c67bbd4bd2
+      internalID: 2069848934
       vertices: []
       indices: 
       edges: []
@@ -222,11 +243,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ladybug_attack_R_1: 597474953
-      ladybug_attack_R_3: 2096234693
-      ladybug_attack_R_4: -204173179
-      ladybug_attack_R_2: -1898444030
-      ladybug_attack_R_0: 963569222
+      popcornbug_spread_spore_R_0: 2069848934
+      popcornbug_spread_spore_R_3: 59176645
+      popcornbug_spread_spore_R_2: 991762502
+      popcornbug_spread_spore_R_5: -272661726
+      popcornbug_spread_spore_R_1: -931758254
+      popcornbug_spread_spore_R_4: -340482427
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

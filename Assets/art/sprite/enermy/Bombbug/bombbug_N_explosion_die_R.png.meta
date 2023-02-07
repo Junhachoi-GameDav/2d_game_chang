@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 277080b5ead3b7649bbd9090d030470f
+guid: ebc77b9ee374c7d4eab2edf7f7bac21c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -107,7 +107,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ladybug_attack_R_4
+      name: bombbug_N_explosion_die_R_7
       rect:
         serializedVersion: 2
         x: 0
@@ -115,62 +115,62 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebe1eeeed61dfd94d9b7e69bfa754324
-      internalID: -204173179
+      spriteID: e1101c52dd2c88d46baa4bc48f37e7f5
+      internalID: 2133642733
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ladybug_attack_R_3
+      name: bombbug_N_explosion_die_R_6
       rect:
         serializedVersion: 2
-        x: 78
+        x: 80
         y: 0
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0c5577d11dfc4c47b11a0fa34eb1cfd
-      internalID: 2096234693
+      spriteID: 8d7cd7674a26dfa46af012145dcb2f75
+      internalID: 1185105239
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ladybug_attack_R_2
+      name: bombbug_N_explosion_die_R_5
       rect:
         serializedVersion: 2
-        x: 159
+        x: 160
         y: 0
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 030b5b44bd8404d489384e139c028308
-      internalID: -1898444030
+      spriteID: a5cd03abe7f3bcf4ca8309873466dac4
+      internalID: 743891795
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ladybug_attack_R_1
+      name: bombbug_N_explosion_die_R_4
       rect:
         serializedVersion: 2
         x: 240
@@ -178,20 +178,20 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5dc86bb180051546b3bd1f997ee7637
-      internalID: 597474953
+      spriteID: aeb6195b52a42194c9b349080288d75f
+      internalID: -325397765
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ladybug_attack_R_0
+      name: bombbug_N_explosion_die_R_3
       rect:
         serializedVersion: 2
         x: 320
@@ -199,14 +199,77 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ffe8ca128542d04eb177593986c6bee
-      internalID: 963569222
+      spriteID: 1d97a72f1e9909243a338a8b41c8f7fd
+      internalID: 559866167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombbug_N_explosion_die_R_2
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b52b1fe5bd740f04a852016e50edd31f
+      internalID: 854739811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombbug_N_explosion_die_R_1
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b2be59d530bbd44aaf1b05ca7951a6b
+      internalID: -2025905272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombbug_N_explosion_die_R_0
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7edbadc0298dfe44ab3d5f55548305f
+      internalID: 11282551
       vertices: []
       indices: 
       edges: []
@@ -222,11 +285,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ladybug_attack_R_1: 597474953
-      ladybug_attack_R_3: 2096234693
-      ladybug_attack_R_4: -204173179
-      ladybug_attack_R_2: -1898444030
-      ladybug_attack_R_0: 963569222
+      bombbug_N_explosion_die_R_7: 2133642733
+      bombbug_N_explosion_die_R_1: -2025905272
+      bombbug_N_explosion_die_R_0: 11282551
+      bombbug_N_explosion_die_R_6: 1185105239
+      bombbug_N_explosion_die_R_5: 743891795
+      bombbug_N_explosion_die_R_3: 559866167
+      bombbug_N_explosion_die_R_2: 854739811
+      bombbug_N_explosion_die_R_4: -325397765
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

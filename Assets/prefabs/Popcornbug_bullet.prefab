@@ -196,6 +196,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1d2802cc5548742aca5736d63ce5cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boxSize: {x: 0.23, y: 0.24}
+  boxpos: {fileID: 4470388629056879822}
+  box: {fileID: 4470388629056879823}
 --- !u!95 &2407557107880111934
 Animator:
   serializedVersion: 4

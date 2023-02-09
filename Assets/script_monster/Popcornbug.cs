@@ -82,7 +82,7 @@ public class Popcornbug : Enermy
                 walktime -= Time.deltaTime;
             }
         }
-        if(iscollider==true)
+        if(iscollider==true&&isDie==false)
         {
             walktime -= Time.deltaTime;
             DirectionEnemy(transform.position.x, collider_position.x);
@@ -104,7 +104,7 @@ public class Popcornbug : Enermy
                 bullet_cooltime = 0.8f;
         }
         
-        if(walktime<=0&&iscollider==true)
+        if(walktime<=0&&iscollider==true && isDie == false)
         {
             isLeft *= -1;
             iscollider=false;
@@ -174,20 +174,7 @@ public class Popcornbug : Enermy
         animator.SetBool("Attacked", false);
     }
 
-   /* void Attack()
-    {
-       
-        
-            box.SetActive(true);
-            Debug.Log("yes");
-            GameObject bullet = Instantiate(popcorn_bullet, boxpos.position, transform.rotation);
-
-            bullet.transform.position = Vector2.MoveTowards(bullet.transform.position, player_position.position, Time.deltaTime * speed);
-
-            yield return new WaitForSeconds(3f);
-            Destroy(bullet);
-        
-    }*/
+  
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "weapon" && isDie == false)

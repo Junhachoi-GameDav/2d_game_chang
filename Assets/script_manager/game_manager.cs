@@ -52,4 +52,8 @@ public class game_manager : MonoBehaviour
         Application.Quit();
     }
 
+    public void scene_load(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
 }

@@ -8,13 +8,12 @@ public class talk_manager : MonoBehaviour
 {
     public GameObject t_panel;
 
-    public Image g1;
-    public Image g2;
-    public Image talk_bar;
+    //public Image[] chaereters;
+    //public Image talk_bar;
 
-    public Text dialog_talk;
+    //public Text dialog_talk;
 
-    public int id;
+    //public int id;
     public bool is_talking;
 
 
@@ -23,6 +22,7 @@ public class talk_manager : MonoBehaviour
     {
         t_panel.SetActive(false);
         dialogue_con = GetComponent<dialogue_controller>();
+        Invoke("is_t_start_botton", 2.2f);
     }
     void Update()
     {
@@ -43,6 +43,9 @@ public class talk_manager : MonoBehaviour
                 else
                 {
                     is_talking = false;
+                    fade_manager fade = FindObjectOfType<fade_manager>();
+                    fade.fade_out();
+                    Invoke("scene_load_deley", 2.5f);
                 }
 
             }
@@ -56,5 +59,9 @@ public class talk_manager : MonoBehaviour
     public void is_t_start_botton()
     {
         is_talking = true;
+    }
+    void scene_load_deley()
+    {
+        game_manager.Instance.scene_load("loading_scene");
     }
 }

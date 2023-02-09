@@ -39,6 +39,10 @@ public class dialogue_controller : MonoBehaviour
         if (count != 0)
         {
             dialogues[count - 1].cgs.color = new Color(0.3f, 0.3f, 0.3f, 1); //어두어짐
+            if(character_img.name == character_img.name) //같은 사진이라면
+            {
+                character_img.color = new Color(1, 1, 1, 1); //밝아짐
+            }
         }
 
         count++;//다음

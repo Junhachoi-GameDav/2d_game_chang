@@ -77,6 +77,7 @@ public class player : MonoBehaviour
         player_use_granade();
         player_dash();
         player_attack();
+        die();
     }
 
     // 이동은 효율을 위해 여기에 넣는다.
@@ -373,10 +374,10 @@ public class player : MonoBehaviour
         if(collision.tag == "monster_melee")
         {
             is_hitted = true;
+            player_hp -= damage_manager.Instance.en_dmg;
             anime.SetTrigger("is_hitted");
             gameObject.layer = 14; // 무적
             sprite.color = new Color(1, 1, 1, 0.5f); //투명해짐
-            player_hp -= damage_manager.Instance.en_dmg;
             hitted_anime_stop();
             Invoke("hitted_deley", 0.3f);
             Invoke("hitted_back", 2f);
@@ -398,5 +399,13 @@ public class player : MonoBehaviour
         is_wall_jump_ready = false;
         is_dash = false;
         p_melee.SetActive(false);
+    }
+    void die()
+    {
+        if (player_hp <= 0)
+        {
+            is_hitted = true;
+            gameObject.layer = 14; // 무적
+        }
     }
 }

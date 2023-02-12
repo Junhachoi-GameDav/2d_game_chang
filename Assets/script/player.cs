@@ -59,6 +59,7 @@ public class player : MonoBehaviour
     grapping grap;
     Animator anime;
     SpriteRenderer sprite;
+    player_hp p_hp;
     void Start()
     {
         anime = GetComponent<Animator>();
@@ -66,6 +67,7 @@ public class player : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         apply_speed = run_speed; // 기존 스피드는 run속도
         grap = GetComponent<grapping>();
+        p_hp = FindObjectOfType<player_hp>();
         is_trun = true;
     }
 
@@ -375,6 +377,8 @@ public class player : MonoBehaviour
         {
             is_hitted = true;
             player_hp -= damage_manager.Instance.en_dmg;
+            p_hp.count -= damage_manager.Instance.en_dmg;
+            p_hp.count++; // 한번만 실행 하기위해 넣어줬다.
             anime.SetTrigger("is_hitted");
             gameObject.layer = 14; // 무적
             sprite.color = new Color(1, 1, 1, 0.5f); //투명해짐

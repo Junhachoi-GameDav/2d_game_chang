@@ -9,7 +9,7 @@ public class player_hp : MonoBehaviour
     public Transform[] ef_pos;
     public GameObject hp_ef;
 
-    int count =9;
+    public int count;
 
 
     Image cur_img; //현재 체력 이미지
@@ -18,6 +18,7 @@ public class player_hp : MonoBehaviour
     {
         cur_img = GetComponent<Image>();
         p = FindObjectOfType<player>();
+        count = p.player_hp-1;
     }
     private void Update()
     {
@@ -36,70 +37,71 @@ public class player_hp : MonoBehaviour
                 if(count == 9)
                 {
                     Instantiate(hp_ef, ef_pos[0].position, ef_pos[0].rotation);
-                    count--;
+                    count=8;
+                    return;
                 }
                 break;
             case 8:
                 if (count == 8)
                 {
                     Instantiate(hp_ef, ef_pos[0].position, ef_pos[0].rotation);
-                    count--;
+                    count=7;
                 }
                 break;
             case 7:
                 if (count == 7)
                 {
                     Instantiate(hp_ef, ef_pos[1].position, ef_pos[1].rotation);
-                    count--;
+                    count=6;
                 }
                 break;
             case 6:
                 if (count == 6)
                 {
                     Instantiate(hp_ef, ef_pos[1].position, ef_pos[1].rotation);
-                    count--;
+                    count=5;
                 }
                 break;
             case 5:
                 if (count == 5)
                 {
                     Instantiate(hp_ef, ef_pos[2].position, ef_pos[2].rotation);
-                    count--;
+                    count=4;
                 }
                 break;
             case 4:
                 if (count == 4)
                 {
                     Instantiate(hp_ef, ef_pos[2].position, ef_pos[2].rotation);
-                    count--;
+                    count=3;
                 }
                 break;
             case 3:
                 if (count == 3)
                 {
                     Instantiate(hp_ef, ef_pos[3].position, ef_pos[3].rotation);
-                    count--;
+                    count=2;
                 }
                 break;
             case 2:
                 if (count == 2)
                 {
                     Instantiate(hp_ef, ef_pos[3].position, ef_pos[3].rotation);
-                    count--;
+                    count=1;
                 }
                 break;
             case 1:
                 if (count == 1)
                 {
                     Instantiate(hp_ef, ef_pos[4].position, ef_pos[4].rotation);
-                    count--;
+                    count=0;
                 }
                 break;
             case 0:
                 if (count == 0)
                 {
                     Instantiate(hp_ef, ef_pos[4].position, ef_pos[4].rotation);
-                    count--;
+                    count=-1;
                 }
                 break;
         }

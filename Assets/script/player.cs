@@ -60,6 +60,7 @@ public class player : MonoBehaviour
     Animator anime;
     SpriteRenderer sprite;
     player_hp p_hp;
+    menu_manager m_manager;
     void Start()
     {
         anime = GetComponent<Animator>();
@@ -68,12 +69,17 @@ public class player : MonoBehaviour
         apply_speed = run_speed; // 기존 스피드는 run속도
         grap = GetComponent<grapping>();
         p_hp = FindObjectOfType<player_hp>();
+        m_manager = FindObjectOfType<menu_manager>();
         is_trun = true;
     }
 
     void Update()
     {
         check_wall_and_bottom();
+        if (m_manager.is_menu_show)
+        {
+            return;
+        }
         player_jump();
         player_wall_jump();
         player_use_granade();

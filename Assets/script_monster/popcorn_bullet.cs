@@ -51,7 +51,7 @@ public class popcorn_bullet : MonoBehaviour
             if (colider.tag == "Player")//콜라이더의 테그를 비교해서 플레이어면은 넣어놓는다
             {
                 Debug.Log("player damage");
-                damage_manager.Instance.damage_count(1/10);
+                damage_manager.Instance.damage_count(1);
                 StartCoroutine(attack());
             }
         }

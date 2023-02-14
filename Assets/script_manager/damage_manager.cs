@@ -23,7 +23,7 @@ public class damage_manager
     {
         
     }
-    public int en_dmg; //적 공격력을 담을 정수(ui 때문에 정수로 한다.)
+    public int en_dmg = 1; //적 공격력을 담을 정수(ui 때문에 정수로 한다.)
     public void damage_count(int enemy_damage)
     {
         en_dmg = enemy_damage;

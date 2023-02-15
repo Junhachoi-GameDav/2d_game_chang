@@ -32,10 +32,13 @@ public class menu_manager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            is_menu_show = !is_menu_show;
+            is_menu_show_onoff();
         }
     }
-
+    public void is_menu_show_onoff()
+    {
+        is_menu_show = !is_menu_show;
+    }
     public void ingame_quit()
     {
         SceneManager.LoadScene(0);

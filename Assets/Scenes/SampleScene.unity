@@ -49532,7 +49532,7 @@ MonoBehaviour:
   - {fileID: 72040582}
   - {fileID: 875511754}
   hp_ef: {fileID: 9082833674367949077, guid: fdff371de7cfc0644aafb4bd68cb5561, type: 3}
-  count: 10
+  count: 9
 --- !u!1 &1117588073
 GameObject:
   m_ObjectHideFlags: 0

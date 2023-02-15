@@ -9,7 +9,7 @@ public class player_hp : MonoBehaviour
     public Transform[] ef_pos;
     public GameObject hp_ef;
 
-    public int count;
+    public int count; //9
 
 
     Image cur_img; //현재 체력 이미지
@@ -18,7 +18,6 @@ public class player_hp : MonoBehaviour
     {
         cur_img = GetComponent<Image>();
         p = FindObjectOfType<player>();
-        count = p.player_hp-1;
     }
     private void Update()
     {

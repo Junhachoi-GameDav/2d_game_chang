@@ -40,6 +40,7 @@ public class menu_manager : MonoBehaviour
     }
     public void ingame_quit()
     {
+        Time.timeScale = 1f;
         game_manager.Instance.scene_load("main_menu");
     }
 

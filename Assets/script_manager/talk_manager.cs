@@ -18,10 +18,13 @@ public class talk_manager : MonoBehaviour
 
 
     dialogue_controller dialogue_con;
+    fade_manager fade;
     void Awake()
     {
         t_panel.SetActive(false);
         dialogue_con = GetComponent<dialogue_controller>();
+        fade = FindObjectOfType<fade_manager>();
+        fade.fade_in();
         Invoke("is_t_start_botton", 2.2f);
     }
     void Update()
@@ -43,7 +46,6 @@ public class talk_manager : MonoBehaviour
                 else
                 {
                     is_talking = false;
-                    fade_manager fade = FindObjectOfType<fade_manager>();
                     fade.fade_out();
                     Invoke("scene_load_deley", 2.5f);
                 }
@@ -53,6 +55,7 @@ public class talk_manager : MonoBehaviour
         else
         {
             t_panel.SetActive(false);
+            dialogue_con.count = 0;
         }
     }
 

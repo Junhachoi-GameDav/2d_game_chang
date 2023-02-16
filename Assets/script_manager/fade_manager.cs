@@ -9,10 +9,6 @@ public class fade_manager : MonoBehaviour
     public Image fade_img;
 
     //public bool bool_fade;
-    private void Awake()
-    {
-        fade_in();
-    }
     /*
     private void Update()
     {
@@ -33,7 +29,7 @@ public class fade_manager : MonoBehaviour
         }
         fade_img.color = color;
     }
-    */
+    *///안쓰는거
 
     public void fade_in()
     {

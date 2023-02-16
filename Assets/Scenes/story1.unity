@@ -270,6 +270,44 @@ RectTransform:
   m_AnchoredPosition: {x: 50, y: -30}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 1}
+--- !u!1 &732554492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 732554493}
+  m_Layer: 5
+  m_Name: player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &732554493
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732554492}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 768588718}
+  - {fileID: 1108895401}
+  m_Father: {fileID: 1618461041}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &768588717
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,12 +320,12 @@ GameObject:
   - component: {fileID: 768588720}
   - component: {fileID: 768588719}
   m_Layer: 5
-  m_Name: player
+  m_Name: player_talk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &768588718
 RectTransform:
   m_ObjectHideFlags: 0
@@ -300,7 +338,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1618461041}
+  m_Father: {fileID: 732554493}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -345,6 +383,82 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 768588717}
+  m_CullTransparentMesh: 1
+--- !u!1 &1108895400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1108895401}
+  - component: {fileID: 1108895403}
+  - component: {fileID: 1108895402}
+  m_Layer: 5
+  m_Name: player_no talk
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1108895401
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108895400}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 732554493}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 204, y: -92}
+  m_SizeDelta: {x: 293.4228, y: 537.017}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1108895402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108895400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.3, g: 0.3, b: 0.3, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 1f2bea4f38fa1434aa833a8f955cc26a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1108895403
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108895400}
   m_CullTransparentMesh: 1
 --- !u!1 &1454471256
 GameObject:
@@ -471,7 +585,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 768588718}
+  - {fileID: 732554493}
   - {fileID: 2037311336}
   m_Father: {fileID: 2050953264}
   m_RootOrder: -1
@@ -498,7 +612,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1777177489
 RectTransform:
   m_ObjectHideFlags: 0
@@ -650,7 +764,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1985426621}
-  - component: {fileID: 1985426620}
   - component: {fileID: 1985426619}
   m_Layer: 0
   m_Name: talk_manager
@@ -673,27 +786,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character_img: {fileID: 768588719}
   dialog_talk: {fileID: 158826668}
-  dialog_speed: 0.1
+  t_panel: {fileID: 1618461040}
+  dialog_speed: 0.05
   count: 0
+  is_talk: 1
+  is_typing: 0
   dialogues:
   - dialogue: "(\uB300\uCDA9 \uAE5C\uC9DD\uB180\uB790\uB2E4\uB294 \uAE00)"
-    cgs: {fileID: 768588719}
+    cgs: {fileID: 1108895402}
   - dialogue: "(\uB300\uCDA9 \uC2A4\uD1A0\uB9AC \uC124\uBA85 \uD558\uB294 \uC911)"
     cgs: {fileID: 768588719}
---- !u!114 &1985426620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1985426618}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5de8023db3a9da24eadbe4478ab18af3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  t_panel: {fileID: 1618461040}
-  is_talking: 0
+  - dialogue: asdasdasdasd
+    cgs: {fileID: 1108895402}
+  - dialogue: "\u3141\u3134\u3147\u3141\u3134\u3147\u3141\u3134\u3147"
+    cgs: {fileID: 1108895402}
+  - dialogue: asdasdasdasd
+    cgs: {fileID: 1108895402}
+  - dialogue: "\u3141\u3134\u3147\u3141\u3134\u3147\u3141\u3134\u3147\u3141"
+    cgs: {fileID: 1108895402}
 --- !u!4 &1985426621
 Transform:
   m_ObjectHideFlags: 0

@@ -38,6 +38,7 @@ public class game_manager : MonoBehaviour
 
     public void scene_load(string name)
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(name);
     }
 }

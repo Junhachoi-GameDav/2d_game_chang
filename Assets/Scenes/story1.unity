@@ -766,7 +766,7 @@ GameObject:
   - component: {fileID: 1985426621}
   - component: {fileID: 1985426619}
   m_Layer: 0
-  m_Name: talk_manager
+  m_Name: dialogue_controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -792,17 +792,15 @@ MonoBehaviour:
   is_talk: 1
   is_typing: 0
   dialogues:
-  - dialogue: "(\uB300\uCDA9 \uAE5C\uC9DD\uB180\uB790\uB2E4\uB294 \uAE00)"
+  - dialogue: "(\uB300\uCDA9 \uAE5C\uC9DD\uB180\uB790\uB2E4\uB294 \uAE00)................................................................"
     cgs: {fileID: 1108895402}
-  - dialogue: "(\uB300\uCDA9 \uC2A4\uD1A0\uB9AC \uC124\uBA85 \uD558\uB294 \uC911)"
+  - dialogue: "(\uB300\uCDA9 \uC2A4\uD1A0\uB9AC \uC124\uBA85 \uD558\uB294 \uC911)......................................................"
     cgs: {fileID: 768588719}
   - dialogue: asdasdasdasd
     cgs: {fileID: 1108895402}
   - dialogue: "\u3141\u3134\u3147\u3141\u3134\u3147\u3141\u3134\u3147"
     cgs: {fileID: 1108895402}
   - dialogue: asdasdasdasd
-    cgs: {fileID: 1108895402}
-  - dialogue: "\u3141\u3134\u3147\u3141\u3134\u3147\u3141\u3134\u3147\u3141"
     cgs: {fileID: 1108895402}
 --- !u!4 &1985426621
 Transform:

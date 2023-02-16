@@ -40,6 +40,7 @@ public class dialogue_controller : MonoBehaviour
             {
                 if (count < dialogues.Length) //´??­°¡ ³¡³ª±???
                 {
+                    text_finish = false;
                     next_dialogue();
                 }
                 else
@@ -48,6 +49,12 @@ public class dialogue_controller : MonoBehaviour
                     //fade.fade_out();
                     Invoke("scene_load_deley", 0.1f);
                 }
+            }
+            else if(is_typing && Input.GetMouseButtonDown(0))
+            {
+                text_finish = true;
+                dialog_talk.text = dialogues[count-1].dialogue;
+                is_typing = false;
             }
         }
         else
@@ -106,6 +113,10 @@ public class dialogue_controller : MonoBehaviour
     {
         foreach (char letter in text.ToCharArray())//문자열을 한 글자씩 쪼개서 이를 char타입의 배열에 집어넣어줌
         {
+            if (text_finish)
+            {
+                break;
+            }
             is_typing = true;
             
             dialog_talk.text += letter;

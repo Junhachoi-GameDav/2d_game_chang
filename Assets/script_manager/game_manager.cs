@@ -14,7 +14,7 @@ public class game_manager : MonoBehaviour
         if (null == instance)
         {
             instance = this;
-
+            
             DontDestroyOnLoad(this.gameObject);
         }
         else
@@ -35,22 +35,6 @@ public class game_manager : MonoBehaviour
     }
     #endregion
 
-    public void new_game()
-    {
-        SceneManager.LoadScene(1);
-    }
-    public void load_game()
-    {
-
-    }
-    public void option()
-    {
-
-    }
-    public void quit_game()
-    {
-        Application.Quit();
-    }
 
     public void scene_load(string name)
     {

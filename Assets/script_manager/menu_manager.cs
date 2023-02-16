@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 
 public class menu_manager : MonoBehaviour
@@ -41,7 +40,7 @@ public class menu_manager : MonoBehaviour
     }
     public void ingame_quit()
     {
-        SceneManager.LoadScene(0);
+        game_manager.Instance.scene_load("main_menu");
     }
 
     public void info()

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3a8a70b5cd7f88947aa3c6b29658c1fb
+guid: cbfc543ce63415c41a488cff26f4770a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -107,7 +107,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ef48afe30a570864_0
+      name: jump_atk-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,62 +115,62 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.50493824, y: 0.40123463}
+      pivot: {x: 0.46875, y: 0.59375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6f5a6c4efff1bc489a96f9067602e92
-      internalID: 469292396
+      spriteID: c9e75008b410c834082c8d2997437f3e
+      internalID: 1664470214
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ef48afe30a570864_1
+      name: jump_atk-Sheet_1
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.46875, y: 0.59375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3392784808657a343b5076e305a67419
-      internalID: 1627374312
+      spriteID: 8165f0d8c4dec3844a3c17d0da6b8072
+      internalID: 2100614125
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ef48afe30a570864_2
+      name: jump_atk-Sheet_2
       rect:
         serializedVersion: 2
         x: 128
         y: 0
         width: 64
         height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.46875, y: 0.59375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6172d90e0d9705a478dc7872f0f18250
-      internalID: -1186208590
+      spriteID: b947371899a82504bba6582a6fd52c2f
+      internalID: 1443713607
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ef48afe30a570864_3
+      name: jump_atk-Sheet_3
       rect:
         serializedVersion: 2
         x: 192
@@ -178,56 +178,14 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 9
-      pivot: {x: 0.49999976, y: 0.7123457}
+      pivot: {x: 0.46875, y: 0.59375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0429f6ac48b525c40a882b7c02ffe1b8
-      internalID: -1735951260
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ef48afe30a570864_4
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 37a7449475d2f4f49b2a8f1eef5f83ee
-      internalID: -1543685093
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ef48afe30a570864_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.49999952, y: 0.45061734}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ff6609df1cd75ed4b86a97157db3abd0
-      internalID: -940923430
+      spriteID: a2fe24cacb948784da6d04ad1cc2334c
+      internalID: -1382613522
       vertices: []
       indices: 
       edges: []
@@ -243,12 +201,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ef48afe30a570864_4: -1543685093
-      ef48afe30a570864_1: 1627374312
-      ef48afe30a570864_2: -1186208590
-      ef48afe30a570864_0: 469292396
-      ef48afe30a570864_3: -1735951260
-      ef48afe30a570864_5: -940923430
+      jump_atk-Sheet_3: -1382613522
+      jump_atk-Sheet_1: 2100614125
+      jump_atk-Sheet_2: 1443713607
+      jump_atk-Sheet_0: 1664470214
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

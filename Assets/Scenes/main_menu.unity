@@ -3089,13 +3089,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556912996}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4cb1ca35d615dfe459a9b70c70c39c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   resolutions_dropdown: {fileID: 585097138}
   full_screen_b: {fileID: 1537135297}
+  resoultion_num: 0
 --- !u!1 &1655124742
 GameObject:
   m_ObjectHideFlags: 0

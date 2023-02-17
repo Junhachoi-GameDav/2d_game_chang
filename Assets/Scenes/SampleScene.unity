@@ -28528,7 +28528,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &493110355
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37058,6 +37058,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resolutions_dropdown: {fileID: 1887310966}
   full_screen_b: {fileID: 521706688}
+  resoultion_num: 0
 --- !u!1 &615070515
 GameObject:
   m_ObjectHideFlags: 0

@@ -61,8 +61,10 @@ public class screen_option : MonoBehaviour
 
     public void screen_ok_btn()
     {
+        //screenMode = is_full ? FullScreenMode.FullScreenWindow : FullScreenMode.Windowed;
         // 가로, 높히, 전체화면, 헤르츠
         Screen.SetResolution(resolutions[resoultion_num].width, resolutions[resoultion_num].height, screenMode);
+
     }
 
 }

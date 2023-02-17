@@ -975,7 +975,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1556913001}
         m_TargetAssemblyTypeName: screen_option, Assembly-CSharp
         m_MethodName: full_screen_btn
-        m_Mode: 6
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

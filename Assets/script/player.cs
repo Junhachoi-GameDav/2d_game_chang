@@ -376,7 +376,29 @@ public class player : MonoBehaviour
     {
         p_melee.SetActive(false);
     }
-    #endregion  
+    #endregion
+    #region 공격 콜라이더 크기
+    public void atk1_collider_transform()
+    {
+        p_melee.transform.localPosition = new Vector3(1.32f, -0.12f, 0);
+        p_melee.transform.localScale = new Vector3(1.51f, 0.99f, 0);
+    }
+    public void atk2_collider_transform()
+    {
+        p_melee.transform.localPosition = new Vector3(1.32f, -0.12f, 0);
+        p_melee.transform.localScale = new Vector3(1.8f, 1.26f, 0);
+    }
+    public void atk3_collider_transform()
+    {
+        p_melee.transform.localPosition = new Vector3(1.12f, 0, 0);
+        p_melee.transform.localScale = new Vector3(2.29f, 1.65f, 0);
+    }
+    public void jump_atk_collider_transform()
+    {
+        p_melee.transform.localPosition = new Vector3(1.12f, 0, 0);
+        p_melee.transform.localScale = new Vector3(2.02f, 1.6f, 0);
+    }
+    #endregion
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "monster_melee")

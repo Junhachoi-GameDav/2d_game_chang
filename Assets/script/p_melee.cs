@@ -10,7 +10,7 @@ public class p_melee : MonoBehaviour
     {
         if(collision.tag == "Monster")
         {
-            GameObject hit_ef = Instantiate(hit_effect, collision.transform.position, collision.transform.rotation);
+            GameObject hit_ef = Instantiate(hit_effect, collision.transform.localPosition, collision.transform.localRotation);
             Destroy(hit_ef, 0.2f);
         }
     }

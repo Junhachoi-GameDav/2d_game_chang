@@ -61,7 +61,6 @@ public class player : MonoBehaviour
     SpriteRenderer sprite;
     player_hp p_hp;
     menu_manager m_manager;
-    dialogue_controller d_controller;
     void Start()
     {
         anime = GetComponent<Animator>();
@@ -71,14 +70,13 @@ public class player : MonoBehaviour
         grap = GetComponent<grapping>();
         p_hp = FindObjectOfType<player_hp>();
         m_manager = FindObjectOfType<menu_manager>();
-        d_controller = FindObjectOfType<dialogue_controller>();
         is_trun = true;
     }
 
     void Update()
     {
         check_wall_and_bottom();
-        if (m_manager.is_menu_show || d_controller.is_talk)
+        if (m_manager.is_menu_show)
         {
             return;
         }
@@ -93,7 +91,7 @@ public class player : MonoBehaviour
     // 이동은 효율을 위해 여기에 넣는다.
     void FixedUpdate()
     {
-        if (is_hitted || m_manager.is_menu_show || d_controller.is_talk)
+        if (is_hitted)
         {
             return;
         }

@@ -56688,6 +56688,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8080588815086061121, guid: 23a7f5fa055fac447b4e0129ce0e13c9, type: 3}
+      propertyPath: press_f
+      value: 
+      objectReference: {fileID: 2077729557}
     - target: {fileID: 8080588815086061131, guid: 23a7f5fa055fac447b4e0129ce0e13c9, type: 3}
       propertyPath: m_Name
       value: mushroom_npc
@@ -132969,6 +132973,11 @@ Transform:
   m_Father: {fileID: 482890844}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2077729557 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2077729557, guid: 23a7f5fa055fac447b4e0129ce0e13c9, type: 3}
+  m_PrefabInstance: {fileID: 906232291}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2078683261
 GameObject:
   m_ObjectHideFlags: 0

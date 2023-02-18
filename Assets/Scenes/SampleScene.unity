@@ -2876,9 +2876,12 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> parent of 940bd07 (2-19)
 =======
 >>>>>>> parent of 940bd07 (2-19)
 --- !u!1 &64344825
@@ -3011,6 +3014,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 68
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 =======
@@ -3022,6 +3026,10 @@ Transform:
 >>>>>>> parent of 940bd07 (2-19)
 =======
 >>>>>>> parent of 147f300 (2-18 버섯장로 대화 기능 추가)
+=======
+  m_RootOrder: 67
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> parent of 940bd07 (2-19)
 --- !u!1 &65396788
 GameObject:
   m_ObjectHideFlags: 0
@@ -5923,6 +5931,7 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 83
 =======
@@ -5938,6 +5947,9 @@ Transform:
 =======
   m_RootOrder: 83
 >>>>>>> parent of 147f300 (2-18 버섯장로 대화 기능 추가)
+=======
+  m_RootOrder: 84
+>>>>>>> parent of 940bd07 (2-19)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &118135485
 GameObject:
@@ -8747,6 +8759,7 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 70
 =======
@@ -8762,6 +8775,9 @@ Transform:
 =======
   m_RootOrder: 70
 >>>>>>> parent of 147f300 (2-18 버섯장로 대화 기능 추가)
+=======
+  m_RootOrder: 71
+>>>>>>> parent of 940bd07 (2-19)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &149621612
 GameObject:
@@ -10376,6 +10392,7 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 68
 =======
@@ -10391,6 +10408,9 @@ Transform:
 =======
   m_RootOrder: 68
 >>>>>>> parent of 147f300 (2-18 버섯장로 대화 기능 추가)
+=======
+  m_RootOrder: 69
+>>>>>>> parent of 940bd07 (2-19)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &180817331
 GameObject:
@@ -12871,6 +12891,7 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 81
 =======
@@ -12886,6 +12907,9 @@ Transform:
 =======
   m_RootOrder: 81
 >>>>>>> parent of 147f300 (2-18 버섯장로 대화 기능 추가)
+=======
+  m_RootOrder: 82
+>>>>>>> parent of 940bd07 (2-19)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &217533906
 GameObject:
@@ -15755,6 +15779,7 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 72
 =======
@@ -15770,6 +15795,9 @@ Transform:
 =======
   m_RootOrder: 72
 >>>>>>> parent of 147f300 (2-18 버섯장로 대화 기능 추가)
+=======
+  m_RootOrder: 73
+>>>>>>> parent of 940bd07 (2-19)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &261034481
 GameObject:
@@ -45812,6 +45840,7 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 77
 =======
@@ -45827,6 +45856,9 @@ Transform:
 =======
   m_RootOrder: 77
 >>>>>>> parent of 147f300 (2-18 버섯장로 대화 기능 추가)
+=======
+  m_RootOrder: 78
+>>>>>>> parent of 940bd07 (2-19)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &732590553
 GameObject:
@@ -64406,6 +64438,7 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 79
 =======
@@ -64421,6 +64454,9 @@ Transform:
 =======
   m_RootOrder: 79
 >>>>>>> parent of 147f300 (2-18 버섯장로 대화 기능 추가)
+=======
+  m_RootOrder: 80
+>>>>>>> parent of 940bd07 (2-19)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1013839131
 GameObject:
@@ -81930,6 +81966,7 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 75
 =======
@@ -81945,6 +81982,9 @@ Transform:
 =======
   m_RootOrder: 75
 >>>>>>> parent of 147f300 (2-18 버섯장로 대화 기능 추가)
+=======
+  m_RootOrder: 76
+>>>>>>> parent of 940bd07 (2-19)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1252305782
 GameObject:
@@ -86041,6 +86081,7 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 73
 =======
@@ -86056,6 +86097,9 @@ Transform:
 =======
   m_RootOrder: 73
 >>>>>>> parent of 147f300 (2-18 버섯장로 대화 기능 추가)
+=======
+  m_RootOrder: 74
+>>>>>>> parent of 940bd07 (2-19)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1313993523
 GameObject:
@@ -89998,6 +90042,7 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 85
 =======
@@ -90013,6 +90058,9 @@ Transform:
 =======
   m_RootOrder: 85
 >>>>>>> parent of 147f300 (2-18 버섯장로 대화 기능 추가)
+=======
+  m_RootOrder: 86
+>>>>>>> parent of 940bd07 (2-19)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1370742931
 GameObject:
@@ -93364,6 +93412,7 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 71
 =======
@@ -93379,6 +93428,9 @@ Transform:
 =======
   m_RootOrder: 71
 >>>>>>> parent of 147f300 (2-18 버섯장로 대화 기능 추가)
+=======
+  m_RootOrder: 72
+>>>>>>> parent of 940bd07 (2-19)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1430137923
 GameObject:
@@ -94852,6 +94904,7 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 76
 =======
@@ -94867,6 +94920,9 @@ Transform:
 =======
   m_RootOrder: 76
 >>>>>>> parent of 147f300 (2-18 버섯장로 대화 기능 추가)
+=======
+  m_RootOrder: 77
+>>>>>>> parent of 940bd07 (2-19)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1455071149
 GameObject:
@@ -95494,6 +95550,7 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 78
 =======
@@ -95509,6 +95566,9 @@ Transform:
 =======
   m_RootOrder: 78
 >>>>>>> parent of 147f300 (2-18 버섯장로 대화 기능 추가)
+=======
+  m_RootOrder: 79
+>>>>>>> parent of 940bd07 (2-19)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1460870438
 GameObject:
@@ -99476,6 +99536,7 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 84
 =======
@@ -99491,6 +99552,9 @@ Transform:
 =======
   m_RootOrder: 84
 >>>>>>> parent of 147f300 (2-18 버섯장로 대화 기능 추가)
+=======
+  m_RootOrder: 85
+>>>>>>> parent of 940bd07 (2-19)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1517209520
 GameObject:
@@ -108002,6 +108066,7 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 82
 =======
@@ -108017,6 +108082,9 @@ Transform:
 =======
   m_RootOrder: 82
 >>>>>>> parent of 147f300 (2-18 버섯장로 대화 기능 추가)
+=======
+  m_RootOrder: 83
+>>>>>>> parent of 940bd07 (2-19)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1652254272
 BoxCollider2D:
@@ -113572,6 +113640,7 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 74
 =======
@@ -113587,6 +113656,9 @@ Transform:
 =======
   m_RootOrder: 74
 >>>>>>> parent of 147f300 (2-18 버섯장로 대화 기능 추가)
+=======
+  m_RootOrder: 75
+>>>>>>> parent of 940bd07 (2-19)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1769056188
 GameObject:
@@ -119324,6 +119396,7 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 80
 =======
@@ -119339,6 +119412,9 @@ Transform:
 =======
   m_RootOrder: 80
 >>>>>>> parent of 147f300 (2-18 버섯장로 대화 기능 추가)
+=======
+  m_RootOrder: 81
+>>>>>>> parent of 940bd07 (2-19)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1872454202
 GameObject:
@@ -123263,6 +123339,7 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 69
 =======
@@ -123278,6 +123355,9 @@ Transform:
 =======
   m_RootOrder: 69
 >>>>>>> parent of 147f300 (2-18 버섯장로 대화 기능 추가)
+=======
+  m_RootOrder: 70
+>>>>>>> parent of 940bd07 (2-19)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &1936815327
 GameObject:
@@ -128523,6 +128603,7 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 86
 =======
@@ -128538,6 +128619,9 @@ Transform:
 =======
   m_RootOrder: 86
 >>>>>>> parent of 147f300 (2-18 버섯장로 대화 기능 추가)
+=======
+  m_RootOrder: 87
+>>>>>>> parent of 940bd07 (2-19)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2012876917
 GameObject:
@@ -134780,6 +134864,7 @@ Transform:
   m_Father: {fileID: 0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 67
 =======
@@ -134795,6 +134880,9 @@ Transform:
 =======
   m_RootOrder: 67
 >>>>>>> parent of 147f300 (2-18 버섯장로 대화 기능 추가)
+=======
+  m_RootOrder: 68
+>>>>>>> parent of 940bd07 (2-19)
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2121568874
 GameObject:

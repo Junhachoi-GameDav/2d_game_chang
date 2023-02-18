@@ -2878,9 +2878,12 @@ SpriteRenderer:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> parent of 940bd07 (2-19)
 =======
 >>>>>>> parent of 940bd07 (2-19)
 =======
@@ -3020,6 +3023,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_RootOrder: 68
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 =======
@@ -3034,6 +3038,10 @@ Transform:
 >>>>>>> parent of 940bd07 (2-19)
 =======
 >>>>>>> parent of 147f300 (2-18 버섯장로 대화 기능 추가)
+=======
+  m_RootOrder: 67
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> parent of 940bd07 (2-19)
 =======
   m_RootOrder: 67
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5946,6 +5954,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 83
 =======
@@ -5967,6 +5976,9 @@ Transform:
 =======
   m_RootOrder: 83
 >>>>>>> parent of e69450d (2-18 NPC 추가)
+=======
+  m_RootOrder: 84
+>>>>>>> parent of 940bd07 (2-19)
 =======
   m_RootOrder: 84
 >>>>>>> parent of 940bd07 (2-19)
@@ -8782,6 +8794,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 70
 =======
@@ -8803,6 +8816,9 @@ Transform:
 =======
   m_RootOrder: 70
 >>>>>>> parent of e69450d (2-18 NPC 추가)
+=======
+  m_RootOrder: 71
+>>>>>>> parent of 940bd07 (2-19)
 =======
   m_RootOrder: 71
 >>>>>>> parent of 940bd07 (2-19)
@@ -10423,6 +10439,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 68
 =======
@@ -10444,6 +10461,9 @@ Transform:
 =======
   m_RootOrder: 68
 >>>>>>> parent of e69450d (2-18 NPC 추가)
+=======
+  m_RootOrder: 69
+>>>>>>> parent of 940bd07 (2-19)
 =======
   m_RootOrder: 69
 >>>>>>> parent of 940bd07 (2-19)
@@ -12930,6 +12950,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 81
 =======
@@ -12951,6 +12972,9 @@ Transform:
 =======
   m_RootOrder: 81
 >>>>>>> parent of e69450d (2-18 NPC 추가)
+=======
+  m_RootOrder: 82
+>>>>>>> parent of 940bd07 (2-19)
 =======
   m_RootOrder: 82
 >>>>>>> parent of 940bd07 (2-19)
@@ -15826,6 +15850,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 72
 =======
@@ -15847,6 +15872,9 @@ Transform:
 =======
   m_RootOrder: 72
 >>>>>>> parent of e69450d (2-18 NPC 추가)
+=======
+  m_RootOrder: 73
+>>>>>>> parent of 940bd07 (2-19)
 =======
   m_RootOrder: 73
 >>>>>>> parent of 940bd07 (2-19)
@@ -45743,6 +45771,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 77
 =======
@@ -45764,6 +45793,9 @@ Transform:
 =======
   m_RootOrder: 77
 >>>>>>> parent of e69450d (2-18 NPC 추가)
+=======
+  m_RootOrder: 78
+>>>>>>> parent of 940bd07 (2-19)
 =======
   m_RootOrder: 78
 >>>>>>> parent of 940bd07 (2-19)
@@ -64252,6 +64284,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 79
 =======
@@ -64273,6 +64306,9 @@ Transform:
 =======
   m_RootOrder: 79
 >>>>>>> parent of e69450d (2-18 NPC 추가)
+=======
+  m_RootOrder: 80
+>>>>>>> parent of 940bd07 (2-19)
 =======
   m_RootOrder: 80
 >>>>>>> parent of 940bd07 (2-19)
@@ -81712,6 +81748,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 75
 =======
@@ -81733,6 +81770,9 @@ Transform:
 =======
   m_RootOrder: 75
 >>>>>>> parent of e69450d (2-18 NPC 추가)
+=======
+  m_RootOrder: 76
+>>>>>>> parent of 940bd07 (2-19)
 =======
   m_RootOrder: 76
 >>>>>>> parent of 940bd07 (2-19)
@@ -85630,6 +85670,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 73
 =======
@@ -85651,6 +85692,9 @@ Transform:
 =======
   m_RootOrder: 73
 >>>>>>> parent of e69450d (2-18 NPC 추가)
+=======
+  m_RootOrder: 74
+>>>>>>> parent of 940bd07 (2-19)
 =======
   m_RootOrder: 74
 >>>>>>> parent of 940bd07 (2-19)
@@ -89599,6 +89643,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 85
 =======
@@ -89620,6 +89665,9 @@ Transform:
 =======
   m_RootOrder: 85
 >>>>>>> parent of e69450d (2-18 NPC 추가)
+=======
+  m_RootOrder: 86
+>>>>>>> parent of 940bd07 (2-19)
 =======
   m_RootOrder: 86
 >>>>>>> parent of 940bd07 (2-19)
@@ -92977,6 +93025,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 71
 =======
@@ -92998,6 +93047,9 @@ Transform:
 =======
   m_RootOrder: 71
 >>>>>>> parent of e69450d (2-18 NPC 추가)
+=======
+  m_RootOrder: 72
+>>>>>>> parent of 940bd07 (2-19)
 =======
   m_RootOrder: 72
 >>>>>>> parent of 940bd07 (2-19)
@@ -94477,6 +94529,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 76
 =======
@@ -94498,6 +94551,9 @@ Transform:
 =======
   m_RootOrder: 76
 >>>>>>> parent of e69450d (2-18 NPC 추가)
+=======
+  m_RootOrder: 77
+>>>>>>> parent of 940bd07 (2-19)
 =======
   m_RootOrder: 77
 >>>>>>> parent of 940bd07 (2-19)
@@ -95094,6 +95150,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 78
 =======
@@ -95115,6 +95172,9 @@ Transform:
 =======
   m_RootOrder: 78
 >>>>>>> parent of e69450d (2-18 NPC 추가)
+=======
+  m_RootOrder: 79
+>>>>>>> parent of 940bd07 (2-19)
 =======
   m_RootOrder: 79
 >>>>>>> parent of 940bd07 (2-19)
@@ -99088,6 +99148,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 84
 =======
@@ -99109,6 +99170,9 @@ Transform:
 =======
   m_RootOrder: 84
 >>>>>>> parent of e69450d (2-18 NPC 추가)
+=======
+  m_RootOrder: 85
+>>>>>>> parent of 940bd07 (2-19)
 =======
   m_RootOrder: 85
 >>>>>>> parent of 940bd07 (2-19)
@@ -107626,6 +107690,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 82
 =======
@@ -107647,6 +107712,9 @@ Transform:
 =======
   m_RootOrder: 82
 >>>>>>> parent of e69450d (2-18 NPC 추가)
+=======
+  m_RootOrder: 83
+>>>>>>> parent of 940bd07 (2-19)
 =======
   m_RootOrder: 83
 >>>>>>> parent of 940bd07 (2-19)
@@ -113208,6 +113276,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 74
 =======
@@ -113229,6 +113298,9 @@ Transform:
 =======
   m_RootOrder: 74
 >>>>>>> parent of e69450d (2-18 NPC 추가)
+=======
+  m_RootOrder: 75
+>>>>>>> parent of 940bd07 (2-19)
 =======
   m_RootOrder: 75
 >>>>>>> parent of 940bd07 (2-19)
@@ -118935,6 +119007,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 80
 =======
@@ -118956,6 +119029,9 @@ Transform:
 =======
   m_RootOrder: 80
 >>>>>>> parent of e69450d (2-18 NPC 추가)
+=======
+  m_RootOrder: 81
+>>>>>>> parent of 940bd07 (2-19)
 =======
   m_RootOrder: 81
 >>>>>>> parent of 940bd07 (2-19)
@@ -122886,6 +122962,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 69
 =======
@@ -122907,6 +122984,9 @@ Transform:
 =======
   m_RootOrder: 69
 >>>>>>> parent of e69450d (2-18 NPC 추가)
+=======
+  m_RootOrder: 70
+>>>>>>> parent of 940bd07 (2-19)
 =======
   m_RootOrder: 70
 >>>>>>> parent of 940bd07 (2-19)
@@ -127991,6 +128071,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 86
 =======
@@ -128012,6 +128093,9 @@ Transform:
 =======
   m_RootOrder: 86
 >>>>>>> parent of e69450d (2-18 NPC 추가)
+=======
+  m_RootOrder: 87
+>>>>>>> parent of 940bd07 (2-19)
 =======
   m_RootOrder: 87
 >>>>>>> parent of 940bd07 (2-19)
@@ -134184,6 +134268,7 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_RootOrder: 67
 =======
@@ -134205,6 +134290,9 @@ Transform:
 =======
   m_RootOrder: 67
 >>>>>>> parent of e69450d (2-18 NPC 추가)
+=======
+  m_RootOrder: 68
+>>>>>>> parent of 940bd07 (2-19)
 =======
   m_RootOrder: 68
 >>>>>>> parent of 940bd07 (2-19)

@@ -38,6 +38,8 @@ public class player : MonoBehaviour
     public GameObject granade;
     public GameObject hiar;
     public GameObject p_melee;
+    public GameObject dash_partical;
+    public GameObject j_dash_partical;
 
     //ÃÑ¾Ë ¹× ÆøÅº Èû, ±âÅ¸ °ª
     public float g_force;
@@ -319,10 +321,26 @@ public class player : MonoBehaviour
                     if (dash_timer >= dash_time)
                     {
                         apply_speed = run_speed;
+                        dash_partical.SetActive(false);
+                        j_dash_partical.SetActive(false);
                     }
                     else
                     {
                         apply_speed = dash_speed;
+                        if (is_ground)
+                            dash_partical.SetActive(true);
+                        else
+                            j_dash_partical.SetActive(true);
+                        if (x == 1)
+                        {
+                            dash_partical.transform.localScale = new Vector3(1, 1, 1);
+                            j_dash_partical.transform.localScale = new Vector3(1, 1, 1);
+                        }
+                        else if (x == -1)
+                        {
+                            dash_partical.transform.localScale = new Vector3(-1, 1, 1);
+                            j_dash_partical.transform.localScale = new Vector3(-1, 1, 1);
+                        }
                     }
                 }
             }
@@ -330,12 +348,17 @@ public class player : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.LeftShift) || is_hitted)
         {
-            dash_timer = 0;
+            Invoke("dash_deley", 0.2f);
             is_dash = false;
             apply_speed = run_speed;
+            dash_partical.SetActive(false);
+            j_dash_partical.SetActive(false);
         }
     }
-
+    void dash_deley()
+    {
+        dash_timer = 0;
+    }
     void player_attack()
     {
         if (do_atk || is_hitted || is_wall_jump_ready)

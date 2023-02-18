@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class npc_mushroom : MonoBehaviour
 {
+    public GameObject press_f;
     dialogue_controller controller;
     private void Start()
     {
@@ -20,7 +21,7 @@ public class npc_mushroom : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("in to_npc");
+            press_f.SetActive(true);
             controller.mushroom = true;
         }
     }
@@ -28,7 +29,7 @@ public class npc_mushroom : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("out to_npc");
+            press_f.SetActive(false);
             controller.mushroom = false;
         }
     }

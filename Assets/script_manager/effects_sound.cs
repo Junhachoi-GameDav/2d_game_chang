@@ -4,15 +4,56 @@ using UnityEngine;
 
 public class effects_sound : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //이펙트 사운드
+    public AudioClip atk1_sound;
+    public AudioClip atk2_sound;
+    public AudioClip jump_step_sound;
+    public AudioClip land_sound;
+    public AudioClip wall_jump_step_sound;
+    public AudioClip grenade_sound;
+
+    //적
+    public AudioClip enemy1_sound;
+    public AudioClip enemy2_sound;
+    public AudioClip enemy3_sound;
+    public AudioClip boss_sound;
+
+
+    //ui사운드
+    public AudioClip click_sound;
+
+
+    AudioSource audio;
+
     void Start()
     {
-        
+        audio = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void play_sounds(string action)
     {
-        
+        switch (action)
+        {
+            case "atk1_sound":
+                audio.clip = atk1_sound;
+                break;
+            case "atk2_sound":
+                audio.clip = atk2_sound;
+                break;
+            case "jump_step_sound":
+                audio.clip = jump_step_sound;
+                break;
+            case "land_sound":
+                audio.clip = land_sound;
+                break;
+            case "wall_jump_step_sound":
+                audio.clip = wall_jump_step_sound;
+                break;
+            case "click_sound":
+                audio.clip = click_sound;
+                break;
+        }
+        audio.Play();
     }
 }

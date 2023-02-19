@@ -791,6 +791,9 @@ MonoBehaviour:
   count: 0
   is_talk: 1
   is_typing: 0
+  story1: 1
+  mushroom: 0
+  npc_spider_store: 0
   dialogues:
   - dialogue: "(\uB300\uCDA9 \uAE5C\uC9DD\uB180\uB790\uB2E4\uB294 \uAE00)................................................................"
     cgs: {fileID: 1108895402}

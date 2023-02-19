@@ -2924,7 +2924,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6b08ccefe2c8c5e4fb69ec0c3d5d92df, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3020,6 +3020,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80bdaed02cc3ca4498722b0c8d1a525d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  main_menu_bgm: {fileID: 8300000, guid: 6b08ccefe2c8c5e4fb69ec0c3d5d92df, type: 3}
+  story1_bgm: {fileID: 8300000, guid: 97a3355649e9f1c4faf93f28eb2d3220, type: 3}
+  ingame_bgm: {fileID: 8300000, guid: d9e280ca0b9d3ad4f83da6d4defd2c91, type: 3}
+  boss_bgm: {fileID: 8300000, guid: 14a1cf915de1c2448b200ab123c01445, type: 3}
 --- !u!1 &1326149520
 GameObject:
   m_ObjectHideFlags: 0
@@ -3696,7 +3700,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3792,6 +3796,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d48ba45308efb0478ac36dca4b459f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  atk1_sound: {fileID: 8300000, guid: e1c46311240d04071ad00f2e40cc164e, type: 3}
+  atk2_sound: {fileID: 8300000, guid: 28035043174d44f928d428fc44f59150, type: 3}
+  jump_step_sound: {fileID: 8300000, guid: 8420cf17e21d6354a98e6ef6d19dc9cc, type: 3}
+  land_sound: {fileID: 8300000, guid: ac6649006dbee9e4685752e124111da7, type: 3}
+  wall_jump_step_sound: {fileID: 8300000, guid: 82354d1fee336984994fbdcc8154c89c, type: 3}
+  click_sound: {fileID: 8300000, guid: 0e6d4d48fef8bd34f9a18cc6b7ed156c, type: 3}
 --- !u!1 &1717951061
 GameObject:
   m_ObjectHideFlags: 0

@@ -116,7 +116,8 @@ public class dialogue_controller : MonoBehaviour
     void scene_load_deley()
     {
         is_talk = true;
-        //game_manager.Instance.scene_load("loading_scene");
+        game_manager.Instance.scene_load("loading_scene");
+        game_manager.Instance.gm_bg_sound_mng("ingame_bgm");
     }
 
     IEnumerator typing(string text)

@@ -30,6 +30,9 @@ public class Boss_fairy : MonoBehaviour
     bool isone = false;
 
     public bool is_bettle_start;//보스전 시작
+    public GameObject potal1;
+    public GameObject potal2;
+
 
     public int Hp;
     float isLeft;
@@ -42,6 +45,9 @@ public class Boss_fairy : MonoBehaviour
     Transform Player;
     float bullet_respown = 0.3f;
     int op,s_op;
+
+
+
 
     public float min_P;//움직일수 있는 최하좌표
     public float max_P;//움직일수 있는 최대좌표
@@ -74,6 +80,8 @@ public class Boss_fairy : MonoBehaviour
         else if (sound_cnt <= 0)
         {
             game_manager.Instance.gm_bg_sound_mng("boss_bgm");
+            potal1.SetActive(false);
+            potal2.SetActive(false);
             sound_cnt++;
         }
         
@@ -490,6 +498,8 @@ public class Boss_fairy : MonoBehaviour
 
         //Explosion();
         //yield return new WaitForSeconds(0.1f);
+        potal1.SetActive(true);
+        potal2.SetActive(true);
         game_manager.Instance.gm_bg_sound_mng("ingame_bgm");
         Destroy(gameObject);
     }

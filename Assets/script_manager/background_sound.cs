@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class background_sound : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class background_sound : MonoBehaviour
     public AudioClip boss_bgm;
     public AudioClip none_sound;
 
-    AudioSource audio;
+    public AudioSource audio;
  
 
     void Start()

@@ -24,7 +24,7 @@ public class effects_sound : MonoBehaviour
     public AudioClip click_sound;
 
 
-    AudioSource audio;
+    public AudioSource audio;
 
     void Start()
     {

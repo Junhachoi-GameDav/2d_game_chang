@@ -42,6 +42,7 @@ public class menu_manager : MonoBehaviour
     {
         Time.timeScale = 1f;
         game_manager.Instance.scene_load("main_menu");
+        game_manager.Instance.gm_bg_sound_mng("main_menu_bgm");
     }
 
     public void info()

@@ -8,6 +8,7 @@ public class background_sound : MonoBehaviour
     public AudioClip story1_bgm;
     public AudioClip ingame_bgm;
     public AudioClip boss_bgm;
+    public AudioClip none_sound;
 
     AudioSource audio;
  
@@ -33,6 +34,9 @@ public class background_sound : MonoBehaviour
                 break;
             case "boss_bgm":
                 audio.clip = boss_bgm;
+                break;
+            case "none_sound":
+                audio.clip = none_sound;
                 break;
         }
         audio.Play();

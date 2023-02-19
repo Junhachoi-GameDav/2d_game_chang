@@ -7,6 +7,7 @@ public class player : MonoBehaviour
     //플레이어 정보
     public int player_hp;
     public int player_dmg;
+    public int player_grenade_num;
     //속도
     public float apply_speed; // 현재 스피드
     public float crouch_speed = 0f;
@@ -295,7 +296,7 @@ public class player : MonoBehaviour
         {
             return;
         }
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && player_grenade_num > 0)
         {
             // 참고로 중력값은 2이다.
             GameObject ins_granade = Instantiate(granade, transform.position, transform.rotation); // 캐릭터 위치에서 생성, 나중에 오브젝트 풀링 해줄거임.
@@ -303,7 +304,7 @@ public class player : MonoBehaviour
             
             //캐릭터위치에서 (위* 힘* 조절) + (오른쪽 * 힘* 캐릭터 바라보는 방향) = 대각선으로 포물선을 그린다.
             rigid_granade.velocity = (transform.up * g_force *0.7f ) + (transform.right * g_force * (is_trun ? 1 : -1));
-           
+            player_grenade_num--;
         }
     }
     
@@ -460,6 +461,8 @@ public class player : MonoBehaviour
             p_hp.count++; // 한번만 실행 하기위해 넣어줬다.
             anime.SetTrigger("is_hitted");
             gameObject.layer = 14; // 무적
+            dash_partical.SetActive(false);
+            j_dash_partical.SetActive(false);
             sprite.color = new Color(1, 1, 1, 0.5f); //투명해짐
             hitted_anime_stop();
             Invoke("hitted_deley", 0.3f);

@@ -536,7 +536,7 @@ public class Boss_fairy : MonoBehaviour
         potal1.SetActive(true);
         potal2.SetActive(true);
         game_manager.Instance.gm_bg_sound_mng("ingame_bgm");
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
     public void TakeDamage(int damage, int h)
     {

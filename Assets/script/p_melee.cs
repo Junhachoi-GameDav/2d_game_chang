@@ -25,7 +25,7 @@ public class p_melee : MonoBehaviour
             {
                 game_manager.Instance.gm_ef_sound_mng("atk2_hit_sound");
             }
-            Destroy(hit_ef, 0.2f);
+            //Destroy(hit_ef, 0.2f);
         }
     }
 }

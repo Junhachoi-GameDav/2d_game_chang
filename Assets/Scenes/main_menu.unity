@@ -3796,11 +3796,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d48ba45308efb0478ac36dca4b459f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atk1_sound: {fileID: 8300000, guid: e1c46311240d04071ad00f2e40cc164e, type: 3}
-  atk2_sound: {fileID: 8300000, guid: 28035043174d44f928d428fc44f59150, type: 3}
+  atk1_sound: {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
+  atk2_sound: {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
+  atk1_hit_sound: {fileID: 8300000, guid: e1c46311240d04071ad00f2e40cc164e, type: 3}
+  atk2_hit_sound: {fileID: 8300000, guid: 28035043174d44f928d428fc44f59150, type: 3}
   jump_step_sound: {fileID: 8300000, guid: 8420cf17e21d6354a98e6ef6d19dc9cc, type: 3}
   land_sound: {fileID: 8300000, guid: ac6649006dbee9e4685752e124111da7, type: 3}
   wall_jump_step_sound: {fileID: 8300000, guid: 82354d1fee336984994fbdcc8154c89c, type: 3}
+  grenade_sound: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b, type: 3}
   click_sound: {fileID: 8300000, guid: 0e6d4d48fef8bd34f9a18cc6b7ed156c, type: 3}
 --- !u!1 &1717951061
 GameObject:

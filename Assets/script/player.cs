@@ -80,7 +80,7 @@ public class player : MonoBehaviour
     void Update()
     {
         check_wall_and_bottom();
-        if (m_manager.is_menu_show || d_controller.is_talk)
+        if (m_manager.is_menu_show || d_controller.is_talk || is_hitted)
         {
             return;
         }
@@ -173,6 +173,7 @@ public class player : MonoBehaviour
         if (!is_ground)
         {
             anime.SetBool("do_jump", true);
+            
         }
         else
         {
@@ -184,6 +185,7 @@ public class player : MonoBehaviour
             Invoke("jump_ani_deley", 0.5f);
             rigid.velocity = new Vector2(rigid.velocity.x, jump_force);
             anime.SetBool("do_jump", true);
+            game_manager.Instance.gm_ef_sound_mng("jump_step_sound");
         }
         else if (Input.GetButtonDown("Jump") && grap.is_attach) // 갈고리에 붙을시
         {
@@ -259,6 +261,7 @@ public class player : MonoBehaviour
             {
                 // is_trun이 트루면 왼쪽으로 펄스면 오른쪽으로 튕김 (즉 왼쪽벽에서 점프를 누르면 오른쪽으로 튕김)
                 rigid.velocity = new Vector2(wall_jump_force * (is_trun ? -1 : 1), wall_jump_force * 1.5f);
+                game_manager.Instance.gm_ef_sound_mng("wall_jump_step_sound");
                 anime.SetBool("is_wall", false);
                 anime.SetBool("do_jump", true);
                 Invoke("wall_jump_deley", 0.15f); // 튕기고 딜레이
@@ -370,6 +373,7 @@ public class player : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             anime.SetTrigger("is_atk");
+
         }
         
     }
@@ -422,6 +426,17 @@ public class player : MonoBehaviour
     {
         p_melee.transform.localPosition = new Vector3(1.12f, 0, 0);
         p_melee.transform.localScale = new Vector3(2.02f, 1.6f, 0);
+    }
+    #endregion
+    #region 공격사운드
+    public void atk1_sound()
+    {
+        game_manager.Instance.gm_ef_sound_mng("atk1_sound");
+        
+    }
+    public void atk2_sound()
+    {
+        game_manager.Instance.gm_ef_sound_mng("atk2_sound");
     }
     #endregion
     private void OnTriggerEnter2D(Collider2D collision)

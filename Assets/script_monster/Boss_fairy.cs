@@ -11,6 +11,7 @@ public class Boss_fairy : MonoBehaviour
     GameObject effect;
     player p;
     SpriteRenderer sprite;
+    float uptime = 0.5f;
     float attack_cool = 4f;
     float readytime = 5f;
     float groundtime = 3.5f;
@@ -28,7 +29,8 @@ public class Boss_fairy : MonoBehaviour
     bool isDown = false;
     bool isback= false;
     bool isone = false;
-
+    bool isupdown = false;
+    bool isAttacking = false;
     public bool is_bettle_start;//보스전 시작
     public GameObject potal1;
     public GameObject potal2;
@@ -68,11 +70,13 @@ public class Boss_fairy : MonoBehaviour
         weapon_damage = weapon.GetComponent<granade>().granade_dmg;
         effect = weapon.GetComponent<granade>().granade_effect;
        // op = 2;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         if (!is_bettle_start)
         {
             return;
@@ -85,7 +89,7 @@ public class Boss_fairy : MonoBehaviour
             sound_cnt++;
         }
         
-        Debug.Log("op");
+       /* Debug.Log("op");
         Debug.Log(op);
         Debug.Log("iscool");
         Debug.Log(iscool);
@@ -96,7 +100,7 @@ public class Boss_fairy : MonoBehaviour
         Debug.Log("notmove");
         Debug.Log(isNotmove);
         Debug.Log("isdie");
-        Debug.Log(isDie);
+        Debug.Log(isDie);*/
         //Debug.Log(s_op);
         //op = 2;
         // s_op = 1;
@@ -109,6 +113,11 @@ public class Boss_fairy : MonoBehaviour
                 {
                     //Debug.Log("yes");
                     //rb.velocity = Vector3.zero;
+                   // if(isupdown==false)
+                   // {
+                   //     updown();
+                    //}
+
                     if (iscool == false)
                     {
                         StartCoroutine(op0());
@@ -219,13 +228,15 @@ public class Boss_fairy : MonoBehaviour
                     //Invoke("cooltime_C", 1f);
                     if (isAttack == true && attack_cool > 0)
                     {
-                        if (Vector2.Distance(this.transform.position, Player.position) > 1.5f)
+                        if (Vector2.Distance(this.transform.position, Player.position) > 1.5f&&isAttacking==false)
                             this.transform.position = Vector2.MoveTowards(this.transform.position, Player.position, Time.deltaTime * speed);
                         if (Vector2.Distance(this.transform.position, Player.position) <= 1.5f)
                         {
                             DirectionEnemy(Player.position.x, this.transform.position.x);
                             //isfast = true;
-                            Invoke("Attack", 0.5f);
+                            isAttacking = true;
+                            sprite.color = Color.red;
+                            Invoke("Attack", 0.3f);
 
                         }
 
@@ -276,6 +287,7 @@ public class Boss_fairy : MonoBehaviour
                     isAttack= false;
                     isNotmove = false;
                     isback = false;
+                    isupdown = false;
                     attack_cool = 4f;
                     readytime = 5f;
                 }
@@ -286,10 +298,31 @@ public class Boss_fairy : MonoBehaviour
     public GameObject box;
     public Transform boxpos;
     public Vector2 boxSize;
+    public void updown()
+    {
+        if (uptime > 0)
+        {
+            rb.AddForce(Vector2.up* 1.41f );
+            //rb.AddForce(boxSize);
+            uptime-=Time.deltaTime;
+        }
+        else 
+        {   
+            if(isupdown == false)
+                rb.AddForce(Vector2.down*1.41f);
+            if (this.transform.position.y <= (center.transform.position.y + 6f))
+            {
+                isupdown = true;
+                rb.velocity = Vector2.zero;
+                
+            }
+        }
+    }
     public void Attack()
     {
         //p_left = isLeft;
         box.SetActive(true);
+        
         //Debug.Log("yes");
         if (isLeft == -1)
         {
@@ -328,9 +361,11 @@ public class Boss_fairy : MonoBehaviour
 
     IEnumerator attack()
     {
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.6f);
         //isAttack = false;
+        sprite.color = Color.white;
         box.SetActive(false);
+        isAttacking = false;
         yield return null;
         //melee.SetActive(false);
        // animator.SetBool("Attack", false);
@@ -379,7 +414,7 @@ public class Boss_fairy : MonoBehaviour
         {
             return;
         }
-        if (isAttack == false&&isback==false&&isNotmove==false&&isDie==false)//위에 공격시에 안움직임
+        if (isAttack == false&&isback==false&&isNotmove==false&&isDie==false&&isupdown==false)//위에 공격시에 안움직임
         { 
             FollowTarget();
             isone = false;
@@ -528,10 +563,17 @@ public class Boss_fairy : MonoBehaviour
             {
                 if (this.transform.position.x <= min_P + 1f)
                 {
-                    isAttack = true;
+                    if (isupdown == false)
+                        {
+                        updown();
+                        }
+                        isAttack = true;
                     //Debug.Log("yes");
-                    box.SetActive(true);
-                    rb.AddForce(new Vector2(1.41f * speed , -1.41f * speed ));
+                    if (isupdown == true)
+                    {
+                        box.SetActive(true);
+                        rb.AddForce(new Vector2(1.41f * speed, -1.41f * speed));
+                    }
                 }
             }
 
@@ -539,9 +581,16 @@ public class Boss_fairy : MonoBehaviour
             {
                 if (this.transform.position.x >= max_P - 1f)
                 {
+                    if (isupdown == false)
+                    {
+                        updown();
+                    }
                     isAttack = true;
-                    box.SetActive(true);
-                    rb.AddForce(new Vector2(-1.41f * speed, -1.41f * speed));
+                    if (isupdown == true)
+                    {
+                        box.SetActive(true);
+                        rb.AddForce(new Vector2(-1.41f * speed, -1.41f * speed));
+                    }
                 }
             }
         }

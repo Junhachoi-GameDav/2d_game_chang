@@ -236,7 +236,7 @@ public class Boss_fairy : MonoBehaviour
                             //isfast = true;
                             isAttacking = true;
                             sprite.color = Color.red;
-                            Invoke("Attack", 0.3f);
+                            Invoke("Attack", 0.45f);
 
                         }
 

@@ -5,7 +5,9 @@ using UnityEngine;
 public class Boss_fairy : MonoBehaviour 
 {
     int weapon_damage;
-    
+
+    int sound_cnt; //배경음 한번만 실행
+
     GameObject effect;
     player p;
     SpriteRenderer sprite;
@@ -26,6 +28,9 @@ public class Boss_fairy : MonoBehaviour
     bool isDown = false;
     bool isback= false;
     bool isone = false;
+
+    public bool is_bettle_start;//보스전 시작
+
     public int Hp;
     float isLeft;
     public float speed;
@@ -62,6 +67,16 @@ public class Boss_fairy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!is_bettle_start)
+        {
+            return;
+        }
+        else if (sound_cnt <= 0)
+        {
+            game_manager.Instance.gm_bg_sound_mng("boss_bgm");
+            sound_cnt++;
+        }
+        
         Debug.Log("op");
         Debug.Log(op);
         Debug.Log("iscool");
@@ -352,6 +367,10 @@ public class Boss_fairy : MonoBehaviour
     
     private void FixedUpdate()
     {
+        if (!is_bettle_start)
+        {
+            return;
+        }
         if (isAttack == false&&isback==false&&isNotmove==false&&isDie==false)//위에 공격시에 안움직임
         { 
             FollowTarget();
@@ -471,6 +490,7 @@ public class Boss_fairy : MonoBehaviour
 
         //Explosion();
         //yield return new WaitForSeconds(0.1f);
+        game_manager.Instance.gm_bg_sound_mng("ingame_bgm");
         Destroy(gameObject);
     }
     public void TakeDamage(int damage, int h)

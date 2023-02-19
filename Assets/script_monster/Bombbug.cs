@@ -221,6 +221,7 @@ public class Bombbug : Enermy
                 StartCoroutine(Attacked_weapon(collision.gameObject));
             Debug.Log("weapondamage");
             TakeDamage(weapon_damage,Hp);
+            game_manager.Instance.gm_ef_sound_mng("grenade_sound");
             isDamage = true;
             Debug.Log("isnot move");
             sprite.color = new Color(1, 1, 0, 1);

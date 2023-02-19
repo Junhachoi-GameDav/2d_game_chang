@@ -421,6 +421,7 @@ public class Boss_fairy : MonoBehaviour
            // Debug.Log("weapondamage");
             TakeDamage(weapon_damage, Hp);
             isDamage = true;
+            game_manager.Instance.gm_ef_sound_mng("grenade_sound");
            // Debug.Log("isnot move");
            // animator.SetBool("Attacked", true);
             Debug.Log(isDamage);

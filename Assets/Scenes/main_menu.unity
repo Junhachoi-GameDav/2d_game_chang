@@ -3804,6 +3804,7 @@ MonoBehaviour:
   land_sound: {fileID: 8300000, guid: ac6649006dbee9e4685752e124111da7, type: 3}
   wall_jump_step_sound: {fileID: 8300000, guid: 82354d1fee336984994fbdcc8154c89c, type: 3}
   grenade_sound: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b, type: 3}
+  dash_sound: {fileID: 8300000, guid: d22035de002018b44bc76a915efcba10, type: 3}
   click_sound: {fileID: 8300000, guid: 0e6d4d48fef8bd34f9a18cc6b7ed156c, type: 3}
 --- !u!1 &1717951061
 GameObject:

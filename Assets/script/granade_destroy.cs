@@ -17,6 +17,7 @@ public class granade_destroy : MonoBehaviour
         if (collision.gameObject.tag == "bottom")
         {
             Instantiate(boom_position, transform.position, boom_position.transform.rotation);
+            game_manager.Instance.gm_ef_sound_mng("grenade_sound");
             Destroy(gameObject);
         }
     }

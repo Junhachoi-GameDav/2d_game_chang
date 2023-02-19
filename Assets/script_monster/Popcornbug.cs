@@ -183,6 +183,7 @@ public class Popcornbug : Enermy
                 StartCoroutine(Attacked_weapon(collision.gameObject));
             Debug.Log("weapondamage");
             TakeDamage(weapon_damage, Hp);
+            game_manager.Instance.gm_ef_sound_mng("grenade_sound");
             isDamage = true;
             Debug.Log("isnot move");
             animator.SetBool("Attacked", true);

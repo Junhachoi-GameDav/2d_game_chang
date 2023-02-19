@@ -20,6 +20,8 @@ public class player : MonoBehaviour
 
     //사용횟수 인트
     int stop_cnt; //벽점프 멈추게하는것 한번만 실행
+    int dash_sound_cut;
+    public int atk_num;
 
     //타임
     float dash_timer;
@@ -319,7 +321,11 @@ public class player : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 is_dash = true;
-
+                if (dash_sound_cut <= 0)
+                {
+                    game_manager.Instance.gm_ef_sound_mng("dash_sound");
+                    dash_sound_cut++;
+                }
                 if (is_dash)
                 {
                     dash_timer += Time.deltaTime;
@@ -358,6 +364,7 @@ public class player : MonoBehaviour
             apply_speed = run_speed;
             dash_partical.SetActive(false);
             j_dash_partical.SetActive(false);
+            dash_sound_cut = 0;
         }
     }
     void dash_deley()
@@ -406,24 +413,28 @@ public class player : MonoBehaviour
         p_melee.SetActive(false);
     }
     #endregion
-    #region 공격 콜라이더 크기
+    #region 공격 콜라이더 크기 및 넘버
     public void atk1_collider_transform()
     {
+        atk_num = 1;
         p_melee.transform.localPosition = new Vector3(1.32f, -0.12f, 0);
         p_melee.transform.localScale = new Vector3(1.51f, 0.99f, 0);
     }
     public void atk2_collider_transform()
     {
+        atk_num = 1;
         p_melee.transform.localPosition = new Vector3(1.32f, -0.12f, 0);
         p_melee.transform.localScale = new Vector3(1.8f, 1.26f, 0);
     }
     public void atk3_collider_transform()
     {
+        atk_num = 2;
         p_melee.transform.localPosition = new Vector3(1.12f, 0, 0);
         p_melee.transform.localScale = new Vector3(2.29f, 1.65f, 0);
     }
     public void jump_atk_collider_transform()
     {
+        atk_num = 2;
         p_melee.transform.localPosition = new Vector3(1.12f, 0, 0);
         p_melee.transform.localScale = new Vector3(2.02f, 1.6f, 0);
     }

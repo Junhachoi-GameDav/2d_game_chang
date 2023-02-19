@@ -115,7 +115,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0
-    functionName: atk2_sound
+    functionName: atk1_sound
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

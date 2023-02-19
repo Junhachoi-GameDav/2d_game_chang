@@ -13,6 +13,7 @@ public class effects_sound : MonoBehaviour
     public AudioClip land_sound;
     public AudioClip wall_jump_step_sound;
     public AudioClip grenade_sound;
+    public AudioClip dash_sound;
 
     //public AudioClip enemy2_sound;
     //public AudioClip enemy3_sound;
@@ -55,6 +56,12 @@ public class effects_sound : MonoBehaviour
                 break;
             case "wall_jump_step_sound":
                 audio.clip = wall_jump_step_sound;
+                break;
+            case "grenade_sound":
+                audio.clip = grenade_sound;
+                break;
+            case "dash_sound":
+                audio.clip = dash_sound;
                 break;
             case "click_sound":
                 audio.clip = click_sound;

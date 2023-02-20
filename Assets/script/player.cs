@@ -302,11 +302,11 @@ public class player : MonoBehaviour
 
     void player_use_granade()
     {
-        if(g_use_timer <= 1f)
+        if(g_use_timer <= 0.7f)
         {
             g_use_timer += Time.deltaTime;
         }
-        else if (g_use_timer >= 1f)
+        else if (g_use_timer >= 0.7f)
         {
             is_use_g = false;
         }

@@ -46,7 +46,7 @@ public class Boss_fairy : MonoBehaviour
     Rigidbody2D rb;
     Transform target;
     Transform Player;
-    float bullet_respown = 0.3f;
+    float bullet_respown = 0.2f;
     int op,s_op;
 
 
@@ -157,7 +157,7 @@ public class Boss_fairy : MonoBehaviour
                                     GameObject bullet = obj_m.make_obj("boss_bullet"); //持失
                                     bullet.transform.position = bullet_box.transform.position;
                                     //Instantiate(bullet, bullet_box.transform.position, bullet_box.transform.rotation);
-                                    bullet_respown = 0.5f;
+                                    bullet_respown = 0.2f;
                                 }
                                 fly_limit_time -= Time.deltaTime;
 
@@ -181,7 +181,7 @@ public class Boss_fairy : MonoBehaviour
                                 {
                                     GameObject bullet = obj_m.make_obj("boss_bullet"); //持失
                                     bullet.transform.position = bullet_box.transform.position;
-                                    bullet_respown = 0.5f;
+                                    bullet_respown = 0.2f;
                                 }
                                 fly_limit_time -= Time.deltaTime;
 
@@ -234,7 +234,7 @@ public class Boss_fairy : MonoBehaviour
                     //Invoke("cooltime_C", 1f);
                     if (isAttack == true && attack_cool > 0)
                     {
-                        
+                        anime.SetBool("do_atk", true);
                         if (Vector2.Distance(this.transform.position, Player.position) > 1.5f&&isAttacking==false)
                             this.transform.position = Vector2.MoveTowards(this.transform.position, Player.position, Time.deltaTime * speed);
                         if (Vector2.Distance(this.transform.position, Player.position) <= 1.5f)
@@ -243,7 +243,7 @@ public class Boss_fairy : MonoBehaviour
                             //isfast = true;
                             isAttacking = true;
                             //sprite.color = Color.red;
-                            anime.SetBool("do_atk", true);
+                            
                             Invoke("Attack", 0.45f);
 
                         }
@@ -398,12 +398,14 @@ public class Boss_fairy : MonoBehaviour
     }
     IEnumerator cooltime()
     {
-        anime.SetBool("is_air", false);
+        
         // yield return new WaitForSeconds(2.5f);
         isone = true;
+        yield return new WaitForSeconds(0.5f);
+        anime.SetBool("is_air", true);
         // isup = true;
         yield return new WaitForSeconds(5f);
-        anime.SetBool("is_air", true);
+        anime.SetBool("is_air", false);
         groundtime = 3.5f;
         fly_limit_time = 3.5f;
         attack_cool = 4f;

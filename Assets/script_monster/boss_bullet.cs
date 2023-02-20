@@ -11,7 +11,7 @@ public class boss_bullet : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag=="bottom")
+        if(collision.tag=="bottom1")
         {
             gameObject.SetActive(false);
         }

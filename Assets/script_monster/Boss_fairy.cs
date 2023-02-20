@@ -119,11 +119,10 @@ public class Boss_fairy : MonoBehaviour
                 {
                     //Debug.Log("yes");
                     //rb.velocity = Vector3.zero;
-                   // if(isupdown==false)
-                   // {
-                   //     updown();
+                    // if(isupdown==false)
+                    // {
+                    //     updown();
                     //}
-
                     if (iscool == false)
                     {
                         StartCoroutine(op0());
@@ -139,7 +138,6 @@ public class Boss_fairy : MonoBehaviour
                 }
                 else if (op == 1)
                 {
-                    anime.SetBool("do_atk", true);
                     if (fly_limit_time > 0)
                     {
                         //ÅºÈ¯¹ß»ç
@@ -236,7 +234,7 @@ public class Boss_fairy : MonoBehaviour
                     //Invoke("cooltime_C", 1f);
                     if (isAttack == true && attack_cool > 0)
                     {
-                        anime.SetBool("do_atk", true);
+                        
                         if (Vector2.Distance(this.transform.position, Player.position) > 1.5f&&isAttacking==false)
                             this.transform.position = Vector2.MoveTowards(this.transform.position, Player.position, Time.deltaTime * speed);
                         if (Vector2.Distance(this.transform.position, Player.position) <= 1.5f)
@@ -244,7 +242,8 @@ public class Boss_fairy : MonoBehaviour
                             DirectionEnemy(Player.position.x, this.transform.position.x);
                             //isfast = true;
                             isAttacking = true;
-                            sprite.color = Color.red;
+                            //sprite.color = Color.red;
+                            anime.SetBool("do_atk", true);
                             Invoke("Attack", 0.45f);
 
                         }
@@ -334,7 +333,8 @@ public class Boss_fairy : MonoBehaviour
     {
         //p_left = isLeft;
         box.SetActive(true);
-        
+        anime.SetBool("do_atk", false);
+        anime.SetTrigger("atk");
         //Debug.Log("yes");
         if (isLeft == -1)
         {
@@ -374,12 +374,12 @@ public class Boss_fairy : MonoBehaviour
     {
         yield return new WaitForSeconds(0.6f);
         //isAttack = false;
-        sprite.color = Color.white;
+        //sprite.color = Color.white;
         box.SetActive(false);
         isAttacking = false;
         yield return null;
         //melee.SetActive(false);
-       // animator.SetBool("Attack", false);
+        //animator.SetBool("Attack", false);
     }
 
 

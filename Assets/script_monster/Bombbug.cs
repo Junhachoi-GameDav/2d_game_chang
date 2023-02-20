@@ -7,7 +7,7 @@ public class Bombbug : Enermy
     Animator animator;
     bool isFind = false;
     bool isexplosion = false;
-    public int Hp = 30;
+    public int Hp = 20;
     int weapon_damage;
     //GameObject effect;
     public GameObject explosion;
@@ -27,6 +27,7 @@ public class Bombbug : Enermy
         Physics2D.IgnoreLayerCollision(3, 11);//플레이어와의 충돌 무시
         //GameObject weapon = Instantiate(prefab_weapon);
         weapon_damage = p.player_grenade_dmg;
+        Hp = 20;
         //effect = weapon.GetComponent<granade>().granade_effect;
     }
 

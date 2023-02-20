@@ -13,7 +13,7 @@ public class Ladybug :Enermy
     //GameObject effect;
     Animator animator;
     public Transform ray;
-    public int Hp = 20;
+    public int Hp = 5;
     Transform target;
     float player_follow_limit;
     [Header("근접거리")]
@@ -35,6 +35,7 @@ public class Ladybug :Enermy
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<player>().hiar.transform;//GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         //GameObject weapon = Instantiate(prefab_weapon);
         weapon_damage = p.player_grenade_dmg;
+        Hp = 5;
         //effect = weapon.GetComponent<granade>().granade_effect;
         //player_isleft= GameObject.FindGameObjectWithTag("Player").GetComponent<player>().;
     }
@@ -287,6 +288,7 @@ public class Ladybug :Enermy
             TakeDamage(p.player_dmg, Hp);
             isDamage = true;
             sprite.color = new Color(1, 0, 0, 1);
+            Debug.Log(Hp);
             animator.SetBool("Attacked", true);
             Invoke("attacked", 0.15f);
             Invoke("damage", 0.15f);

@@ -6,7 +6,7 @@ public class Popcornbug : Enermy
 {
     Animator animator;
     bool isFind = false;
-    public int Hp = 30;
+    public int Hp = 3;
     int weapon_damage;
     //GameObject effect;
     player p;
@@ -28,6 +28,7 @@ public class Popcornbug : Enermy
         //GameObject weapon = Instantiate(prefab_weapon);
         weapon_damage = p.player_grenade_dmg;
         obj_m = FindObjectOfType<obj_manager>();
+        Hp = 3;
         //effect = weapon.GetComponent<granade>().granade_effect;
     }
 

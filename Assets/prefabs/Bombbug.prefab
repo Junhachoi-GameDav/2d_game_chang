@@ -251,7 +251,7 @@ MonoBehaviour:
   isLeft: 0
   speed: 1
   prefab_weapon: {fileID: 3606087065601212249, guid: 79886e46dde56804db44de5fa1dda3b2, type: 3}
-  Hp: 20
+  Hp: 15
   explosion: {fileID: 3010039478945510829}
   boxSize: {x: 2, y: 2}
   boxpos: {fileID: 3010039478847891796}

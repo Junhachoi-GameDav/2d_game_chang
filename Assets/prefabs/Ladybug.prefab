@@ -217,7 +217,7 @@ MonoBehaviour:
   speed: 2
   prefab_weapon: {fileID: 3606087065601212249, guid: 79886e46dde56804db44de5fa1dda3b2, type: 3}
   ray: {fileID: 3342292252442825170}
-  Hp: 10
+  Hp: 5
   contactDistance: 0.65
   dontcatch: 5
   boxSize: {x: 0, y: 0}

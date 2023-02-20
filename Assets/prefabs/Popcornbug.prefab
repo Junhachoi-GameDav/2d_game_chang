@@ -396,7 +396,7 @@ MonoBehaviour:
   isLeft: 0
   speed: 0.5
   prefab_weapon: {fileID: 3606087065601212249, guid: 79886e46dde56804db44de5fa1dda3b2, type: 3}
-  Hp: 15
+  Hp: 3
   boxSize: {x: 0, y: 0}
   boxpos: {fileID: 5653518897028297352}
   direct: {fileID: 5653518897028297352}

@@ -16,7 +16,7 @@ public class Boss_fairy : MonoBehaviour
     float attack_cool = 4f;
     float readytime = 5f;
     float groundtime = 3.5f;
-    GameObject bullet;
+    //GameObject bullet;
     public GameObject center;//이 물체를 기준으로 좌우로 움직인다(처음에만
     public float distance;
     public LayerMask isLayer;
@@ -151,7 +151,7 @@ public class Boss_fairy : MonoBehaviour
                                     bullet_respown -= Time.deltaTime;
                                 if (bullet_respown <= 0)
                                 {
-                                    bullet = obj_m.make_obj("boss_bullet"); //생성
+                                    GameObject bullet = obj_m.make_obj("boss_bullet"); //생성
                                     bullet.transform.position = bullet_box.transform.position;
                                     //Instantiate(bullet, bullet_box.transform.position, bullet_box.transform.rotation);
                                     bullet_respown = 0.5f;
@@ -176,8 +176,8 @@ public class Boss_fairy : MonoBehaviour
                                     bullet_respown -= Time.deltaTime;
                                 if (bullet_respown <= 0)
                                 {
-
-                                    Instantiate(bullet, bullet_box.transform.position, bullet_box.transform.rotation);
+                                    GameObject bullet = obj_m.make_obj("boss_bullet"); //생성
+                                    bullet.transform.position = bullet_box.transform.position;
                                     bullet_respown = 0.5f;
                                 }
                                 fly_limit_time -= Time.deltaTime;
@@ -277,7 +277,7 @@ public class Boss_fairy : MonoBehaviour
                         {
 
                             // Debug.Log("minp");
-                            Debug.Log(min_P);
+                            //Debug.Log(min_P);
                             //Debug.Log("back");
                             isback = false;
                         }

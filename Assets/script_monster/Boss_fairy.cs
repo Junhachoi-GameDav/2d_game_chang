@@ -541,9 +541,8 @@ public class Boss_fairy : MonoBehaviour
         //isDamage = true;//적 못움직이게
         yield return new WaitForSeconds(0.3f);
         rb.AddForce(new Vector3(0, 0, 0));
-        yield return new WaitForSeconds(2f);
         anime.SetTrigger("is_die");
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
         //폭발하도록하기
 
         //Explosion();

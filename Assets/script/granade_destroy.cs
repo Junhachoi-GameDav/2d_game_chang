@@ -15,7 +15,7 @@ public class granade_destroy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "bottom")
+        if (collision.gameObject.tag == "bottom" || collision.gameObject.tag == "Monster")
         {
             //Instantiate(boom_position, transform.position, boom_position.transform.rotation);
             obj_m = FindObjectOfType<obj_manager>();

@@ -54,8 +54,10 @@ public class Boss_fairy : MonoBehaviour
 
     public float min_P;//움직일수 있는 최하좌표
     public float max_P;//움직일수 있는 최대좌표
-    float fly_limit_time= 3.5f; 
-    // Start is called before the first frame update
+    float fly_limit_time= 3.5f;
+
+    Animator anime;
+
     private void Awake()
     {
         p = FindObjectOfType<player>();
@@ -63,6 +65,7 @@ public class Boss_fairy : MonoBehaviour
         obj_m = FindObjectOfType<obj_manager>();
         Player= GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
+        anime = GetComponent<Animator>();
         op = Random.Range(0, 3);
         s_op=Random.Range(0, 2);
         target = center.transform;
@@ -88,6 +91,7 @@ public class Boss_fairy : MonoBehaviour
             game_manager.Instance.gm_bg_sound_mng("boss_bgm");
             potal1.SetActive(false);
             potal2.SetActive(false);
+            anime.SetTrigger("do_battle");
             sound_cnt++;
         }
         
@@ -135,6 +139,7 @@ public class Boss_fairy : MonoBehaviour
                 }
                 else if (op == 1)
                 {
+                    anime.SetBool("do_atk", true);
                     if (fly_limit_time > 0)
                     {
                         //탄환발사

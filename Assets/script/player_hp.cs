@@ -8,6 +8,7 @@ public class player_hp : MonoBehaviour
     public Sprite[] sprites;
     public Transform[] ef_pos;
     public GameObject hp_ef;
+    public Text g_num;
 
     public int count; //9
 
@@ -21,7 +22,8 @@ public class player_hp : MonoBehaviour
     }
     private void Update()
     {
-        if(p.player_hp <= 0)
+        g_count();
+        if (p.player_hp <= 0)
         {
             return;
         }
@@ -108,5 +110,9 @@ public class player_hp : MonoBehaviour
                 }
                 break;
         }
+    }
+    void g_count()
+    {
+        g_num.text = p.player_grenade_num.ToString();
     }
 }

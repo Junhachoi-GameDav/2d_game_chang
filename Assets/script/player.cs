@@ -38,7 +38,7 @@ public class player : MonoBehaviour
     float y;
 
     //기타 오브젝트
-    public GameObject granade;
+    public GameObject use_granade;
     public GameObject hiar;
     public GameObject p_melee;
     public GameObject dash_partical;
@@ -67,6 +67,7 @@ public class player : MonoBehaviour
     player_hp p_hp;
     menu_manager m_manager;
     dialogue_controller d_controller;
+    obj_manager obj_m;
     void Start()
     {
         anime = GetComponent<Animator>();
@@ -77,6 +78,7 @@ public class player : MonoBehaviour
         p_hp = FindObjectOfType<player_hp>();
         m_manager = FindObjectOfType<menu_manager>();
         d_controller = FindObjectOfType<dialogue_controller>();
+        obj_m = FindObjectOfType<obj_manager>();
         is_trun = true;
     }
 
@@ -299,9 +301,11 @@ public class player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q) && player_grenade_num > 0)
         {
             // 참고로 중력값은 2이다.
-            GameObject ins_granade = Instantiate(granade, transform.position, transform.rotation); // 캐릭터 위치에서 생성, 나중에 오브젝트 풀링 해줄거임.
-            Rigidbody2D rigid_granade = ins_granade.GetComponent<Rigidbody2D>(); // 물리 선언
-            
+            //GameObject ins_granade = Instantiate(granade, transform.position, transform.rotation); // 캐릭터 위치에서 생성, 나중에 오브젝트 풀링 해줄거임.
+            GameObject granade_obj = obj_m.make_obj("grenades");
+            Rigidbody2D rigid_granade = granade_obj.GetComponent<Rigidbody2D>(); // 물리 선언
+
+            granade_obj.transform.position = gameObject.transform.position;
             //캐릭터위치에서 (위* 힘* 조절) + (오른쪽 * 힘* 캐릭터 바라보는 방향) = 대각선으로 포물선을 그린다.
             rigid_granade.velocity = (transform.up * g_force *0.7f ) + (transform.right * g_force * (is_trun ? 1 : -1));
             player_grenade_num--;

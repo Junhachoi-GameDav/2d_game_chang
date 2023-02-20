@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class granade_destroy : MonoBehaviour
 {
-    public GameObject boom_position;
+    //public GameObject boom_position;
     float ro_speed =350;
     
     void Update()
@@ -16,9 +16,12 @@ public class granade_destroy : MonoBehaviour
     {
         if (collision.gameObject.tag == "bottom")
         {
-            Instantiate(boom_position, transform.position, boom_position.transform.rotation);
+            //Instantiate(boom_position, transform.position, boom_position.transform.rotation);
+            obj_manager obj_m = FindObjectOfType<obj_manager>();
+            var ex_g = obj_m.make_obj("exclusion");
+            ex_g.transform.position = gameObject.transform.position;
             game_manager.Instance.gm_ef_sound_mng("grenade_sound");
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 

@@ -236,6 +236,7 @@ public class Boss_fairy : MonoBehaviour
                     //Invoke("cooltime_C", 1f);
                     if (isAttack == true && attack_cool > 0)
                     {
+                        anime.SetBool("do_atk", true);
                         if (Vector2.Distance(this.transform.position, Player.position) > 1.5f&&isAttacking==false)
                             this.transform.position = Vector2.MoveTowards(this.transform.position, Player.position, Time.deltaTime * speed);
                         if (Vector2.Distance(this.transform.position, Player.position) <= 1.5f)
@@ -258,12 +259,14 @@ public class Boss_fairy : MonoBehaviour
                         if (this.transform.position.x == min_P)
                         {
                             isback = true;
+                            anime.SetBool("do_atk", false);
                             if (isone == false)
                                 StartCoroutine(cooltime());
                         }
                         else if (isback == false)
                         {
                             //isback = true;
+                            anime.SetBool("do_atk", false);
                             gofirst();
                         }
                     }
@@ -292,7 +295,8 @@ public class Boss_fairy : MonoBehaviour
                 {
                     //op = 0;
                     //s_op = 1;
-                    isAttack= false;
+                    anime.SetBool("do_atk", false);
+                    isAttack = false;
                     isNotmove = false;
                     isback = false;
                     isupdown = false;
@@ -394,10 +398,12 @@ public class Boss_fairy : MonoBehaviour
     }
     IEnumerator cooltime()
     {
+        anime.SetBool("is_air", false);
         // yield return new WaitForSeconds(2.5f);
         isone = true;
         // isup = true;
         yield return new WaitForSeconds(5f);
+        anime.SetBool("is_air", true);
         groundtime = 3.5f;
         fly_limit_time = 3.5f;
         attack_cool = 4f;
@@ -535,7 +541,9 @@ public class Boss_fairy : MonoBehaviour
         //isDamage = true;//적 못움직이게
         yield return new WaitForSeconds(0.3f);
         rb.AddForce(new Vector3(0, 0, 0));
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
+        anime.SetTrigger("is_die");
+        yield return new WaitForSeconds(2f);
         //폭발하도록하기
 
         //Explosion();

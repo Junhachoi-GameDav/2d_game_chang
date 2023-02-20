@@ -242,7 +242,7 @@ public class Boss_fairy : MonoBehaviour
                             DirectionEnemy(Player.position.x, this.transform.position.x);
                             //isfast = true;
                             isAttacking = true;
-                            //sprite.color = Color.red;
+                            sprite.color = Color.red;
                             
                             Invoke("Attack", 0.45f);
 
@@ -258,14 +258,12 @@ public class Boss_fairy : MonoBehaviour
                         if (this.transform.position.x == min_P)
                         {
                             isback = true;
-                            anime.SetBool("do_atk", false);
                             if (isone == false)
                                 StartCoroutine(cooltime());
                         }
                         else if (isback == false)
                         {
                             //isback = true;
-                            anime.SetBool("do_atk", false);
                             gofirst();
                         }
                     }
@@ -341,6 +339,7 @@ public class Boss_fairy : MonoBehaviour
             //direct.localScale = new Vector3(direct.localScale.x, direct.localScale.y, direct.localScale.z);
             if (boxpos.localPosition.x > 0)//부모와의 거리가 양수일때 음수가 정상 왼쪽
             {
+                sprite.flipX = true;
                 boxpos.localPosition = new Vector2(boxpos.localPosition.x * -1, boxpos.localPosition.y);//음수로 만든다
                 //axepos.localPosition = new Vector2(axepos.localPosition.x * -1, axepos.localPosition.y);
             }
@@ -351,6 +350,7 @@ public class Boss_fairy : MonoBehaviour
 
             if (boxpos.localPosition.x < 0)//부모와의 거리가 음수일때 양수가 정상 오른쪽
             {
+                sprite.flipX = false;
                 boxpos.localPosition = new Vector2(Mathf.Abs(boxpos.localPosition.x), boxpos.localPosition.y);//절대값으로 양수로 만든다.
                 //axepos.localPosition = new Vector2(Mathf.Abs(axepos.localPosition.x), axepos.localPosition.y);
             }
@@ -374,7 +374,7 @@ public class Boss_fairy : MonoBehaviour
     {
         yield return new WaitForSeconds(0.6f);
         //isAttack = false;
-        //sprite.color = Color.white;
+        sprite.color = Color.white;
         box.SetActive(false);
         isAttacking = false;
         yield return null;

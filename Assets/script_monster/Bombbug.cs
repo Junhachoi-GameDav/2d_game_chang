@@ -140,7 +140,7 @@ public class Bombbug : Enermy
     {
         Hp = h - damage;
 
-        Debug.Log(Hp);
+        //Debug.Log(Hp);
         if (Hp <= 0)
         {
 

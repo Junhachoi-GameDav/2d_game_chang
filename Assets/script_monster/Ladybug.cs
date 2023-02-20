@@ -288,7 +288,7 @@ public class Ladybug :Enermy
             TakeDamage(p.player_dmg, Hp);
             isDamage = true;
             sprite.color = new Color(1, 0, 0, 1);
-            Debug.Log(Hp);
+            //Debug.Log(Hp);
             animator.SetBool("Attacked", true);
             Invoke("attacked", 0.15f);
             Invoke("damage", 0.15f);

@@ -49,7 +49,7 @@ public class obj_manager : MonoBehaviour
         
         popcornbug_bullet = new GameObject[50];
 
-        boss_bullet = new GameObject[10];
+        boss_bullet = new GameObject[30];
 
         generate();
     }

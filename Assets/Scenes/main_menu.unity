@@ -1545,7 +1545,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'TEAM NAME: ??'
+  m_Text: "TEAM NAME: \uADFC\uBCF8\n\uC74C\uC545 \uCD9C\uCC98 : Unity Asset Store"
 --- !u!222 &447657053
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3832,6 +3832,7 @@ MonoBehaviour:
   grenade_sound: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b, type: 3}
   dash_sound: {fileID: 8300000, guid: d22035de002018b44bc76a915efcba10, type: 3}
   click_sound: {fileID: 8300000, guid: 0e6d4d48fef8bd34f9a18cc6b7ed156c, type: 3}
+  audio: {fileID: 0}
 --- !u!1 &1717951061
 GameObject:
   m_ObjectHideFlags: 0

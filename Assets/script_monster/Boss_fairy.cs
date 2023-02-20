@@ -8,14 +8,15 @@ public class Boss_fairy : MonoBehaviour
 
     int sound_cnt; //배경음 한번만 실행
 
-    GameObject effect;
+    //GameObject effect;
     player p;
     SpriteRenderer sprite;
+    obj_manager obj_m;
     float uptime = 0.5f;
     float attack_cool = 4f;
     float readytime = 5f;
     float groundtime = 3.5f;
-    public GameObject bullet;
+    GameObject bullet;
     public GameObject center;//이 물체를 기준으로 좌우로 움직인다(처음에만
     public float distance;
     public LayerMask isLayer;
@@ -59,6 +60,7 @@ public class Boss_fairy : MonoBehaviour
     {
         p = FindObjectOfType<player>();
         sprite = GetComponent<SpriteRenderer>();
+        obj_m = FindObjectOfType<obj_manager>();
         Player= GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
         op = Random.Range(0, 3);
@@ -66,10 +68,10 @@ public class Boss_fairy : MonoBehaviour
         target = center.transform;
         min_P = target.position.x - 8f;
         max_P = target.position.x + 8f;
-        GameObject weapon = Instantiate(prefab_weapon);
-        weapon_damage = weapon.GetComponent<granade>().granade_dmg;
-        effect = weapon.GetComponent<granade>().granade_effect;
-       // op = 2;
+        //GameObject weapon = Instantiate(prefab_weapon);
+        weapon_damage = p.player_grenade_dmg;
+        //effect = weapon.GetComponent<granade>().granade_effect;
+        // op = 2;
 
     }
 
@@ -149,8 +151,9 @@ public class Boss_fairy : MonoBehaviour
                                     bullet_respown -= Time.deltaTime;
                                 if (bullet_respown <= 0)
                                 {
-
-                                    Instantiate(bullet, bullet_box.transform.position, bullet_box.transform.rotation);
+                                    bullet = obj_m.make_obj("boss_bullet"); //생성
+                                    bullet.transform.position = bullet_box.transform.position;
+                                    //Instantiate(bullet, bullet_box.transform.position, bullet_box.transform.rotation);
                                     bullet_respown = 0.5f;
                                 }
                                 fly_limit_time -= Time.deltaTime;
@@ -351,7 +354,6 @@ public class Boss_fairy : MonoBehaviour
             // Debug.Log("충돌");
             if (colider.tag == "Player")//콜라이더의 테그를 비교해서 플레이어면은 넣어놓는다
             {
-                Debug.Log("player damage");
                 damage_manager.Instance.damage_count(2); 
             }
         }
@@ -448,10 +450,10 @@ public class Boss_fairy : MonoBehaviour
     {
         iseffect = true;
         Transform d = collision.transform;
-        Destroy(collision);
-        GameObject eff = Instantiate(effect, transform.position, Quaternion.identity);
+        //Destroy(collision);
+        //GameObject eff = Instantiate(effect, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(0.3f);
-        Destroy(eff);
+        //Destroy(eff);
         yield return new WaitForSeconds(0.1f);
         iseffect = false;
     }
@@ -486,7 +488,7 @@ public class Boss_fairy : MonoBehaviour
             game_manager.Instance.gm_ef_sound_mng("grenade_sound");
            // Debug.Log("isnot move");
            // animator.SetBool("Attacked", true);
-            Debug.Log(isDamage);
+            //Debug.Log(isDamage);
             Invoke("attacked", 0.15f);
          //   Invoke("damage", 0.15f);
             sprite.color = new Color(1, 0, 0, 1);
@@ -498,10 +500,10 @@ public class Boss_fairy : MonoBehaviour
             isDamage = true;
           //  Debug.Log("isnot move");
            // animator.SetBool("Attacked", true);
-            Debug.Log(isDamage);
+            //Debug.Log(isDamage);
             Invoke("attacked", 0.15f);
           //  Invoke("damage", 0.15f);
-            Debug.Log(isDamage);
+            //Debug.Log(isDamage);
             sprite.color = new Color(1, 0, 0, 1);
         }
 
@@ -542,7 +544,7 @@ public class Boss_fairy : MonoBehaviour
     {
 
         Hp = h - damage;
-        Debug.Log(Hp);
+        //Debug.Log(Hp);
         if (Hp <= 0)
         {
             isDie = true;

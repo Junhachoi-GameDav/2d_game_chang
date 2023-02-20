@@ -13,12 +13,12 @@ public class boss_bullet : MonoBehaviour
     {
         if(collision.tag=="bottom")
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
         if(collision.tag=="Player")
         {
             damage_manager.Instance.damage_count(2);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

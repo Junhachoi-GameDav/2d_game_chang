@@ -7,7 +7,9 @@ public class player : MonoBehaviour
     //플레이어 정보
     public int player_hp;
     public int player_dmg;
+    public int player_grenade_dmg;
     public int player_grenade_num;
+
     //속도
     public float apply_speed; // 현재 스피드
     public float crouch_speed = 0f;

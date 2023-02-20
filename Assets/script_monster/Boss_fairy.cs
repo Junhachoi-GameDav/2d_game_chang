@@ -258,12 +258,14 @@ public class Boss_fairy : MonoBehaviour
                         if (this.transform.position.x == min_P)
                         {
                             isback = true;
+                            anime.SetBool("do_atk", false);
                             if (isone == false)
                                 StartCoroutine(cooltime());
                         }
                         else if (isback == false)
                         {
                             //isback = true;
+                            anime.SetBool("do_atk", false);
                             gofirst();
                         }
                     }

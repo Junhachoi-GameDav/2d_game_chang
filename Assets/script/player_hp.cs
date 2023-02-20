@@ -21,6 +21,10 @@ public class player_hp : MonoBehaviour
     }
     private void Update()
     {
+        if(p.player_hp <= 0)
+        {
+            return;
+        }
         change_img(p.player_hp);
     }
     void change_img(int num)

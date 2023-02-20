@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class menu_manager : MonoBehaviour
 {
     public GameObject ingame_menu;
-
+    public GameObject gameover_menu;
     public GameObject[] in_button_menu;
 
     public bool is_menu_show;
@@ -37,6 +37,12 @@ public class menu_manager : MonoBehaviour
     public void is_menu_show_onoff()
     {
         is_menu_show = !is_menu_show;
+    }
+    public void new_game()
+    {
+        Time.timeScale = 1f;
+        game_manager.Instance.scene_load("loading_scene");
+        game_manager.Instance.gm_bg_sound_mng("ingame_bgm");
     }
     public void ingame_quit()
     {

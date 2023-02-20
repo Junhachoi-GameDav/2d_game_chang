@@ -25,9 +25,11 @@ public class player : MonoBehaviour
     int stop_cnt; //벽점프 멈추게하는것 한번만 실행
     int dash_sound_cut;
     public int atk_num;
+    int fade_num;
 
     //타임
     float dash_timer;
+    float g_use_timer;
     [Range(0.1f, 3)] public float dash_time;
 
     //점프
@@ -61,6 +63,7 @@ public class player : MonoBehaviour
     bool do_atk; //공격 중 2
     public bool is_hook_range_max; // 갈고리 길이 최대 상태
     bool is_use_g;
+    bool is_die;
 
     // 컴포넌트
     public Rigidbody2D rigid;
@@ -71,6 +74,7 @@ public class player : MonoBehaviour
     menu_manager m_manager;
     dialogue_controller d_controller;
     obj_manager obj_m;
+    fade_manager f_mng;
     void Start()
     {
         anime = GetComponent<Animator>();
@@ -82,12 +86,14 @@ public class player : MonoBehaviour
         m_manager = FindObjectOfType<menu_manager>();
         d_controller = FindObjectOfType<dialogue_controller>();
         obj_m = FindObjectOfType<obj_manager>();
+        f_mng = FindObjectOfType<fade_manager>();
         is_trun = true;
     }
 
     void Update()
     {
         check_wall_and_bottom();
+        die();
         if (m_manager.is_menu_show || d_controller.is_talk || is_hitted)
         {
             return;
@@ -97,7 +103,6 @@ public class player : MonoBehaviour
         player_use_granade();
         player_dash();
         player_attack();
-        die();
     }
 
     // 이동은 효율을 위해 여기에 넣는다.
@@ -297,6 +302,15 @@ public class player : MonoBehaviour
 
     void player_use_granade()
     {
+        if(g_use_timer <= 1f)
+        {
+            g_use_timer += Time.deltaTime;
+        }
+        else if (g_use_timer >= 1f)
+        {
+            is_use_g = false;
+        }
+
         if (is_attacking)
         {
             return;
@@ -313,6 +327,7 @@ public class player : MonoBehaviour
             rigid_granade.velocity = (transform.up * g_force *0.7f ) + (transform.right * g_force * (is_trun ? 1 : -1));
             player_grenade_num--;
             is_use_g = true;
+            g_use_timer = 0;
         }
     }
     
@@ -463,28 +478,38 @@ public class player : MonoBehaviour
     {
         if(collision.tag == "monster_melee")
         {
+
             is_hitted = true;
+            gameObject.layer = 14; // 무적
             player_hp -= damage_manager.Instance.en_dmg;
             p_hp.count -= damage_manager.Instance.en_dmg;
             p_hp.count++; // 한번만 실행 하기위해 넣어줬다.
             anime.SetTrigger("is_hitted");
-            gameObject.layer = 14; // 무적
             dash_partical.SetActive(false);
             j_dash_partical.SetActive(false);
             sprite.color = new Color(1, 1, 1, 0.5f); //투명해짐
             hitted_anime_stop();
-            Invoke("hitted_deley", 0.3f);
-            Invoke("hitted_back", 2f);
+            if (!is_die)
+            {
+                Invoke("hitted_deley", 0.3f);
+                Invoke("hitted_back", 2f);
+            }
         }
     }
     void hitted_back()
     {
-        gameObject.layer = 3; // 무적 다시 돌아옴
-        sprite.color = new Color(1, 1, 1, 1);
+        if (!is_die)
+        {
+            gameObject.layer = 3; // 무적 다시 돌아옴
+            sprite.color = new Color(1, 1, 1, 1);
+        }
     }
     void hitted_deley()
     {
-        is_hitted = false;
+        if (!is_die)
+        {
+            is_hitted = false;
+        }
     }
     void hitted_anime_stop()
     {
@@ -496,10 +521,28 @@ public class player : MonoBehaviour
     }
     void die()
     {
-        if (player_hp <= 0)
+        if (player_hp <= 0 && fade_num<=0)
         {
             is_hitted = true;
+            is_die = true;
             gameObject.layer = 14; // 무적
+            rigid.velocity = new Vector2(jump_force/2 * (is_trun ? -1 : 1), jump_force / 2);
+            StartCoroutine(die_co_ro());
+            fade_num++;
         }
+    }
+    
+    IEnumerator die_co_ro()
+    {
+        anime.SetBool("is_die", true);
+        yield return new WaitForSeconds(0.4f);
+        hiar.transform.localPosition = new Vector3(0, -0.35f, 0);
+        hiar.SetActive(false);
+        yield return new WaitForSeconds(1.0f);
+
+        f_mng.fade_img.gameObject.SetActive(true);
+        f_mng.fade_out();
+        yield return new WaitForSeconds(1f);
+        m_manager.gameover_menu.SetActive(true);
     }
 }
